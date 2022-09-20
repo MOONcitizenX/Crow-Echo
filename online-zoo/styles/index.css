@@ -140,7 +140,6 @@
 }
 
 .card_title {
-	font-style: normal;
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 22px;
@@ -151,7 +150,6 @@
 }
 
 .card_location {
-	font-style: normal;
 	font-weight: 300;
 	font-size: 15px;
 	line-height: 18px;
@@ -201,7 +199,8 @@
 }
 
 .friend-container {
-	padding: 41px 100px 59px;
+	padding-top: 41px;
+	padding-bottom: 59px;
 
 	background: rgba(253, 253, 255, 0.52);
 	backdrop-filter: blur(2px);
@@ -210,11 +209,104 @@
 }
 
 .friend_title {
-	font-style: normal;
+	margin-bottom: 30px;
+
 	font-weight: 400;
 	font-size: 48px;
 	line-height: 58px;
 	text-align: center;
 
 	color: #fe9013;
+}
+
+.friend_text-content {
+	padding-left: 100px;
+	padding-bottom: 60px;
+}
+
+.friend_subtitle {
+	margin-bottom: 40px;
+
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 29px;
+
+	color: var(--black_blue);
+}
+
+.friend_text {
+	margin-bottom: 10px;
+
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 21px;
+
+	color: var(--black_blue);
+}
+
+.friend_desc {
+	max-width: 863px;
+
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 21px;
+
+	color: var(--black_blue);
+}
+
+.friend_link {
+	color: var(--black_blue);
+	padding-bottom: 2px;
+	text-decoration: none;
+	border-bottom: 1px solid #fe9013;
+}
+
+.how_title {
+	margin-bottom: 40px;
+
+	text-align: center;
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 47px;
+
+	color: var(--black_blue);
+}
+
+.how_container {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 30px;
+	padding-bottom: 62px;
+}
+
+.how_card {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.how_block-img {
+	background-color: #ffffff;
+	border-radius: 5px;
+	width: 168px;
+	height: 168px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.how_block-text {
+	max-width: 168px;
+
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+
+	color: var(--black_blue);
+}
+
+.how_arrow {
+	padding-top: 60px;
 }
