@@ -196,4 +196,25 @@
 /* Friend section */
 
 .friend-wrapper {
+	background-image: var(--orang_grad);
+	padding: 69px 0 100px;
+}
+
+.friend-container {
+	padding: 41px 100px 59px;
+
+	background: rgba(253, 253, 255, 0.52);
+	backdrop-filter: blur(2px);
+
+	border-radius: 20px;
+}
+
+.friend_title {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 48px;
+	line-height: 58px;
+	text-align: center;
+
+	color: #fe9013;
 }
