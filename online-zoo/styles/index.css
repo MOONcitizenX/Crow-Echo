@@ -51,3 +51,59 @@
 	background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
 	z-index: 1;
 }
+
+/* Backstage styles */
+
+.backstage-wrapper {
+	background-image: url('../img/flower_foto1.jpg');
+	background-position: 100% 12%;
+	background-repeat: no-repeat;
+	background-size: 203px;
+}
+
+.backstage-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 87px;
+
+	padding-top: 140px;
+	padding-bottom: 180px;
+}
+
+.backstage_content {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 465px;
+	height: 100%;
+	max-height: 609px;
+	font-style: normal;
+	font-weight: 400;
+	color: var(--black_blue);
+}
+
+.backstage_title {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 48px;
+	line-height: 58px;
+	padding-bottom: 20px;
+}
+
+.backstage_title--small {
+	font-style: normal;
+	font-weight: 400;
+	padding-bottom: 34px;
+	font-size: 24px;
+	line-height: 29px;
+}
+
+.backstage-text {
+	font-size: 16px;
+	line-height: 21px;
+}
+
+.backstage-text--top {
+	padding-bottom: 54px;
+}
