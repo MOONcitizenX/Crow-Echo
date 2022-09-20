@@ -111,15 +111,55 @@ body {
 	max-width: 1160px;
 }
 
+.btn {
+	display: block;
+	width: 100%;
+	max-width: 298px;
+	padding: 16px 0;
+	border-radius: 5px;
+	border: none;
+
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 22px;
+	text-align: center;
+	text-transform: uppercase;
+	color: #ffffff;
+	transition: all ease-in-out 0.2s;
+}
+
+.btn--round {
+	border-radius: 25px;
+}
+
+.btn--orange {
+	background-color: var(--orang);
+}
+
+.btn--orange:hover {
+	background-color: #e47209;
+}
+.btn--orange:focus {
+	background-color: var(--green);
+}
+
+.btn--disabled {
+	background-color: var(--gray);
+}
+
 /* Header styles */
 
 .header-wrapper {
 	background-color: #000000;
 	backdrop-filter: blur(2px);
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .header-container {
-	padding: 14px 0;
+	padding: 13px 0;
 	display: flex;
 	align-items: center;
 }
@@ -127,7 +167,7 @@ body {
 .logo {
 	margin-right: 63px;
 	max-width: 82px;
-	padding: 3.5px 4.5px;
+	padding: 3px 4px;
 
 	position: relative;
 
@@ -181,11 +221,4 @@ body {
 }
 .nav_link--active {
 	cursor: default;
-}
-
-.hero-wrapper {
-	background-image: url('../img/Giant\ Panda.jpg');
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
 }

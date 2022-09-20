@@ -1,2 +1,53 @@
+/* Hero styles */
 
+.hero-wrapper {
+	background-image: url('../img/Giant\ Panda.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 
+.hero-container {
+	padding-top: 166px;
+	padding-bottom: 100px;
+}
+
+.hero_title,
+.hero_title--white,
+.hero_title--yellow {
+	max-width: 500px;
+	margin-left: auto;
+
+	position: relative;
+	z-index: 2;
+
+	font-style: normal;
+	font-weight: 700;
+	font-size: 107px;
+	line-height: 80px;
+	text-align: center;
+	text-transform: uppercase;
+}
+.hero_title {
+	margin-bottom: 60px;
+}
+
+.hero_title--white {
+	color: #ffffff;
+}
+
+.hero_title--yellow {
+	color: var(--yellow);
+}
+
+.hero_title::after {
+	content: '';
+	width: 465px;
+	height: 465px;
+	position: absolute;
+	right: 108px;
+	top: -74px;
+	border-radius: 50%;
+	background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
+	z-index: 1;
+}
