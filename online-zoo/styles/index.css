@@ -83,6 +83,11 @@
 	color: var(--black_blue);
 }
 
+.backstage_img {
+	width: 100%;
+	max-width: 609px;
+}
+
 .backstage_title {
 	font-style: normal;
 	font-weight: 400;
@@ -106,6 +111,32 @@
 
 .backstage-text--top {
 	padding-bottom: 54px;
+}
+
+@media screen and (max-width: 1000px) {
+	.backstage-wrapper {
+		background-image: none;
+	}
+	.backstage-container {
+		gap: 31px;
+	}
+	.backstage_content {
+		max-width: 454px;
+	}
+	.backstage_img {
+		src: url('../img/bamboo-cap_1000.jpg');
+	}
+	.backstage_img {
+		max-width: 455px;
+	}
+	.backstage_title {
+		font-size: 48px;
+		line-height: 120%;
+	}
+	.backstage-text {
+		font-size: 16px;
+		line-height: 21px;
+	}
 }
 
 /* Pets styles */
@@ -134,9 +165,15 @@
 }
 
 .slide_card {
-	border: 1px solid var(--orang);
-	border-radius: 5px;
+	background-color: #fff;
 	overflow: hidden;
+
+	background: linear-gradient(#ffffff, #ffffff) padding-box,
+		linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%) border-box;
+	border: 1px solid transparent;
+	border-radius: 20px;
+
+	border-radius: 5px;
 }
 
 .card_title {
@@ -162,8 +199,9 @@
 }
 
 .swiper_button {
+	cursor: pointer;
 	position: absolute;
-	top: 36.5%;
+	top: 36.3%;
 	width: 62px;
 	height: 62px;
 	background-color: var(--orang);
@@ -174,11 +212,11 @@
 }
 
 .swiper_button-next {
-	right: -82px;
+	right: 0;
 }
 
 .swiper_button-prev {
-	left: -82px;
+	left: -2px;
 }
 
 .swiper_arrow--left {
@@ -188,10 +226,10 @@
 .card_desc {
 	display: flex;
 	justify-content: space-between;
-	padding: 4px 8px 11px 14px;
+	padding: 4px 10px 11px 14px;
 }
 
-/* Friend section */
+/* Friend styles */
 
 .friend-wrapper {
 	background-image: var(--orang_grad);
@@ -201,6 +239,9 @@
 .friend-container {
 	padding-top: 41px;
 	padding-bottom: 59px;
+	padding-right: 0;
+	padding-left: 0;
+	max-width: 1160px;
 
 	background: rgba(253, 253, 255, 0.52);
 	backdrop-filter: blur(2px);
@@ -291,6 +332,7 @@
 	border-radius: 5px;
 	width: 168px;
 	height: 168px;
+	border: 1px solid #f9804b;
 
 	display: flex;
 	justify-content: center;
@@ -309,4 +351,101 @@
 
 .how_arrow {
 	padding-top: 60px;
+}
+
+/* Testimonials styles */
+
+.testimonials-wrapper {
+	padding-top: 140px;
+
+	background-image: url('../img/leaf.jpg');
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-size: 244px;
+}
+
+.testimonials-container {
+	padding-bottom: 180px;
+}
+
+.testimonials_title {
+	margin-bottom: 47px;
+	font-weight: 400;
+	font-size: 36px;
+	line-height: 47px;
+
+	text-align: center;
+
+	color: #333b41;
+}
+
+.swiper-scrollbar-drag {
+	background-color: #fe9013;
+}
+
+.bg-wrapper {
+	background: var(--pink_grad);
+	border-radius: 5px;
+}
+
+.swiper-container-horizontal > .swiper-scrollbar {
+	position: relative;
+	left: 0;
+	bottom: 0;
+	margin: 22px auto 32px;
+
+	height: 6px;
+	width: 100%;
+	max-width: 600px;
+
+	background: linear-gradient(#f5f7f6, #f5f7f6) padding-box,
+		var(--pink_grad) border-box;
+	border: 0.5px solid transparent;
+}
+
+.testi_card {
+	padding: 12px 15px 19px 16px;
+
+	background: linear-gradient(#f1f3f2, #f1f3f2) padding-box,
+		var(--pink_grad) border-box;
+	border: 2px solid transparent;
+	border-radius: 20px;
+}
+
+.card_top {
+	display: flex;
+	padding-bottom: 11px;
+}
+
+.testi_card_img {
+	max-width: 37px;
+	height: 37px;
+	margin-right: 10px;
+}
+
+.card_name {
+	padding-bottom: 2px;
+
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+
+	color: #000000;
+}
+
+.card_local,
+.card_descr {
+	font-style: normal;
+	font-weight: 300;
+	font-size: 15px;
+	line-height: 18px;
+
+	color: #bdbdbd;
+}
+
+.card_descr {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 17;
+	overflow: hidden;
 }
