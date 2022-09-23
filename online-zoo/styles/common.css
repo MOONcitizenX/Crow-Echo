@@ -138,6 +138,7 @@ body {
 	line-height: 22px;
 	text-align: center;
 	text-transform: uppercase;
+	cursor: pointer;
 	color: #ffffff;
 	transition: all ease-in-out 0.2s;
 }
@@ -393,6 +394,20 @@ body {
 	line-height: 22px;
 
 	color: #ffffff;
+}
+
+.submit_input:focus {
+	color: #4b9200;
+	border: 0.7px solid #4b9200;
+}
+
+.submit_input:focus::placeholder {
+	color: #4b9200;
+}
+
+.submit_input:invalid {
+	color: #d31414;
+	border: 0.7px solid #d31414;
 }
 
 .submit_input:placeholder {

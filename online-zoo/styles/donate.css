@@ -284,6 +284,26 @@
 	color: #404950;
 }
 
+.donation-input::-webkit-inner-spin-button,
+.donation-input::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.donation-input:focus {
+	color: #4b9200;
+	border: 1px solid #4b9200;
+}
+
+.donation-input:focus::placeholder {
+	color: #4b9200;
+}
+
+.donation-input:invalid {
+	color: #d31414;
+	border: 1px solid #d31414;
+}
+
 .donation-input:placeholder {
 	font-weight: 400;
 	font-size: 16px;
