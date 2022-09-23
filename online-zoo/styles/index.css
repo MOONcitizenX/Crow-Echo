@@ -68,7 +68,7 @@
 	gap: 87px;
 
 	padding-top: 140px;
-	padding-bottom: 180px;
+	padding-bottom: 160px;
 }
 
 .backstage_content {
@@ -151,11 +151,14 @@
 
 .pets-container {
 	position: relative;
-	padding-bottom: 100px;
+	padding: 0px 60px 100px;
 }
 
 .cards_slider {
+	padding-top: 20px;
 	padding-bottom: 80px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .swiper-slide {
@@ -165,8 +168,8 @@
 }
 
 .slide_card {
+	cursor: pointer;
 	background-color: #fff;
-	overflow: hidden;
 
 	background: linear-gradient(#ffffff, #ffffff) padding-box,
 		linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%) border-box;
@@ -195,20 +198,64 @@
 }
 
 .card_img {
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
 	width: 100%;
+	filter: brightness(100%);
+	transition: all 0.3s ease-in-out;
+}
+
+.card_title,
+.card_location {
+	transition: all 0.3s ease-in-out;
+}
+
+.slide_card:hover .card_desc {
+	transform: translate(0, -50px);
+}
+.slide_card:hover .card_title,
+.slide_card:hover .card_location {
+	color: #ffffff;
+}
+
+.card_desc {
+	display: flex;
+	justify-content: space-between;
+	padding: 4px 10px 11px 14px;
+	transition: all 0.3s ease-in-out;
+}
+
+.slide_card:hover .card_img {
+	border-radius: 5px;
+	position: relative;
+	/* z-index: 999; */
+	scale: 1.06;
+	filter: brightness(30%);
 }
 
 .swiper_button {
 	cursor: pointer;
 	position: absolute;
-	top: 36.3%;
+	top: 37.3%;
 	width: 62px;
 	height: 62px;
 	background-color: var(--orang);
+	background-image: linear-gradient(
+		113.96deg,
+		#f9804b 1.49%,
+		#fe9013 101.44%
+	);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-radius: 50%;
+	transition: all 0.3s ease-in-out;
+}
+
+.swiper_button:focus,
+.swiper_button:active {
+	background-color: var(--green);
+	background-image: none;
 }
 
 .swiper_button-next {
@@ -218,15 +265,12 @@
 .swiper_button-prev {
 	left: -2px;
 }
-
 .swiper_arrow--left {
-	transform: rotate(180deg);
+	user-select: none;
 }
-
-.card_desc {
-	display: flex;
-	justify-content: space-between;
-	padding: 4px 10px 11px 14px;
+.swiper_arrow--left {
+	user-select: none;
+	transform: rotate(180deg);
 }
 
 /* Friend styles */
@@ -365,7 +409,7 @@
 }
 
 .testimonials-container {
-	padding-bottom: 180px;
+	padding-bottom: 179px;
 }
 
 .testimonials_title {

@@ -11,7 +11,7 @@
 		<title>Pet Story</title>
 	</head>
 	<body>
-		<header class="section-wrapper header-wrapper">
+		<header class="section-wrapper header-wrapper" id="header">
 			<div class="container header-container">
 				<div class="logo">
 					<h1 class="logo_title">PetStory online</h1>
@@ -24,9 +24,7 @@
 				<nav class="nav">
 					<ul class="nav_list">
 						<li class="nav_item">
-							<a
-								class="nav_link nav_link--active"
-								href="./index.html"
+							<a class="nav_link nav_link--active" href="./"
 								>About</a
 							>
 						</li>
@@ -804,15 +802,20 @@
 		<footer class="section-wrapper footer-wrapper">
 			<div class="container footer-container">
 				<div class="footer_block--left">
-					<div class="logo">
-						<h1 class="logo_title">PetStory online</h1>
-						<img
-							class="logo_img"
-							src="./icons/bamboo.svg"
-							alt="bamboo"
-						/>
-					</div>
-					<button class="btn btn--orange" style="margin-right: auto">
+					<a href="./#header" class="nav_link">
+						<div class="logo footer-logo">
+							<h1 class="logo_title">PetStory online</h1>
+							<img
+								class="logo_img"
+								src="./icons/bamboo.svg"
+								alt="bamboo"
+							/>
+						</div>
+					</a>
+					<button
+						onclick="window.location.href='/donation.html'"
+						class="btn btn--orange btn--footer"
+					>
 						donate for volunteers
 					</button>
 					<ul class="social">
@@ -831,13 +834,99 @@
 								<p>Facebook</p>
 							</a>
 						</li>
-						<li class="social_link"></li>
-						<li class="social_link"></li>
-						<li class="social_link"></li>
+						<li class="social_link">
+							<a
+								href="https://twitter.com"
+								class="social_link-cont"
+							>
+								<div class="social_link-img-cont">
+									<img
+										src="./icons/social/tw.svg"
+										alt="Twitter"
+										class="social_link-img"
+									/>
+								</div>
+								<p>Twitter</p>
+							</a>
+						</li>
+						<li class="social_link">
+							<a
+								href="https://instagram.com"
+								class="social_link-cont"
+							>
+								<div class="social_link-img-cont">
+									<img
+										src="./icons/social/inst.svg"
+										alt="instagram"
+										class="social_link-img"
+									/>
+								</div>
+								<p>Instagram</p>
+							</a>
+						</li>
+						<li class="social_link">
+							<a
+								href="https://youtube.com"
+								class="social_link-cont"
+							>
+								<div class="social_link-img-cont">
+									<img
+										src="./icons/social/yt.svg"
+										alt="YouTube"
+										class="social_link-img"
+									/>
+								</div>
+								<p>YouTube</p>
+							</a>
+						</li>
 					</ul>
 				</div>
-				<div class="footer_block--center"></div>
-				<div class="footer_block--right"></div>
+				<div class="footer_block--center">
+					<nav class="nav">
+						<ul class="nav_list">
+							<li class="nav_item">
+								<a class="nav_link nav_link--active" href="./"
+									>About</a
+								>
+							</li>
+							<li class="nav_item">
+								<a class="nav_link" href="#">Map</a>
+							</li>
+							<li class="nav_item">
+								<a class="nav_link" href="#">Zoos</a>
+							</li>
+
+							<li class="nav_item">
+								<a class="nav_link" href="#">Contact&nbsp;us</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="footer_block--right">
+					<div class="footer_email">
+						<label for="subscribe" class="subscribe_label"
+							>Subscribe to our news</label
+						>
+						<form class="submit_form">
+							<input
+								class="submit_input"
+								type="email"
+								name="subscribe"
+								id="subscribe_email"
+								placeholder="Enter your email"
+							/>
+							<button class="btn btn--small">Submit</button>
+						</form>
+					</div>
+					<div class="footer_info">
+						<p class="footer-info--text">
+							Designed by Alisa Samborskaya
+						</p>
+						<p class="footer-info--text">
+							&copy;RSSchool &amp;&nbsp;&copy;Yem Digital 2021
+						</p>
+					</div>
+				</div>
 			</div>
 		</footer>
 

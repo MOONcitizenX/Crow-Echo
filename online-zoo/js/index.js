@@ -32,3 +32,11 @@ const updateOnResize = () => {
 };
 
 window.addEventListener('resize', updateOnResize);
+
+const handleSubmit = (e) => {
+	e.preventDefault();
+};
+
+const submit_form = document.querySelector('.submit_form');
+
+submit_form.addEventListener('submit', handleSubmit);
