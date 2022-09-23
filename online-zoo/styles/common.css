@@ -142,6 +142,18 @@ body {
 	transition: all ease-in-out 0.2s;
 }
 
+.btn--center {
+	margin: 0 auto;
+}
+
+.btn--left {
+	margin-right: auto;
+}
+
+.btn--right {
+	margin-left: auto;
+}
+
 .btn--small {
 	max-width: 129px;
 	padding: 9px 0;
@@ -200,7 +212,7 @@ body {
 
 .header-container {
 	padding-top: 13px;
-	padding-bottom: 12px;
+	padding-bottom: 13px;
 	display: flex;
 	align-items: center;
 }
@@ -376,10 +388,19 @@ body {
 	width: 100%;
 	padding: 9px 7px 9px 0;
 
+	font-weight: 400;
 	font-size: 16px;
 	line-height: 22px;
 
 	color: #ffffff;
+}
+
+.submit_input:placeholder {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+
+	color: #bdbdbd;
 }
 
 .footer_info {
