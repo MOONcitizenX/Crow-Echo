@@ -407,7 +407,7 @@
 }
 
 .testimonials-container {
-	padding-bottom: 179px;
+	padding-bottom: 181px;
 }
 
 .testimonials_title {
@@ -454,7 +454,7 @@
 }
 
 .testi_card {
-	padding: 12px 15px 19px 16px;
+	padding: 12px 0 19px 16px;
 
 	background: linear-gradient(#f1f3f2, #f1f3f2) padding-box,
 		var(--pink_grad) border-box;
@@ -494,6 +494,7 @@
 }
 
 .card_descr {
+	max-width: 237px;
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 17;

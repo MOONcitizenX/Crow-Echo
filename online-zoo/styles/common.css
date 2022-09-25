@@ -95,6 +95,9 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+html {
+	scroll-behavior: smooth;
+}
 
 body {
 	font-family: 'Roboto', sans-serif;
@@ -158,13 +161,19 @@ body {
 .btn--small {
 	max-width: 129px;
 	padding: 9px 0;
-	border: 1px solid var(--green);
+	border: 1px solid var(--black_blue);
 
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 22px;
 	text-transform: none;
 
+	color: var(--black_blue);
+}
+
+.btn--small:hover,
+.btn--small:focus {
+	border: 1px solid var(--green);
 	color: var(--green);
 }
 
@@ -408,6 +417,16 @@ body {
 .submit_input:invalid {
 	color: #d31414;
 	border: 0.7px solid #d31414;
+}
+
+.submit_input:focus ~ .btn--small {
+	color: var(--green);
+	border: 1px solid var(--green);
+}
+
+.submit_input:invalid ~ .btn--small {
+	color: #d31414;
+	border: 1px solid #d31414;
 }
 
 .submit_input:placeholder {

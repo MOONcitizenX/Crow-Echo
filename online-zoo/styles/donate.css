@@ -41,6 +41,11 @@
 	line-height: 22px;
 }
 
+.help_text--span {
+	font-weight: 300;
+	letter-spacing: 0.1px;
+}
+
 .donate_title {
 	margin-bottom: 60px;
 
@@ -158,11 +163,12 @@
 .donation_checkmark::before {
 	content: url('../icons/roller_icon.svg');
 	position: absolute;
-	top: 0;
-	left: 0;
+	padding: 5px;
+	top: -5px;
+	left: -5px;
 	z-index: 2;
-	width: 40px;
-	height: 40px;
+	width: 50px;
+	height: 50px;
 	display: none;
 }
 
