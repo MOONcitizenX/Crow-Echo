@@ -1,6 +1,6 @@
 import Swiper from './swiper.js';
 
-const bamboo_hat = document.querySelector('.backstage_img');
+const bamboo_hat = document.getElementById('backstage_img');
 
 const petsSwiper = new Swiper('.cards_slider', {
 	slidesPerView: 3,
