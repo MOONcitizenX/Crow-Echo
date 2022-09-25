@@ -41,6 +41,11 @@
 	line-height: 22px;
 }
 
+.help_text--span {
+	font-weight: 300;
+	letter-spacing: 0.1px;
+}
+
 .donate_title {
 	margin-bottom: 60px;
 
