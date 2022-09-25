@@ -25,9 +25,9 @@ const testimonialsSwiper = new Swiper('.testimonials_slider', {
 
 const updateOnResize = () => {
 	if (window.innerWidth > 1000) {
-		bamboo_hat.src = '../img/bamboo-cap.jpg';
+		bamboo_hat.src = './img/bamboo-cap.jpg';
 	} else if (window.innerWidth > 640) {
-		bamboo_hat.src = '../img/bamboo-cap_1000.jpg';
+		bamboo_hat.src = './img/bamboo-cap_1000.jpg';
 	}
 };
 
