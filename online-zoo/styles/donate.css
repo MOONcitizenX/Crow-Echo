@@ -270,16 +270,20 @@
 .panda-widget_img {
 	padding-right: 30px;
 }
+.don_input--container {
+	position: relative;
+	width: 100%;
+	max-width: 268px;
+	margin: 0 auto 14px;
+}
 
 .donation-input {
 	display: block;
-	margin: 0 auto 14px;
 	background-color: transparent;
 	outline: none;
 	text-indent: 9px;
 	padding: 16px 0;
 	width: 100%;
-	max-width: 268px;
 	border: 1px solid #929699;
 	border-radius: 2px;
 
@@ -288,6 +292,18 @@
 	line-height: 22px;
 
 	color: #404950;
+}
+
+.donation-input--dollar {
+	content: '$';
+	position: absolute;
+	width: 10px;
+	height: 20px;
+	top: 17px;
+	right: 10px;
+	font-size: 20px;
+	color: #929699;
+	user-select: none;
 }
 
 .donation-input::-webkit-inner-spin-button,
@@ -301,13 +317,17 @@
 	border: 1px solid #4b9200;
 }
 
-.donation-input:focus::placeholder {
+.donation-input:focus::placeholder,
+.donation-input:focus ~ .donation-input--dollar {
 	color: #4b9200;
 }
 
 .donation-input:invalid {
 	color: #d31414;
 	border: 1px solid #d31414;
+}
+.donation-input:invalid ~ .donation-input--dollar {
+	color: #d31414;
 }
 
 .donation-input:placeholder {
