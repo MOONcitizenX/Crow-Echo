@@ -52,6 +52,29 @@
 	z-index: 1;
 }
 
+@media screen and (max-width: 1000px) {
+	.hero-container {
+		padding-top: 121px;
+		padding-right: 37px;
+		padding-bottom: 47px;
+	}
+
+	.hero_title {
+		margin-bottom: 42px;
+	}
+	.hero_title > span {
+		display: block;
+		font-size: 85px;
+		line-height: 64px;
+	}
+	.hero_title::after {
+		width: 367px;
+		height: 367px;
+		top: -51px;
+		right: 141px;
+	}
+}
+
 /* Backstage styles */
 
 .backstage-wrapper {
@@ -112,22 +135,28 @@
 .backstage-text--top {
 	padding-bottom: 54px;
 }
-
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1460px) {
 	.backstage-wrapper {
 		background-image: none;
-	}
-	.backstage-container {
-		gap: 31px;
-	}
-	.backstage_content {
-		max-width: 454px;
 	}
 	.backstage_img {
 		src: url('../img/bamboo-cap_1000.jpg');
 	}
+}
+
+@media screen and (max-width: 1000px) {
+	.backstage-container {
+		gap: 31px;
+		padding-bottom: 121px;
+		padding-top: 100px;
+	}
+	.backstage_content {
+		max-width: 454px;
+	}
+
 	.backstage_img {
 		max-width: 455px;
+		flex-shrink: 0;
 	}
 	.backstage_title {
 		font-size: 48px;
@@ -135,7 +164,7 @@
 	}
 	.backstage-text {
 		font-size: 16px;
-		line-height: 21px;
+		line-height: 22px;
 	}
 }
 
@@ -273,6 +302,41 @@
 	transform: rotate(180deg);
 }
 
+@media screen and (max-width: 1460px) {
+	.pets-wrapper {
+		background-image: url('../img/palm_foto_small.jpg'),
+			url('../img/strelitzia\ 1.jpg');
+		background-repeat: no-repeat;
+		background-position: left bottom, right bottom;
+		background-size: 190px, 241px;
+	}
+}
+@media screen and (max-width: 1200px) {
+	.swiper-slide {
+		display: flex;
+		flex-direction: column;
+		gap: 93px;
+	}
+	.swiper_button {
+		top: 35.3%;
+		z-index: 5;
+	}
+	.swiper_button-next {
+		right: 352px;
+	}
+
+	.swiper_button-prev {
+		left: 352px;
+	}
+}
+@media screen and (max-width: 1000px) {
+	.pets-container {
+		padding: 0px 10px 140px;
+	}
+	.cards_slider {
+		padding-bottom: 82px;
+	}
+}
 /* Friend styles */
 
 .friend-wrapper {
@@ -395,6 +459,31 @@
 	padding-top: 60px;
 }
 
+@media screen and (max-width: 1300px) {
+	.friend-wrapper {
+		padding: 30px 30px 50px;
+	}
+	.friend-container {
+		padding-top: 30px;
+		padding-bottom: 50px;
+	}
+	.friend_text-content {
+		padding: 0 48px 40px 49px;
+	}
+	.friend_title {
+		margin-bottom: 21px;
+	}
+	.friend_subtitle {
+		margin-bottom: 20px;
+	}
+	.friend_text {
+		max-width: 813px;
+	}
+	.how_container {
+		padding-bottom: 70px;
+	}
+}
+
 /* Testimonials styles */
 
 .testimonials-wrapper {
@@ -499,4 +588,24 @@
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 17;
 	overflow: hidden;
+}
+
+@media screen and (max-width: 1000px) {
+	.testimonials-wrapper {
+		background-image: url('../img/leav_foto_small.jpg');
+		background-position: right 118%;
+		padding-top: 100px;
+		background-size: 200px;
+	}
+	.swiper-container-horizontal > .swiper-scrollbar {
+		height: 8px;
+		max-width: 405px;
+		margin: 20px auto 52px;
+	}
+	.testimonials-container {
+		padding-bottom: 140px;
+	}
+	.testimonials_title {
+		margin-bottom: 31px;
+	}
 }

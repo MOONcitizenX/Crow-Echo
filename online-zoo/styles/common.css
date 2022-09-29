@@ -118,6 +118,13 @@ body {
 	padding-right: 80px;
 	padding-left: 80px;
 }
+@media screen and (max-width: 1460px) {
+	.container {
+		max-width: 1460px;
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+}
 
 @media screen and (max-width: 1000px) {
 	.container {
@@ -218,6 +225,7 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: 3;
 }
 
 .header-container {
@@ -290,6 +298,12 @@ body {
 .nav_link--active {
 	pointer-events: none;
 	cursor: unset;
+}
+
+@media screen and (max-width: 1000px) {
+	.nav_list {
+		gap: 48px;
+	}
 }
 
 /* Footer styles */
@@ -450,4 +464,39 @@ body {
 	line-height: 21px;
 
 	color: rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 1460px) {
+	.container {
+		max-width: 1460px;
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.footer_block--left {
+		width: 298px;
+		flex-shrink: 0;
+		margin-right: 0;
+	}
+	.nav--footer {
+		position: relative;
+		right: 7px;
+		z-index: 3;
+	}
+	.footer_block--right {
+		position: relative;
+		right: 13%;
+	}
+	.submit_input {
+		width: 228px;
+	}
+	.btn--small {
+		width: 129px;
+	}
+	.footer_info {
+		position: relative;
+		right: -9%;
+	}
 }
