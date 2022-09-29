@@ -361,6 +361,9 @@
 	user-select: none;
 	transform: rotate(180deg);
 }
+.mobile_cards {
+	display: none;
+}
 
 @media screen and (max-width: 1460px) {
 	.pets-wrapper {
@@ -437,9 +440,7 @@
 		left: 243px;
 	}
 }
-.mobile_cards {
-	display: none;
-}
+
 @media screen and (max-width: 640px) {
 	.pets-wrapper {
 		background-position: -13% bottom, right bottom;
