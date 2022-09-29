@@ -234,6 +234,9 @@
 		padding-left: 0px;
 		padding-right: 34px;
 	}
+	.pick-donation_form--radio::before {
+		right: 15px;
+	}
 
 	.pick-donation_form {
 		padding-right: 20px;

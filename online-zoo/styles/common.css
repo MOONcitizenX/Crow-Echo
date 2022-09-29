@@ -133,6 +133,13 @@ body {
 		padding-left: 30px;
 	}
 }
+@media screen and (max-width: 880px) {
+	.container {
+		max-width: 880px;
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+}
 
 .btn {
 	display: block;
@@ -299,11 +306,96 @@ body {
 	pointer-events: none;
 	cursor: unset;
 }
+.burger_nav {
+	display: none;
+}
+.burger_button {
+	display: none;
+}
 
 @media screen and (max-width: 1000px) {
 	.nav_list {
 		gap: 48px;
 	}
+}
+
+@media screen and (max-width: 880px) {
+	.logo_link {
+		display: flex;
+		justify-content: start;
+	}
+	.nav {
+		display: none;
+	}
+	.logo {
+		border: none;
+	}
+
+	.header-container {
+		padding: 10px 20px;
+		justify-content: space-between;
+	}
+	.btn--right {
+		margin-left: 0;
+		margin-right: auto;
+	}
+
+	.burger_nav {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	.nav_list {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: end;
+	}
+	.burger_button {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-end;
+		gap: 2px;
+		width: 25px;
+		height: 25px;
+		cursor: pointer;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.logo {
+		border: none;
+		padding-top: 3px;
+		padding-bottom: 1px;
+	}
+	.header-container {
+		padding: 0 20px 0 0;
+	}
+	.logo_title {
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 15px;
+	}
+	.logo_img {
+		width: 12px;
+		height: 15px;
+		left: 19px;
+		bottom: 7px;
+	}
+}
+
+.burger--active {
+	display: block;
+}
+.burger_button-line {
+	display: block;
+	height: 2px;
+	width: 18px;
+	background-color: #fff;
+	border-radius: 2px;
 }
 
 /* Footer styles */
@@ -466,14 +558,6 @@ body {
 	color: rgba(255, 255, 255, 0.5);
 }
 
-@media screen and (max-width: 1460px) {
-	.container {
-		max-width: 1460px;
-		padding-right: 30px;
-		padding-left: 30px;
-	}
-}
-
 @media screen and (max-width: 1000px) {
 	.footer_block--left {
 		width: 298px;
@@ -498,5 +582,18 @@ body {
 	.footer_info {
 		position: relative;
 		right: -9%;
+	}
+}
+
+.footer--small {
+	display: none;
+}
+
+@media screen and (max-width: 990px) {
+	.footer--large {
+		display: none;
+	}
+	.footer--small {
+		display: block;
 	}
 }

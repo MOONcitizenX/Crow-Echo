@@ -13,7 +13,7 @@
 	<body>
 		<header class="section-wrapper header-wrapper" id="header">
 			<div class="container header-container">
-				<a href="./" class="nav_link">
+				<a href="./" class="nav_link logo_link">
 					<div class="logo">
 						<h1 class="logo_title">PetStory online</h1>
 						<img
@@ -23,6 +23,42 @@
 						/>
 					</div>
 				</a>
+				<div class="burger_button">
+					<span class="burger_button-line"></span>
+					<span class="burger_button-line"></span>
+					<span class="burger_button-line"></span>
+				</div>
+				<nav class="burger_nav">
+					<ul class="nav_list">
+						<li class="nav_item">
+							<a class="nav_link nav_link--active" href="./"
+								>About</a
+							>
+						</li>
+						<li class="nav_item">
+							<a class="nav_link" href="#">Map</a>
+						</li>
+						<li class="nav_item">
+							<a class="nav_link" href="#">Zoos</a>
+						</li>
+						<li class="nav_item">
+							<a class="nav_link" href="./donation.html"
+								>Donate</a
+							>
+						</li>
+						<li class="nav_item">
+							<a class="nav_link" href="#">Contact&nbsp;us</a>
+						</li>
+						<li class="nav_item nav_item--last">
+							<a
+								class="nav_link"
+								href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks?node-id=126%3A0"
+								target="_blank"
+								>Designed&nbsp;by&nbsp;&copy;</a
+							>
+						</li>
+					</ul>
+				</nav>
 
 				<nav class="nav">
 					<ul class="nav_list">
@@ -331,6 +367,11 @@
 								<img src="./icons/pay.svg" alt="pay" />
 							</div>
 							<p class="how_block-text">Pay with card</p>
+							<img
+								src="./icons/arrow_green.svg"
+								alt="arrow"
+								class="how_arrow--green"
+							/>
 						</div>
 						<img
 							class="how_arrow"
@@ -344,6 +385,11 @@
 							<p class="how_block-text">
 								Payment goes to the zoo
 							</p>
+							<img
+								src="./icons/arrow_green.svg"
+								alt="arrow"
+								class="how_arrow--green"
+							/>
 						</div>
 						<img
 							class="how_arrow"
@@ -372,7 +418,7 @@
 					<h3 class="testimonials_title">Testimonials</h3>
 					<div class="testimonials_slider swiper-container">
 						<div class="swiper-wrapper">
-							<div class="swiper-slide">
+							<div class="swiper-slide testi_slide">
 								<div class="testi_card">
 									<div class="card_top">
 										<img
@@ -410,7 +456,7 @@
 									</p>
 								</div>
 							</div>
-							<div class="swiper-slide">
+							<div class="swiper-slide testi_slide">
 								<div class="testi_card">
 									<div class="card_top">
 										<img
@@ -448,7 +494,7 @@
 									</p>
 								</div>
 							</div>
-							<div class="swiper-slide">
+							<div class="swiper-slide testi_slide">
 								<div class="testi_card">
 									<div class="card_top">
 										<img
@@ -492,7 +538,7 @@
 									</p>
 								</div>
 							</div>
-							<div class="swiper-slide">
+							<div class="swiper-slide testi_slide">
 								<div class="testi_card">
 									<div class="card_top">
 										<img
@@ -536,7 +582,7 @@
 									</p>
 								</div>
 							</div>
-							<div class="swiper-slide">
+							<div class="swiper-slide testi_slide">
 								<div class="testi_card">
 									<div class="card_top">
 										<img
@@ -574,7 +620,7 @@
 									</p>
 								</div>
 							</div>
-							<div class="swiper-slide">
+							<div class="swiper-slide testi_slide">
 								<div class="testi_card">
 									<div class="card_top">
 										<img
@@ -612,7 +658,7 @@
 									</p>
 								</div>
 							</div>
-							<div class="swiper-slide">
+							<div class="swiper-slide testi_slide">
 								<div class="testi_card">
 									<div class="card_top">
 										<img
@@ -656,7 +702,7 @@
 									</p>
 								</div>
 							</div>
-							<div class="swiper-slide">
+							<div class="swiper-slide testi_slide">
 								<div class="testi_card">
 									<div class="card_top">
 										<img
@@ -700,7 +746,7 @@
 									</p>
 								</div>
 							</div>
-							<div class="swiper-slide">
+							<div class="swiper-slide testi_slide">
 								<div class="testi_card">
 									<div class="card_top">
 										<img
@@ -738,7 +784,7 @@
 									</p>
 								</div>
 							</div>
-							<div class="swiper-slide">
+							<div class="swiper-slide testi_slide">
 								<div class="testi_card">
 									<div class="card_top">
 										<img
@@ -779,16 +825,21 @@
 						</div>
 						<div class="swiper-scrollbar"></div>
 					</div>
-					<button class="btn btn--orange btn--left">
+					<button class="btn btn--orange btn--left btn-testi--left">
+						leave feedback
+					</button>
+					<button
+						class="btn btn--orange btn--center btn-testi--center"
+					>
 						leave feedback
 					</button>
 				</div>
 			</section>
 		</main>
-		<footer class="section-wrapper footer-wrapper">
+		<footer class="section-wrapper footer-wrapper footer--large">
 			<div class="container footer-container">
 				<div class="footer_block--left">
-					<a href="./#header" class="nav_link">
+					<a href="./#header" class="nav_link logo_link">
 						<div class="logo footer-logo">
 							<h2 class="logo_title">PetStory online</h2>
 							<img
@@ -919,6 +970,7 @@
 				</div>
 			</div>
 		</footer>
+		<footer class="section-wrapper footer-wrapper footer--small"></footer>
 
 		<script type="module" src="./js/index.js"></script>
 	</body>

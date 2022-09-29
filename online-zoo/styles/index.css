@@ -75,6 +75,28 @@
 	}
 }
 
+@media screen and (max-width: 640px) {
+	.hero-container {
+		padding-top: 82px;
+		padding-right: 17px;
+		padding-bottom: 40px;
+	}
+	.hero_title {
+		margin-bottom: -8px;
+		max-width: 255px;
+	}
+	.hero_title > span {
+		font-size: 54px;
+		line-height: 41px;
+	}
+	.hero_title::after {
+		width: 237px;
+		height: 237px;
+		top: -38px;
+		right: 55px;
+	}
+}
+
 /* Backstage styles */
 
 .backstage-wrapper {
@@ -165,6 +187,44 @@
 	.backstage-text {
 		font-size: 16px;
 		line-height: 22px;
+	}
+}
+@media screen and (max-width: 880px) {
+	.backstage_img {
+		display: none;
+	}
+	.backstage-container {
+		display: block;
+		width: 100%;
+		padding-bottom: 80px;
+		padding-top: 60px;
+	}
+
+	.backstage-wrapper {
+		background-image: url('../img/flower_foto1.jpg');
+		background-position: 107% -9px;
+		background-repeat: no-repeat;
+		background-size: 163px;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.backstage-container {
+		padding-bottom: 60px;
+	}
+	.backstage_content {
+		margin-right: 0;
+		width: 100%;
+		max-width: 495px;
+	}
+	.backstage-text--top {
+		padding-bottom: 30px;
+	}
+	.backstage_title--small {
+		padding-bottom: 20px;
+	}
+	.backstage-text {
+		max-width: 495px;
 	}
 }
 
@@ -336,7 +396,74 @@
 	.cards_slider {
 		padding-bottom: 82px;
 	}
+	.swiper_button {
+		top: 35.8%;
+	}
+	.swiper_button-next {
+		right: 351px;
+	}
+
+	.swiper_button-prev {
+		left: 351px;
+	}
 }
+@media screen and (max-width: 880px) {
+	.pets-wrapper {
+		background-position: -10% bottom, right bottom;
+		background-size: 180px, 175px;
+	}
+	.pets-container {
+		padding: 0px 10px 100px;
+	}
+	.cards_slider {
+		padding-bottom: 82px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.swiper_button {
+		top: 37.8%;
+	}
+	.swiper_button-next {
+		right: 243px;
+	}
+
+	.swiper_button-prev {
+		left: 243px;
+	}
+}
+@media screen and (max-width: 640px) {
+	.pets-wrapper {
+		background-position: -13% bottom, right bottom;
+		background-size: 192px, 175px;
+	}
+	.card_title {
+		font-size: 13px;
+		line-height: 16px;
+	}
+	.card_location {
+		font-weight: 300;
+		font-size: 11px;
+		line-height: 14px;
+	}
+	.card_desc {
+		padding: 0px 6px 4px 11px;
+	}
+	.swiper_button {
+		top: 36.8%;
+		z-index: 5;
+	}
+	.swiper_button-next {
+		right: 243px;
+	}
+
+	.swiper_button-prev {
+		left: 243px;
+	}
+	.cards_slider {
+		padding-bottom: 59px;
+	}
+}
+
 /* Friend styles */
 
 .friend-wrapper {
@@ -459,6 +586,10 @@
 	padding-top: 60px;
 }
 
+.how_arrow--green {
+	display: none;
+}
+
 @media screen and (max-width: 1300px) {
 	.friend-wrapper {
 		padding: 30px 30px 50px;
@@ -471,7 +602,7 @@
 		padding: 0 48px 40px 49px;
 	}
 	.friend_title {
-		margin-bottom: 21px;
+		margin-bottom: 20px;
 	}
 	.friend_subtitle {
 		margin-bottom: 20px;
@@ -481,6 +612,53 @@
 	}
 	.how_container {
 		padding-bottom: 70px;
+	}
+}
+@media screen and (max-width: 880px) {
+	.how_arrow {
+		display: none;
+	}
+	.how_card {
+		position: relative;
+	}
+	.how_arrow--green {
+		display: block;
+		position: absolute;
+		top: -17px;
+		right: -58px;
+		z-index: 3;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.friend-wrapper {
+		padding: 20px 0;
+	}
+	.friend-container {
+		padding-top: 0;
+		padding-bottom: 60px;
+	}
+	.friend_text-content {
+		padding: 0 20px 30px;
+	}
+	.friend_title {
+		padding-top: 10px;
+		font-size: 42px;
+		line-height: 50px;
+	}
+	.friend_subtitle {
+		font-size: 22px;
+		line-height: 26px;
+	}
+
+	.how_title {
+		margin-bottom: 20px;
+	}
+	.how_container {
+		justify-content: space-between;
+		padding-left: 20px;
+		padding-right: 32px;
+		padding-bottom: 42px;
 	}
 }
 
@@ -607,5 +785,43 @@
 	}
 	.testimonials_title {
 		margin-bottom: 31px;
+	}
+}
+.btn-testi--center {
+	display: none;
+}
+
+@media screen and (max-width: 640px) {
+	.testimonials-wrapper {
+		padding-top: 60px;
+		background-position: 101% 102%;
+		background-size: 122px;
+	}
+
+	.card_descr {
+		max-width: 100%;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		overflow: hidden;
+	}
+	.swiper-scrollbar {
+		display: none;
+	}
+	.testimonials_slider {
+		height: 100%;
+		max-height: 365px;
+		margin-bottom: 31px;
+	}
+	.testi_card {
+		padding: 12px 0 7px 11px;
+	}
+
+	.btn-testi--left {
+		display: none;
+	}
+	.btn-testi--center {
+		display: block;
+		max-width: 240px;
 	}
 }
