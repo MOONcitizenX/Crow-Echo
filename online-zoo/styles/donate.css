@@ -10,6 +10,32 @@
 	padding-top: 387px;
 }
 
+@media screen and (max-width: 1000px) {
+	.don-hero-container {
+		padding-top: 391px;
+	}
+	.don-hero-wrapper {
+		background-position: 29%;
+	}
+}
+
+@media screen and (max-width: 880px) {
+	.don-hero-container {
+		margin-top: 34px;
+		padding-top: 335px;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.don-hero-container {
+		margin-top: 34px;
+		padding-top: 335px;
+	}
+	.don-hero-wrapper {
+		background-position: 36%;
+	}
+}
+
 .donate-wrapper {
 	padding: 40px 0 180x;
 
@@ -57,6 +83,36 @@
 	color: #fe9013;
 }
 
+@media screen and (max-width: 1000px) {
+	.help_title {
+		max-width: 778px;
+		padding-bottom: 30px;
+	}
+	.donate_title {
+		margin-bottom: 41px;
+	}
+	.donate-container {
+		padding-bottom: 30px;
+	}
+}
+@media screen and (max-width: 640px) {
+	.donate-container {
+		padding-top: 30px;
+		padding-bottom: 46px;
+	}
+	.help_title {
+		font-size: 24px;
+		line-height: 29px;
+		padding-bottom: 20px;
+	}
+	.donate_title {
+		margin-bottom: 30px;
+	}
+	.help {
+		margin-bottom: 30px;
+	}
+}
+
 .make-donation_container {
 	width: 100%;
 	padding: 40px 92px 61px;
@@ -84,6 +140,41 @@
 	line-height: 29px;
 
 	color: var(--black_blue);
+}
+
+@media screen and (max-width: 1000px) {
+	.make-donation_container {
+		padding: 20px 45px 45px;
+	}
+	.make-donation_title {
+		padding-bottom: 11px;
+	}
+	.s5000-container {
+		display: none !important;
+	}
+
+	.nav_don--footer {
+		position: relative;
+		right: -6px;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.make-donation_container {
+		padding: 30px 0 30px;
+	}
+	.make-donation_title {
+		padding-bottom: 19px;
+		padding-left: 12px;
+	}
+	.make-donation_text {
+		text-align: center;
+		padding-bottom: 100px;
+	}
+	.s2000-container,
+	.s1000-container {
+		display: none !important;
+	}
 }
 
 .pick-donation_form {
@@ -191,6 +282,36 @@
 	color: #fe9013;
 }
 
+@media screen and (max-width: 1000px) {
+	.pick-donation_form--radio {
+		padding-left: 0px;
+		padding-right: 34px;
+	}
+	.pick-donation_form--radio::before {
+		right: 15px;
+	}
+
+	.pick-donation_form {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+}
+@media screen and (max-width: 640px) {
+	.pick-donation_form--radio {
+		padding-left: 20px;
+		padding-right: 60px;
+	}
+	.pick-donation_form--radio::before {
+		right: 7%;
+		left: 7%;
+	}
+
+	.pick-donation_form {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
 .labels-list_item {
 	position: absolute;
 	top: 39px;
@@ -270,16 +391,20 @@
 .panda-widget_img {
 	padding-right: 30px;
 }
+.don_input--container {
+	position: relative;
+	width: 100%;
+	max-width: 268px;
+	margin: 0 auto 14px;
+}
 
 .donation-input {
 	display: block;
-	margin: 0 auto 14px;
 	background-color: transparent;
 	outline: none;
 	text-indent: 9px;
 	padding: 16px 0;
 	width: 100%;
-	max-width: 268px;
 	border: 1px solid #929699;
 	border-radius: 2px;
 
@@ -288,6 +413,18 @@
 	line-height: 22px;
 
 	color: #404950;
+}
+
+.donation-input--dollar {
+	content: '$';
+	position: absolute;
+	width: 10px;
+	height: 20px;
+	top: 17px;
+	right: 10px;
+	font-size: 20px;
+	color: #929699;
+	user-select: none;
 }
 
 .donation-input::-webkit-inner-spin-button,
@@ -301,13 +438,17 @@
 	border: 1px solid #4b9200;
 }
 
-.donation-input:focus::placeholder {
+.donation-input:focus::placeholder,
+.donation-input:focus ~ .donation-input--dollar {
 	color: #4b9200;
 }
 
 .donation-input:invalid {
 	color: #d31414;
 	border: 1px solid #d31414;
+}
+.donation-input:invalid ~ .donation-input--dollar {
+	color: #d31414;
 }
 
 .donation-input:placeholder {
@@ -390,4 +531,33 @@
 	line-height: 22px;
 
 	color: #333b41;
+}
+
+@media screen and (max-width: 1000px) {
+	.labels-list_item {
+		left: 1px;
+	}
+	.pre-form_title {
+		padding-left: 20px;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.panda-widget {
+		margin-bottom: 35px;
+	}
+	.pre-form_title {
+		padding-left: 10px;
+		padding-bottom: 7px;
+	}
+	.don_input--container {
+		max-width: 180px;
+		margin-bottom: 20px;
+	}
+	.donation-input,
+	.donation-input::placeholder {
+		font-size: 16px;
+		line-height: 22px;
+		padding: 10px 0;
+	}
 }
