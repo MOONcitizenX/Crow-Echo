@@ -154,9 +154,11 @@
 							alt="arrow"
 						/>
 					</div>
-					<div class="cards_slider swiper-container">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
+					<div
+						class="cards_slider swiper-container pets-swiper-container"
+					>
+						<div class="swiper-wrapper pets-swiper-wrapper">
+							<div class="swiper-slide pets-swiper-slide">
 								<div class="slide_card">
 									<img
 										src="./img/slider/giant_panda.jpg"
@@ -202,7 +204,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="swiper-slide">
+							<div class="swiper-slide pets-swiper-slide">
 								<div class="slide_card">
 									<img
 										src="./img/slider/eagle.jpg"
@@ -244,7 +246,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="swiper-slide">
+							<div class="swiper-slide pets-swiper-slide">
 								<div class="slide_card">
 									<img
 										src="./img/slider/gorilla.jpg"
@@ -286,7 +288,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="swiper-slide">
+							<div class="swiper-slide pets-swiper-slide">
 								<div class="slide_card">
 									<img
 										src="./img/slider/gorillaz.jpg"
@@ -329,6 +331,86 @@
 										/>
 									</div>
 								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mobile_cards">
+						<div class="slide_card">
+							<img
+								src="./img/slider/giant_panda.jpg"
+								alt="giant panda"
+								class="card_img"
+							/>
+							<div class="card_desc">
+								<div class="card_text">
+									<h4 class="card_title">giant Pandas</h4>
+									<p class="card_location">
+										Native to Southwest China
+									</p>
+								</div>
+								<img
+									src="./icons/banana-bamboo_icon.svg"
+									alt="banana bamboo"
+									class="card_icon"
+								/>
+							</div>
+						</div>
+						<div class="slide_card">
+							<img
+								src="./img/slider/eagle.jpg"
+								alt=""
+								class="card_img"
+							/>
+							<div class="card_desc">
+								<div class="card_text">
+									<h4 class="card_title">Eagles</h4>
+									<p class="card_location">
+										Native to South America
+									</p>
+								</div>
+								<img
+									src="./icons/meet-fish_icon.svg"
+									alt="banana bamboo"
+									class="card_icon"
+								/>
+							</div>
+						</div>
+						<div class="slide_card">
+							<img
+								src="./img/slider/gorilla.jpg"
+								alt=""
+								class="card_img"
+							/>
+							<div class="card_desc">
+								<div class="card_text">
+									<h4 class="card_title">Gorillas</h4>
+									<p class="card_location">Native to Congo</p>
+								</div>
+								<img
+									src="./icons/banana-bamboo_icon.svg"
+									alt="banana bamboo"
+									class="card_icon"
+								/>
+							</div>
+						</div>
+						<div class="slide_card">
+							<img
+								src="./img/slider/alligatorz.jpg"
+								alt=""
+								class="card_img"
+							/>
+							<div class="card_desc">
+								<div class="card_text">
+									<h4 class="card_title">Alligators</h4>
+									<p class="card_location">
+										Native to Southeastern U. S.
+									</p>
+								</div>
+								<img
+									src="./icons/meet-fish_icon.svg"
+									alt="banana bamboo"
+									class="card_icon"
+								/>
 							</div>
 						</div>
 					</div>
@@ -970,7 +1052,121 @@
 				</div>
 			</div>
 		</footer>
-		<footer class="section-wrapper footer-wrapper footer--small"></footer>
+		<footer class="section-wrapper footer-wrapper footer--small">
+			<div class="container footer-container">
+				<div class="footer-top-container">
+					<a href="./#header" class="nav_link logo_link">
+						<div class="logo footer-logo">
+							<h2 class="logo_title footer-logo-title">
+								PetStory online
+							</h2>
+							<img
+								class="logo_img footer-logo-img"
+								src="./icons/bamboo.svg"
+								alt="bamboo"
+							/>
+						</div>
+					</a>
+					<ul class="social footer-social">
+						<li class="social_link">
+							<a
+								href="https://facebook.com"
+								target="_blank"
+								class="social_link-cont"
+							>
+								<div class="social_link-img-cont">
+									<img
+										src="./icons/social/fb.svg"
+										alt="facebook"
+										class="social_link-img"
+									/>
+								</div>
+							</a>
+						</li>
+						<li class="social_link">
+							<a
+								href="https://twitter.com"
+								target="_blank"
+								class="social_link-cont"
+							>
+								<div class="social_link-img-cont">
+									<img
+										src="./icons/social/tw.svg"
+										alt="Twitter"
+										class="social_link-img"
+									/>
+								</div>
+							</a>
+						</li>
+						<li class="social_link">
+							<a
+								href="https://instagram.com"
+								target="_blank"
+								class="social_link-cont"
+							>
+								<div class="social_link-img-cont">
+									<img
+										src="./icons/social/inst.svg"
+										alt="instagram"
+										class="social_link-img"
+									/>
+								</div>
+							</a>
+						</li>
+						<li class="social_link">
+							<a
+								href="https://youtube.com"
+								target="_blank"
+								class="social_link-cont"
+							>
+								<div class="social_link-img-cont">
+									<img
+										src="./icons/social/yt.svg"
+										alt="YouTube"
+										class="social_link-img"
+									/>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<button
+						onclick="window.location.href='./donation.html'"
+						class="btn btn--orange btn--footer"
+					>
+						donate for volunteers
+					</button>
+				</div>
+				<div class="footer-bot-container">
+					<nav class="nav nav--footer">
+						<ul class="nav_list nav_list--footer">
+							<li class="nav_item">
+								<a class="nav_link nav_link--active" href="./"
+									>About</a
+								>
+							</li>
+							<li class="nav_item">
+								<a class="nav_link" href="#">Map</a>
+							</li>
+							<li class="nav_item">
+								<a class="nav_link" href="#">Zoos</a>
+							</li>
+
+							<li class="nav_item">
+								<a class="nav_link" href="#">Contact&nbsp;us</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="footer_info">
+						<p class="footer-info--text">
+							Designed by Alisa Samborskaya
+						</p>
+						<p class="footer-info--text">
+							&copy;RSSchool &amp;&nbsp;&copy;Yem Digital 2021
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
 
 		<script type="module" src="./js/index.js"></script>
 	</body>

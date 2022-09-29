@@ -407,6 +407,12 @@
 		left: 351px;
 	}
 }
+@media screen and (max-width: 999px) {
+	.swiper_button {
+		top: 38.8%;
+	}
+}
+
 @media screen and (max-width: 880px) {
 	.pets-wrapper {
 		background-position: -10% bottom, right bottom;
@@ -431,6 +437,9 @@
 		left: 243px;
 	}
 }
+.mobile_cards {
+	display: none;
+}
 @media screen and (max-width: 640px) {
 	.pets-wrapper {
 		background-position: -13% bottom, right bottom;
@@ -453,14 +462,36 @@
 		z-index: 5;
 	}
 	.swiper_button-next {
-		right: 243px;
+		right: 38%;
 	}
 
 	.swiper_button-prev {
-		left: 243px;
+		left: 38%;
 	}
 	.cards_slider {
 		padding-bottom: 59px;
+	}
+}
+@media screen and (max-width: 600px) {
+	.swiper_button-next {
+		right: 30%;
+	}
+
+	.swiper_button-prev {
+		left: 30%;
+	}
+}
+@media screen and (max-width: 500px) {
+	.pets-swiper-container {
+		display: none;
+	}
+	.swiper_button {
+		display: none;
+	}
+	.mobile_cards {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
 	}
 }
 
@@ -794,8 +825,11 @@
 @media screen and (max-width: 640px) {
 	.testimonials-wrapper {
 		padding-top: 60px;
-		background-position: 101% 102%;
+		background-position: 101% 115%;
 		background-size: 122px;
+	}
+	.testimonials-container {
+		padding-bottom: 80px;
 	}
 
 	.card_descr {

@@ -14,12 +14,8 @@ const petsSwiper = new Swiper('.cards_slider', {
 		1000: {
 			slidesPerView: 3
 		},
-		640: {
-			slidesPerView: 2
-		},
 		320: {
 			slidesPerView: 2
-			// direction: 'vertical'
 		}
 	}
 });
