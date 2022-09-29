@@ -693,6 +693,53 @@
 	}
 }
 
+@media screen and (max-width: 600px) {
+	.how_container {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 0 66px 42px;
+		gap: 42px;
+	}
+	.friend-wrapper {
+		padding: 20px 10px;
+	}
+	.friend_desc,
+	.friend_text {
+		display: none;
+	}
+	.friend_title {
+		font-size: 24px;
+		line-height: 29px;
+
+		padding-top: 20px;
+		margin-bottom: 10px;
+	}
+	.friend_text-content {
+		padding: 0;
+	}
+	.friend_subtitle {
+		font-size: 18px;
+		line-height: 22px;
+		text-align: center;
+	}
+	.how_title {
+		font-size: 24px;
+		line-height: 29px;
+	}
+	.how_arrow--green {
+		transform: rotate(80deg);
+		top: 197px;
+		right: -61px;
+	}
+	.how_card {
+		gap: 10px;
+	}
+	.how_card:last-child {
+		margin-top: -13px;
+	}
+}
+
 /* Testimonials styles */
 
 .testimonials-wrapper {
