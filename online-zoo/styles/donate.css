@@ -28,7 +28,7 @@
 
 @media screen and (max-width: 640px) {
 	.don-hero-container {
-		margin-top: 34px;
+		margin-top: 0;
 		padding-top: 335px;
 	}
 	.don-hero-wrapper {
@@ -560,5 +560,128 @@
 		font-size: 16px;
 		line-height: 22px;
 		padding: 10px 0;
+	}
+}
+@media screen and (max-width: 560px) {
+	.panda-widget_img {
+		padding-right: 0;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.don-hero-wrapper {
+		background-position: 33%;
+	}
+	.don-hero-container {
+		padding-top: 187px;
+	}
+	.donate-container {
+		padding-bottom: 21px;
+	}
+	.donate_title {
+		font-size: 24px;
+		line-height: 29px;
+	}
+	.make-donation_container {
+		padding: 20px 0 20px;
+	}
+	.make-donation_title {
+		font-size: 24px;
+		line-height: 29px;
+		padding-bottom: 10px;
+	}
+	.make-donation_text {
+		font-size: 16px;
+		line-height: 22px;
+		padding-bottom: 38px;
+	}
+	.panda-widget_img {
+		margin-right: 9px;
+		width: 100%;
+		max-width: 151px;
+	}
+	.panda-widget_img img {
+		width: 100%;
+	}
+	.diet_number {
+		font-size: 40px;
+		line-height: 32px;
+	}
+	.diet_info {
+		font-size: 9px;
+		line-height: 13px;
+	}
+	.panda-widget_multiplier {
+		margin-right: 30px;
+		width: 8px;
+		height: 8px;
+		padding-bottom: 40px;
+	}
+	.panda-widget_multiplier img {
+		width: 100%;
+	}
+	.panda-widget_diet {
+		margin: 0;
+		gap: 6px;
+	}
+	.panda-widget {
+		justify-content: space-between;
+		margin-bottom: 0;
+	}
+	.pre-form_title {
+		padding-left: 0;
+	}
+	.pick-donation_form {
+		padding-bottom: 48px;
+	}
+	.pick-donation_form--radio {
+		height: 15px;
+		padding-left: 10px;
+		padding-right: 30px;
+	}
+	.pick-donation_form--radio::before {
+		height: 1px;
+		top: calc(50% - 0px);
+	}
+	.labels-list_item {
+		font-size: 13px;
+		line-height: 18px;
+
+		top: 20px;
+		left: -1px;
+	}
+	.labels-list_item > span {
+		font-size: 10px;
+		line-height: 14px;
+	}
+
+	.donation_checkmark {
+		top: -2px;
+		width: 20px;
+		height: 20px;
+	}
+
+	.donation_checkmark--inner {
+		height: 5px;
+		width: 5px;
+	}
+	.donation_checkmark::before {
+		padding: 0px;
+		top: -7px;
+		left: 1px;
+		z-index: 2;
+		width: 20px;
+		height: 20px;
+		display: none;
+	}
+	.don_input--container {
+		margin-bottom: 13px;
+	}
+	.payment-option {
+		margin-bottom: 23px;
+	}
+	.share-text {
+		padding: 0;
+		min-width: 301px;
 	}
 }
