@@ -366,6 +366,10 @@ body {
 }
 
 @media screen and (max-width: 640px) {
+	.header-wrapper {
+		position: sticky;
+		top: 0;
+	}
 	.logo {
 		border: none;
 		padding-top: 3px;
