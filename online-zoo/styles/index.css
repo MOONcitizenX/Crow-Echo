@@ -265,12 +265,18 @@
 		max-width: 495px;
 	}
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 620px) {
 	.backstage-wrapper {
 		background-image: url('../img/flower_foto1.jpg');
 		background-position: 115% 43px;
 		background-repeat: no-repeat;
 		background-size: 70px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.backstage-wrapper {
+		background-image: none;
 	}
 	.backstage_btn {
 		display: block;
@@ -300,6 +306,14 @@
 		max-width: 495px;
 	}
 }
+@media screen and (max-width: 340px) {
+	.backstage-wrapper {
+		background-image: url('../img/flower_foto1.jpg');
+		background-position: 115% 43px;
+		background-repeat: no-repeat;
+		background-size: 70px;
+	}
+}
 
 /* Pets styles */
 
@@ -323,6 +337,9 @@
 	padding-right: 20px;
 }
 
+.pets-swiper-slide {
+	display: flex;
+}
 .swiper-slide {
 	display: flex;
 	flex-direction: column;
@@ -396,6 +413,7 @@
 }
 
 .swiper_button {
+	user-select: none;
 	cursor: pointer;
 	position: absolute;
 	top: 37.3%;
@@ -454,7 +472,7 @@
 		gap: 93px;
 	}
 	.swiper_button {
-		top: 35.3%;
+		top: 37.3%;
 		z-index: 5;
 	}
 	.swiper_button-next {
@@ -502,15 +520,18 @@
 		padding-left: 10px;
 		padding-right: 10px;
 	}
-	.swiper_button {
-		top: 37.8%;
-	}
+
 	.swiper_button-next {
 		right: 243px;
 	}
 
 	.swiper_button-prev {
 		left: 243px;
+	}
+}
+@media screen and (max-width: 850px) {
+	.swiper_button {
+		top: 37.8%;
 	}
 }
 
@@ -555,6 +576,11 @@
 		left: 30%;
 	}
 }
+@media screen and (max-width: 540px) {
+	.swiper_button {
+		top: 35.8%;
+	}
+}
 @media screen and (max-width: 500px) {
 	.pets-swiper-container {
 		display: none;
@@ -566,6 +592,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 20px;
+		margin-bottom: 20px;
 	}
 }
 

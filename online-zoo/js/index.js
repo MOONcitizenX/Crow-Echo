@@ -5,17 +5,23 @@ const bamboo_hat = document.getElementById('backstage_img');
 const petsSwiper = new Swiper('.cards_slider', {
 	slidesPerView: 3,
 	spaceBetween: 30,
+	slidesPerGroup: 3,
 	loop: true,
+	loopAdditionalSlides: 4,
 	navigation: {
 		nextEl: '.swiper_button-next',
 		prevEl: '.swiper_button-prev'
 	},
 	breakpoints: {
 		1000: {
-			slidesPerView: 3
+			slidesPerView: 3,
+			slidesPerGroup: 3,
+			loopAdditionalSlides: 2
 		},
 		320: {
-			slidesPerView: 2
+			slidesPerView: 2,
+			slidesPerGroup: 2,
+			loopAdditionalSlides: 2
 		}
 	}
 });
