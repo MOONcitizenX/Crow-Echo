@@ -76,6 +76,9 @@
 		top: -51px;
 		right: 141px;
 	}
+	.hero_btn {
+		margin-right: 100px;
+	}
 }
 
 @media screen and (max-width: 640px) {
