@@ -53,8 +53,9 @@ const petsSwiper = new Swiper('.cards_slider', {
 	slidesPerGroup: 3,
 	allowTouchMove: false,
 	initialSlide: 120,
+	preventInteractionOnTransition: true,
 
-	speed: 1500,
+	speed: 800,
 	virtual: {
 		slides: (() => {
 			const slides = [];
