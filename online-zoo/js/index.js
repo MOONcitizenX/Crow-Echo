@@ -2,27 +2,10 @@ import Swiper from './swiper.js';
 
 const bamboo_hat = document.getElementById('backstage_img');
 
-const petsSwiper = new Swiper('.cards_slider', {
-	slidesPerView: 3,
-	spaceBetween: 30,
-	loop: true,
-	navigation: {
-		nextEl: '.swiper_button-next',
-		prevEl: '.swiper_button-prev'
-	},
-	breakpoints: {
-		1000: {
-			slidesPerView: 3
-		},
-		320: {
-			slidesPerView: 2
-		}
-	}
-});
-
 const testimonialsSwiper = new Swiper('.testimonials_slider', {
 	slidesPerView: 4,
 	spaceBetween: 30,
+	allowTouchMove: false,
 	scrollbar: {
 		el: '.swiper-scrollbar',
 		draggable: true,
@@ -38,6 +21,7 @@ const testimonialsSwiper = new Swiper('.testimonials_slider', {
 		641: {
 			slidesPerView: 3,
 			direction: 'horizontal',
+			spaceBetween: 30,
 			scrollbar: {
 				el: '.swiper-scrollbar',
 				draggable: true,
