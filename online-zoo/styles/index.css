@@ -83,7 +83,7 @@
 
 @media screen and (max-width: 640px) {
 	.hero-container {
-		padding-top: 48px;
+		padding-top: 82px;
 		padding-right: 17px;
 		padding-bottom: 40px;
 	}
@@ -105,7 +105,7 @@
 
 @media screen and (max-width: 480px) {
 	.hero-container {
-		padding-top: 41px;
+		padding-top: 75px;
 		padding-right: 11px;
 		padding-bottom: 49px;
 	}
@@ -980,6 +980,7 @@
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 17;
 	overflow: hidden;
+	color: #4f4f4f;
 }
 
 @media screen and (max-width: 1000px) {

@@ -374,7 +374,7 @@ body {
 
 @media screen and (max-width: 640px) {
 	.header-wrapper {
-		position: sticky;
+		position: fixed;
 		top: 0;
 	}
 	.logo {

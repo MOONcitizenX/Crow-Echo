@@ -28,11 +28,11 @@
 
 @media screen and (max-width: 640px) {
 	.don-hero-container {
-		margin-top: 0;
+		margin-top: 34px;
 		padding-top: 335px;
 	}
 	.don-hero-wrapper {
-		background-position: 36%;
+		background-position: 37%;
 	}
 }
 
@@ -560,6 +560,9 @@
 		font-size: 16px;
 		line-height: 22px;
 		padding: 10px 0;
+	}
+	.labels-list_item {
+		left: -4px;
 	}
 }
 @media screen and (max-width: 560px) {
