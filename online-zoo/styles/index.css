@@ -105,7 +105,8 @@
 
 @media screen and (max-width: 480px) {
 	.hero-container {
-		padding-top: 75px;
+		margin-top: 34px;
+		padding-top: 41px;
 		padding-right: 11px;
 		padding-bottom: 49px;
 	}
