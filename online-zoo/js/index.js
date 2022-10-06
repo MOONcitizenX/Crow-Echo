@@ -25,7 +25,7 @@ const testimonialsSwiper = new Swiper('.testimonials_slider', {
 			scrollbar: {
 				el: '.swiper-scrollbar',
 				draggable: true,
-				snapOnRelease: false,
+				snapOnRelease: true,
 				dragSize: 75
 			}
 		},

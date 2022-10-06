@@ -1,10 +1,31 @@
 import { getRandomCards } from './petsCards.js';
 import Swiper from './swiper.js';
 
+const prev = document.querySelector('.swiper_button-prev');
+const next = document.querySelector('.swiper_button-next');
+
 let sliderLength = window.innerWidth >= 1000 ? 6 : 4;
 
 window.addEventListener('resize', () => {
 	sliderLength = window.innerWidth >= 1000 ? 6 : 4;
+	if (sliderLength === 6) {
+		const slides = [
+			...getRandomCards1(),
+			...getRandomCards1(),
+			...getRandomCards1()
+		];
+		petsSwiper.virtual.removeAllSlides();
+		petsSwiper.virtual.appendSlide(slides);
+	}
+	if (sliderLength === 4) {
+		const slides = [
+			...getRandomCards1(),
+			...getRandomCards1(),
+			...getRandomCards1()
+		];
+		petsSwiper.virtual.removeAllSlides();
+		petsSwiper.virtual.appendSlide(slides);
+	}
 });
 
 const createSlide = (data) => {
@@ -52,14 +73,14 @@ const petsSwiper = new Swiper('.cards_slider', {
 	spaceBetween: 30,
 	slidesPerGroup: 3,
 	allowTouchMove: false,
-	initialSlide: 120,
+	initialSlide: 3,
+	watchSlidesProgress: true,
 	preventInteractionOnTransition: true,
-
 	speed: 800,
 	virtual: {
 		slides: (() => {
 			const slides = [];
-			for (let i = 0; i < 240; i++) {
+			for (let i = 0; i < 3; i++) {
 				const data = getRandomCards(sliderLength);
 				slides.push(createSlide(data.slice(0, 2)));
 				slides.push(createSlide(data.slice(2, 4)));
@@ -85,3 +106,75 @@ const petsSwiper = new Swiper('.cards_slider', {
 		}
 	}
 });
+
+const getRandomCards1 = () => {
+	const slides = [];
+	const data = getRandomCards(sliderLength);
+	slides.push(createSlide(data.slice(0, 2)));
+	slides.push(createSlide(data.slice(2, 4)));
+	if (sliderLength === 6) {
+		slides.push(createSlide(data.slice(4)));
+	}
+	return slides;
+};
+
+const nextCallback = () => {
+	const slides = [
+		...getRandomCards1(),
+		...petsSwiper.virtual.slides.slice(
+			petsSwiper.activeIndex,
+			petsSwiper.activeIndex + 3
+		),
+		...getRandomCards1()
+	];
+	petsSwiper.virtual.removeAllSlides();
+	petsSwiper.virtual.appendSlide(slides);
+	nextSliderOff();
+	petsSwiper.slideNext(0, false);
+	prev.removeAttribute('disabled');
+	next.removeAttribute('disabled');
+	next.addEventListener('click', nextSliderOn);
+	prev.addEventListener('click', prevSliderOn);
+};
+
+const prevCallback = () => {
+	console.log(petsSwiper.activeIndex);
+	const slides = [
+		...getRandomCards1(),
+		...petsSwiper.virtual.slides.slice(
+			petsSwiper.activeIndex,
+			petsSwiper.activeIndex + 3
+		),
+		...getRandomCards1()
+	];
+	petsSwiper.virtual.removeAllSlides();
+	console.log(slides);
+	petsSwiper.virtual.appendSlide(slides);
+	petsSwiper.slideNext(0, false);
+	prevSliderOff();
+	prev.removeAttribute('disabled');
+	next.removeAttribute('disabled');
+	prev.addEventListener('click', prevSliderOn);
+	next.addEventListener('click', nextSliderOn);
+};
+
+const nextSliderOn = () => {
+	next.removeEventListener('click', nextSliderOn);
+	prev.removeEventListener('click', prevSliderOn);
+	petsSwiper.on('slideNextTransitionEnd', nextCallback);
+};
+const nextSliderOff = () => {
+	petsSwiper.off('slideNextTransitionEnd', nextCallback);
+};
+
+const prevSliderOn = () => {
+	prev.removeEventListener('click', prevSliderOn);
+	next.removeEventListener('click', nextSliderOn);
+	petsSwiper.on('slidePrevTransitionEnd', prevCallback);
+};
+const prevSliderOff = () => {
+	petsSwiper.off('slidePrevTransitionEnd', prevCallback);
+};
+
+next.addEventListener('click', nextSliderOn);
+prev.addEventListener('click', prevSliderOn);
