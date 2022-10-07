@@ -23,35 +23,55 @@
 						/>
 					</div>
 				</a>
-				<div class="burger_button">
+				<div class="burger_button" id="burgerButton">
 					<span class="burger_button-line"></span>
 					<span class="burger_button-line"></span>
 					<span class="burger_button-line"></span>
 				</div>
-				<nav class="burger_nav">
+				<nav class="burger_nav" id="burgerMenu">
 					<ul class="nav_list">
+						<a href="./" class="nav_link logo_link">
+							<div class="burger-logo">
+								<h1 class="burger-logo_title">
+									PetStory online
+								</h1>
+								<img
+									class="burger-logo_img"
+									src="./icons/bamboo.svg"
+									alt="bamboo"
+								/>
+							</div>
+						</a>
 						<li class="nav_item">
-							<a class="nav_link nav_link--active" href="./"
+							<a
+								class="burger-nav_link nav_link nav_link--active"
+								href="./"
 								>About</a
 							>
 						</li>
 						<li class="nav_item">
-							<a class="nav_link" href="#">Map</a>
+							<a class="burger-nav_link nav_link" href="#">Map</a>
 						</li>
 						<li class="nav_item">
-							<a class="nav_link" href="#">Zoos</a>
+							<a class="burger-nav_link nav_link" href="#"
+								>Zoos</a
+							>
 						</li>
 						<li class="nav_item">
-							<a class="nav_link" href="./donation.html"
+							<a
+								class="burger-nav_link nav_link"
+								href="./donation.html"
 								>Donate</a
 							>
 						</li>
 						<li class="nav_item">
-							<a class="nav_link" href="#">Contact&nbsp;us</a>
+							<a class="burger-nav_link nav_link" href="#"
+								>Contact&nbsp;us</a
+							>
 						</li>
 						<li class="nav_item nav_item--last">
 							<a
-								class="nav_link"
+								class="burger-nav_link nav_link"
 								href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks?node-id=126%3A0"
 								target="_blank"
 								>Designed&nbsp;by&nbsp;&copy;</a
@@ -59,7 +79,6 @@
 						</li>
 					</ul>
 				</nav>
-
 				<nav class="nav">
 					<ul class="nav_list">
 						<li class="nav_item">
@@ -1075,7 +1094,7 @@
 				</div>
 			</div>
 		</footer>
-
+		<div id="darkWrapper" class="dark-wrapper"></div>
 		<script type="module" src="./js/index.js"></script>
 		<script type="module" src="./js/sliderHandler.js"></script>
 	</body>

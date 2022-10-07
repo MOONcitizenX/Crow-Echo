@@ -1,3 +1,4 @@
+import { burger } from './burgerMenu.js';
 import Swiper from './swiper.js';
 
 const bamboo_hat = document.getElementById('backstage_img');
@@ -55,3 +56,5 @@ const handleSubmit = (e) => {
 const submit_form = document.querySelector('.submit_form');
 
 submit_form.addEventListener('submit', handleSubmit);
+
+burger();

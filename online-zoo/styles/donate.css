@@ -6,7 +6,6 @@
 }
 
 .don-hero-container {
-	margin-top: 79px;
 	padding-top: 387px;
 }
 
@@ -21,14 +20,12 @@
 
 @media screen and (max-width: 880px) {
 	.don-hero-container {
-		margin-top: 34px;
 		padding-top: 335px;
 	}
 }
 
 @media screen and (max-width: 640px) {
 	.don-hero-container {
-		margin-top: 34px;
 		padding-top: 335px;
 	}
 	.don-hero-wrapper {

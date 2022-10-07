@@ -1,3 +1,5 @@
+import { burger } from './burgerMenu.js';
+
 let amountsList = [...document.getElementsByClassName('donation_radio')];
 
 window.addEventListener('resize', () => {
@@ -41,3 +43,5 @@ amountInput.addEventListener('input', () => {
 		)[0].checked = true;
 	}
 });
+
+burger();

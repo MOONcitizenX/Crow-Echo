@@ -1,4 +1,4 @@
-import { getRandomCards } from './petsCards.js';
+import { getRandomCardsData } from './petsCards.js';
 import Swiper from './swiper.js';
 
 const prev = document.querySelector('.swiper_button-prev');
@@ -10,18 +10,18 @@ window.addEventListener('resize', () => {
 	sliderLength = window.innerWidth >= 1000 ? 6 : 4;
 	if (sliderLength === 6) {
 		const slides = [
-			...getRandomCards1(),
-			...getRandomCards1(),
-			...getRandomCards1()
+			...getRandomCards(),
+			...getRandomCards(),
+			...getRandomCards()
 		];
 		petsSwiper.virtual.removeAllSlides();
 		petsSwiper.virtual.appendSlide(slides);
 	}
 	if (sliderLength === 4) {
 		const slides = [
-			...getRandomCards1(),
-			...getRandomCards1(),
-			...getRandomCards1()
+			...getRandomCards(),
+			...getRandomCards(),
+			...getRandomCards()
 		];
 		petsSwiper.virtual.removeAllSlides();
 		petsSwiper.virtual.appendSlide(slides);
@@ -81,7 +81,7 @@ const petsSwiper = new Swiper('.cards_slider', {
 		slides: (() => {
 			const slides = [];
 			for (let i = 0; i < 3; i++) {
-				const data = getRandomCards(sliderLength);
+				const data = getRandomCardsData(sliderLength);
 				slides.push(createSlide(data.slice(0, 2)));
 				slides.push(createSlide(data.slice(2, 4)));
 				if (sliderLength === 6) {
@@ -107,9 +107,9 @@ const petsSwiper = new Swiper('.cards_slider', {
 	}
 });
 
-const getRandomCards1 = () => {
+const getRandomCards = () => {
 	const slides = [];
-	const data = getRandomCards(sliderLength);
+	const data = getRandomCardsData(sliderLength);
 	slides.push(createSlide(data.slice(0, 2)));
 	slides.push(createSlide(data.slice(2, 4)));
 	if (sliderLength === 6) {
@@ -120,12 +120,12 @@ const getRandomCards1 = () => {
 
 const nextCallback = () => {
 	const slides = [
-		...getRandomCards1(),
+		...getRandomCards(),
 		...petsSwiper.virtual.slides.slice(
 			petsSwiper.activeIndex,
 			petsSwiper.activeIndex + 3
 		),
-		...getRandomCards1()
+		...getRandomCards()
 	];
 	petsSwiper.virtual.removeAllSlides();
 	petsSwiper.virtual.appendSlide(slides);
@@ -139,12 +139,12 @@ const nextCallback = () => {
 
 const prevCallback = () => {
 	const slides = [
-		...getRandomCards1(),
+		...getRandomCards(),
 		...petsSwiper.virtual.slides.slice(
 			petsSwiper.activeIndex,
 			petsSwiper.activeIndex + 3
 		),
-		...getRandomCards1()
+		...getRandomCards()
 	];
 	petsSwiper.virtual.removeAllSlides();
 	petsSwiper.virtual.appendSlide(slides);
