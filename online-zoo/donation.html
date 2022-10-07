@@ -197,7 +197,6 @@
 										name="donation"
 										value="1000"
 										id="s1000"
-										checked
 									/>
 									<span class="labels-list_item"
 										><span>$</span>1000</span
@@ -300,6 +299,7 @@
 								min="0"
 								max="9999"
 								maxlength="4"
+								oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
 								type="number"
 								id="donation_amount"
 								class="donation-input"

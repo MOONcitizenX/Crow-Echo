@@ -138,7 +138,6 @@ const nextCallback = () => {
 };
 
 const prevCallback = () => {
-	console.log(petsSwiper.activeIndex);
 	const slides = [
 		...getRandomCards1(),
 		...petsSwiper.virtual.slides.slice(
@@ -148,7 +147,6 @@ const prevCallback = () => {
 		...getRandomCards1()
 	];
 	petsSwiper.virtual.removeAllSlides();
-	console.log(slides);
 	petsSwiper.virtual.appendSlide(slides);
 	petsSwiper.slideNext(0, false);
 	prevSliderOff();
