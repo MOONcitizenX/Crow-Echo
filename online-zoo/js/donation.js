@@ -23,7 +23,6 @@ window.addEventListener('resize', () => {
 				!el.parentElement.classList.contains('s1000-container')
 		);
 	}
-	console.log(amountsList);
 });
 
 const amountInput = document.getElementById('donation_amount');

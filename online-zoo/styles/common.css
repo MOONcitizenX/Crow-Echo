@@ -369,6 +369,16 @@ body {
 	background-color: transparent;
 	transition: all 0.3s ease-in-out;
 }
+.dark-wrapper1 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	background-color: transparent;
+	transition: all 0.3s ease-in-out;
+}
 
 .dark-wrapper--active {
 	z-index: 20;
@@ -377,6 +387,7 @@ body {
 }
 
 .body-overflow {
+	height: 100vh;
 	overflow: hidden;
 }
 @media screen and (max-width: 1000px) {

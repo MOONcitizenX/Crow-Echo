@@ -1,4 +1,4 @@
-const darkWrapper = document.getElementById('darkWrapper');
+export const darkWrapper = document.getElementById('darkWrapper');
 const burgerButton = document.getElementById('burgerButton');
 const burgerMenu = document.getElementById('burgerMenu');
 const body = document.body;
@@ -46,4 +46,18 @@ export const burger = () => {
 	);
 	darkWrapper.addEventListener('click', handlerBurgerMenu);
 	burgerButton.addEventListener('click', handlerBurgerMenu);
+	window.addEventListener('resize', () => {
+		if (
+			window.innerWidth > 880 &&
+			burgerMenu.classList.contains('burger-active')
+		) {
+			handlerBurgerMenu();
+		}
+		// if (
+		// 	window.innerWidth > 640 &&
+		// 	darkWrapper.classList.contains('dark-wrapper--active')
+		// ) {
+		// 	hideDarkBg();
+		// }
+	});
 };
