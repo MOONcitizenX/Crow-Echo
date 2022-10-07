@@ -6,6 +6,7 @@ const testimonialsSwiper = new Swiper('.testimonials_slider', {
 	slidesPerView: 4,
 	spaceBetween: 30,
 	allowTouchMove: false,
+	speed: 800,
 	scrollbar: {
 		el: '.swiper-scrollbar',
 		draggable: true,
