@@ -344,6 +344,7 @@
 .pets-swiper-slide {
 	display: flex;
 }
+
 .swiper-slide {
 	display: flex;
 	flex-direction: column;
@@ -905,6 +906,7 @@
 
 .swiper-scrollbar-drag {
 	background-color: #fe9013;
+	cursor: grab;
 }
 
 .bg-wrapper {

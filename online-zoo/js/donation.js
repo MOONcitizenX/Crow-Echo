@@ -26,6 +26,7 @@ window.addEventListener('resize', () => {
 });
 
 const amountInput = document.getElementById('donation_amount');
+
 document.getElementById('s100').checked = true;
 amountInput.value = '100';
 amountsList.forEach((el) =>
@@ -40,6 +41,8 @@ amountInput.addEventListener('input', () => {
 		amountsList.filter(
 			(el) => el.id === `s${amountInput.value}`
 		)[0].checked = true;
+	} else {
+		amountsList.forEach((el) => (el.checked = false));
 	}
 });
 
