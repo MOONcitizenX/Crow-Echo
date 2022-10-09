@@ -8,24 +8,13 @@ let sliderLength = window.innerWidth >= 1000 ? 6 : 4;
 
 window.addEventListener('resize', () => {
 	sliderLength = window.innerWidth >= 1000 ? 6 : 4;
-	if (sliderLength === 6) {
-		const slides = [
-			...getRandomCards(),
-			...getRandomCards(),
-			...getRandomCards()
-		];
-		petsSwiper.virtual.removeAllSlides();
-		petsSwiper.virtual.appendSlide(slides);
-	}
-	if (sliderLength === 4) {
-		const slides = [
-			...getRandomCards(),
-			...getRandomCards(),
-			...getRandomCards()
-		];
-		petsSwiper.virtual.removeAllSlides();
-		petsSwiper.virtual.appendSlide(slides);
-	}
+	const slides = [
+		...getRandomCards(),
+		...getRandomCards(),
+		...getRandomCards()
+	];
+	petsSwiper.virtual.removeAllSlides();
+	petsSwiper.virtual.appendSlide(slides);
 });
 
 const createSlide = (data) => {
@@ -123,7 +112,7 @@ const nextCallback = () => {
 		...getRandomCards(),
 		...petsSwiper.virtual.slides.slice(
 			petsSwiper.activeIndex,
-			petsSwiper.activeIndex + 3
+			petsSwiper.activeIndex + (sliderLength === 6 ? 3 : 2)
 		),
 		...getRandomCards()
 	];
@@ -142,7 +131,7 @@ const prevCallback = () => {
 		...getRandomCards(),
 		...petsSwiper.virtual.slides.slice(
 			petsSwiper.activeIndex,
-			petsSwiper.activeIndex + 3
+			petsSwiper.activeIndex + (sliderLength === 6 ? 3 : 2)
 		),
 		...getRandomCards()
 	];
