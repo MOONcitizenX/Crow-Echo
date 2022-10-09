@@ -120,7 +120,6 @@ const createNewElem = ({
 
 export const createSliderCards = (num) => {
 	const cardsForSlider = [];
-	console.log(cardsForSlider);
 
 	for (let i = 0; i < num; i++) {
 		cardsForSlider.push(createSliderCard(cardsListData[i]));

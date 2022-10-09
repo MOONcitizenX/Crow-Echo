@@ -46,10 +46,37 @@ const petsCards = [
 		cardTitle: 'gorillas',
 		cardLocation: 'Native to Congo',
 		cardIcon: './icons/banana-bamboo_icon.svg'
+	},
+	{
+		imgUrl: './img/slider/armadillo.jpg',
+		cardTitle: 'Armadillo',
+		cardLocation: 'Native to Americas',
+		cardIcon: './icons/meet-fish_icon.svg'
+	},
+	{
+		imgUrl: './img/slider/quokka.jpg',
+		cardTitle: 'Quokkas',
+		cardLocation: 'Native to Rottnest Island',
+		cardIcon: './icons/banana-bamboo_icon.svg'
+	},
+	{
+		imgUrl: './img/slider/red_panda.jpg',
+		cardTitle: 'Red Panda',
+		cardLocation: 'Native to Eastern Himalayas',
+		cardIcon: './icons/meet-fish_icon.svg'
+	},
+	{
+		imgUrl: './img/slider/tarsier.jpg',
+		cardTitle: 'Tarsiers',
+		cardLocation: 'Native to Oceania',
+		cardIcon: './icons/banana-bamboo_icon.svg'
 	}
 ];
 
-const getRandomNum = (arrayLength) => Math.floor(Math.random() * arrayLength);
+const getRandomNum = (max, min = 0) => {
+	max = max - 1;
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 
 export const getRandomCardsData = (len) => {
 	const result = [];
