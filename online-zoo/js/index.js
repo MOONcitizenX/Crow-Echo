@@ -1,4 +1,10 @@
+import { burger } from './burgerMenu.js';
 import Swiper from './swiper.js';
+import {
+	showPopup,
+	createSliderCards,
+	popupListenerClose
+} from './testiPopup.js';
 
 const bamboo_hat = document.getElementById('backstage_img');
 
@@ -6,6 +12,13 @@ const testimonialsSwiper = new Swiper('.testimonials_slider', {
 	slidesPerView: 4,
 	spaceBetween: 30,
 	allowTouchMove: false,
+	virtual: {
+		slides: (() => {
+			return createSliderCards(11);
+		})()
+	},
+
+	speed: 800,
 	scrollbar: {
 		el: '.swiper-scrollbar',
 		draggable: true,
@@ -25,7 +38,7 @@ const testimonialsSwiper = new Swiper('.testimonials_slider', {
 			scrollbar: {
 				el: '.swiper-scrollbar',
 				draggable: true,
-				snapOnRelease: false,
+				snapOnRelease: true,
 				dragSize: 75
 			}
 		},
@@ -36,6 +49,13 @@ const testimonialsSwiper = new Swiper('.testimonials_slider', {
 		}
 	}
 });
+
+testimonialsSwiper.slides.forEach((el) =>
+	el.addEventListener('click', (e) => {
+		console.log(e.target.closest('.testi_card').id);
+		showPopup(e.target.closest('.testi_card').id);
+	})
+);
 
 const updateOnResize = () => {
 	if (window.innerWidth > 1200) {
@@ -54,3 +74,6 @@ const handleSubmit = (e) => {
 const submit_form = document.querySelector('.submit_form');
 
 submit_form.addEventListener('submit', handleSubmit);
+
+burger();
+popupListenerClose();

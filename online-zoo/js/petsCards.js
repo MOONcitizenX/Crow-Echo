@@ -51,7 +51,7 @@ const petsCards = [
 
 const getRandomNum = (arrayLength) => Math.floor(Math.random() * arrayLength);
 
-export const getRandomCards = (len) => {
+export const getRandomCardsData = (len) => {
 	const result = [];
 	while (result.length < len) {
 		const randomCard = petsCards[getRandomNum(petsCards.length)];
