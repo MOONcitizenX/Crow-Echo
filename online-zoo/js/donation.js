@@ -44,6 +44,21 @@ amountInput.addEventListener('input', () => {
 	} else {
 		amountsList.forEach((el) => (el.checked = false));
 	}
+	if (amountInput.value.length > amountInput.maxLength) {
+		amountInput.value = amountInput.value.slice(0, amountInput.maxLength);
+	}
+});
+
+amountInput.addEventListener('keydown', (e) => {
+	if (e.key.length === 1 && /\D/.test(e.key)) {
+		e.preventDefault();
+	}
+});
+
+amountInput.addEventListener('paste', (e) => {
+	if (/\D/.test(e.clipboardData.getData('text'))) {
+		e.preventDefault();
+	}
 });
 
 burger();
