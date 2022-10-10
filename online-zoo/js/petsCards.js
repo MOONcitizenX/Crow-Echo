@@ -70,6 +70,24 @@ const petsCards = [
 		cardTitle: 'Tarsiers',
 		cardLocation: 'Native to Oceania',
 		cardIcon: './icons/banana-bamboo_icon.svg'
+	},
+	{
+		imgUrl: './img/slider/giraffe.jpg',
+		cardTitle: 'Giraffe',
+		cardLocation: 'Native to Africa',
+		cardIcon: './icons/banana-bamboo_icon.svg'
+	},
+	{
+		imgUrl: './img/slider/koala.jpg',
+		cardTitle: 'Koala',
+		cardLocation: 'Native to South Australia',
+		cardIcon: './icons/banana-bamboo_icon.svg'
+	},
+	{
+		imgUrl: './img/slider/elephant.jpg',
+		cardTitle: 'Elephant',
+		cardLocation: 'Native to Africa',
+		cardIcon: './icons/banana-bamboo_icon.svg'
 	}
 ];
 
