@@ -15,6 +15,7 @@ window.addEventListener('resize', () => {
 	];
 	petsSwiper.virtual.removeAllSlides();
 	petsSwiper.virtual.appendSlide(slides);
+	petsSwiper.slideNext(0, false);
 });
 
 const createSlide = (data) => {
