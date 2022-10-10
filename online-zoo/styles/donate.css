@@ -541,6 +541,9 @@
 }
 
 @media screen and (max-width: 640px) {
+	.donation-input--dollar {
+		top: 10px;
+	}
 	.panda-widget {
 		margin-bottom: 35px;
 	}
