@@ -88,6 +88,36 @@ const petsCards = [
 		cardTitle: 'Elephant',
 		cardLocation: 'Native to Africa',
 		cardIcon: './icons/banana-bamboo_icon.svg'
+	},
+	{
+		imgUrl: './img/slider/chacoan-peccary.jpg',
+		cardTitle: 'chacoan peccary',
+		cardLocation: 'Native to Gran Chaco',
+		cardIcon: './icons/banana-bamboo_icon.svg'
+	},
+	{
+		imgUrl: './img/slider/platypus.jpg',
+		cardTitle: 'platypus',
+		cardLocation: 'Native to Australia',
+		cardIcon: './icons/meet-fish_icon.svg'
+	},
+	{
+		imgUrl: './img/slider/hyena.jpg',
+		cardTitle: 'hyena',
+		cardLocation: 'Native to Africa',
+		cardIcon: './icons/meet-fish_icon.svg'
+	},
+	{
+		imgUrl: './img/slider/honey-badger.jpg',
+		cardTitle: 'honey badger',
+		cardLocation: 'Native to Africa',
+		cardIcon: './icons/meet-fish_icon.svg'
+	},
+	{
+		imgUrl: './img/slider/arakan-forest-turtle.jpg',
+		cardTitle: 'arakan forest turtle',
+		cardLocation: 'Native to Arakan Hills',
+		cardIcon: './icons/meet-fish_icon.svg'
 	}
 ];
 
