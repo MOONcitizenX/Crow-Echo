@@ -39,15 +39,17 @@ body {
 .header-container {
 	width: 100%;
 	padding: 10px;
+	margin-bottom: 20px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-image: url('../assets/img/wooden-wood-backgrounds-textured-pattern-wallpaper-concept_53876-14103.jpg');
+	background-image: url('../assets/img/wood1.jpg');
 	background-size: cover;
 	box-shadow: rgb(0 0 0 / 56%) 0px 4px 6px 1px;
 }
 
 .header__title {
+	user-select: none;
 	color: rgb(234 211 191);
 	font-weight: 700;
 	font-size: 2.5em;
@@ -66,7 +68,7 @@ body {
 	box-shadow: rgb(0 0 0 / 56%) 0px 3px 4px 1px;
 	border: 3px solid rgba(0, 0, 0, 0.3);
 	border-radius: 5px;
-	background-image: url('../assets/img/wooden-wood-backgrounds-textured-pattern-wallpaper-concept_53876-14103.jpg');
+	background-image: url('../assets/img/wood1.jpg');
 	background-size: cover;
 	background-position: center;
 	animation: spinning 3s infinite;
@@ -90,7 +92,124 @@ body {
 	align-items: center;
 	gap: 10px;
 	padding: 10px;
+	margin-bottom: 20px;
+}
+.select-wrapper select {
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 16px;
+	padding-right: 10px;
+	padding-left: 10px;
+	width: 100%;
+	line-height: 29px;
+	appearance: none;
+	-webkit-appearance: none;
+	outline: 0;
+	background: 0;
+	border: 0;
 }
 
-.controls__select {
+.select-wrapper {
+	width: 100px;
+	position: relative;
+	background-blend-mode: multiply;
+	background-image: url('../assets/img/wood1.jpg');
+	background-size: cover;
+	background-position: center;
+	border: 2px solid rgba(107, 82, 52, 0.5);
+	border-radius: 5px;
+	font-size: 12px;
+	overflow: hidden;
+	transition: all 0.2s ease-in-out;
+}
+
+.select-wrapper:hover {
+	background-color: rgba(129, 97, 61, 0.4);
+}
+.select-wrapper::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	margin-top: -2px;
+	margin-left: 5px;
+	border-top: 4px solid;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+}
+
+.select-wrapper select option {
+	font-size: 16px;
+	font-weight: 700;
+	background-color: rgb(231, 206, 151);
+}
+
+.controls__btn {
+	cursor: pointer;
+	padding: 5px;
+	color: black;
+	font-size: 16px;
+	font-weight: 700;
+	border: 2px solid rgba(107, 82, 52, 0.5);
+	border-radius: 5px;
+	background-blend-mode: multiply;
+	background-image: url('../assets/img/wood1.jpg');
+	background-size: cover;
+	background-position: center;
+	transition: all 0.2s ease-in-out;
+}
+
+.controls__btn:hover,
+.controls__btn:focus {
+	background-color: rgba(129, 97, 61, 0.4);
+	box-shadow: rgb(0 0 0 / 56%) 0px 1px 3px 1px;
+}
+
+/* Main styles */
+
+.main__container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.table {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	justify-content: center;
+	column-gap: 5px;
+	row-gap: 5px;
+	/* width: 100%; */
+	max-width: 1000px;
+	height: auto;
+	margin: 0 auto;
+	padding: 5px;
+	border: 10px solid rgba(107, 82, 52, 0.5);
+}
+
+.table__btn {
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	height: 100px;
+	color: black;
+	font-size: 42px;
+	font-weight: 700;
+	text-shadow: 1px 1px 3px black;
+	border: 2px solid rgba(107, 82, 52, 0.5);
+	border-radius: 5px;
+	background-blend-mode: multiply;
+	background-image: url('../assets/img/wood1.jpg');
+	background-size: cover;
+	background-position: center;
+	transition: all 0.2s ease-in-out;
+}
+
+.table__btn:hover {
+	background-color: rgba(129, 97, 61, 0.4);
+	box-shadow: rgb(0 0 0 / 56%) 0px 1px 2px 1px;
+	border: 2px solid rgba(68, 47, 20, 0.5);
+	scale: 1.02;
 }

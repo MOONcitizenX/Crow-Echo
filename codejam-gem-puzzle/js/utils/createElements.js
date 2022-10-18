@@ -7,11 +7,11 @@ export const createElem = ({
 	txtContent = ''
 }) => {
 	const elem = document.createElement(tag);
-	elem.className = classN;
+	if (classN) elem.className = classN;
 	if (inner) elem.innerHtml = inner;
 	if (txtContent) elem.textContent = txtContent;
 	if (attributes) {
-		for (let attr of attributes) {
+		for (let attr in attributes) {
 			elem.setAttribute(attr, attributes[attr]);
 		}
 	}
@@ -19,4 +19,12 @@ export const createElem = ({
 	return elem;
 };
 
-const createElemsArray = ({ callback, parent = '' }) => {};
+export const createElemsArray = ({ arraySize, callback, parent = '' }) => {
+	const array = [...Array(arraySize)].map(callback);
+	if (parent) {
+		for (let elem of array) {
+			parent.appendChild(elem);
+		}
+	}
+	return array;
+};
