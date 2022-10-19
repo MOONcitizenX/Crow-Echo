@@ -7,13 +7,13 @@ const mainContainer = createElem({
 	classN: 'main__container'
 });
 
-const table = createElem({
+export const table = createElem({
 	tag: 'div',
 	classN: 'table',
 	parent: mainContainer
 });
 
-const tableBtns = createElemsArray({
+export const tableBtns = createElemsArray({
 	arraySize: state.currentFrameSize * state.currentFrameSize,
 	callback: (el, ind) => {
 		el = createElem({

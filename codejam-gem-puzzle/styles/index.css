@@ -194,7 +194,8 @@ body {
 }
 
 .table__btn {
-	cursor: pointer;
+	user-select: none;
+	cursor: grab;
 	display: flex;
 	justify-content: center;
 	align-items: center;
