@@ -1,9 +1,5 @@
-import controlsContainer from './controls.js';
-import header from './header.js';
-import mainContainer from './main.js';
+import wrapper from './header.js';
 
 const body = document.body;
 
-body.appendChild(header);
-body.appendChild(controlsContainer);
-body.appendChild(mainContainer);
+body.appendChild(wrapper);

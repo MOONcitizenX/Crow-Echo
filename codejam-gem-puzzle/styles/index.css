@@ -34,49 +34,71 @@ html {
 
 body {
 	min-height: 100vh;
-	background-image: url('../assets/img/wood1.jpg');
+	background-image: url('../assets/img/background_1.jpg');
 	background-size: cover;
 	background-position: center;
+	background-repeat: no-repeat;
 }
 
-.header-container {
+.wrapper {
 	width: 100%;
-	padding: 10px;
-	margin-bottom: 20px;
+	display: flex;
+}
+
+.header__wrapper {
+	flex-basis: 33%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-image: url('../assets/img/wood2.jpg');
-	background-size: cover;
-	box-shadow: rgb(0 0 0 / 56%) 0px 4px 6px 1px;
+	flex-shrink: 2;
+}
+.empty__wrapper {
+	flex-basis: 33%;
+	flex-shrink: 2;
+	display: block;
+}
+.main__wrapper {
+	flex-basis: 33%;
+	max-width: 500px;
+	flex-grow: 2;
+	display: flex;
+	flex-direction: column;
+}
+
+@media screen and (max-width: 860px) {
+	.header__wrapper,
+	.empty__wrapper {
+		display: none;
+	}
+	.main__wrapper {
+		max-width: 100%;
+	}
+}
+
+.header__container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 110px 10px;
+	background-image: url('../assets/img/plankBG.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	border-radius: 15px;
 }
 
 .header__title {
+	display: block;
 	user-select: none;
-	color: rgb(234 211 191);
-	font-weight: 700;
-	font-size: 2.5em;
-	margin-right: 40px;
-	text-shadow: 4px 2px 5px black;
-}
-
-.header__rolling {
-	user-select: none;
-	display: inline-block;
-	width: 50px;
-	height: 50px;
-	padding: 10px;
-	text-align: center;
-	font-size: 22px;
 	color: white;
-	text-shadow: 1px 1px 3px black;
-	box-shadow: rgb(0 0 0 / 56%) 0px 3px 4px 1px;
-	border: 3px solid rgba(0, 0, 0, 0.3);
-	border-radius: 5px;
-	background-image: url('../assets/img/wood7.jpg');
-	background-size: cover;
-	background-position: center;
-	animation: spinning 3s infinite;
+	font-weight: 700;
+	font-size: 2em;
+	word-wrap: break-word;
+	white-space: nowrap;
+	margin: 0;
+	padding: 0;
+	text-shadow: 3px 3px 3px black;
 }
 
 @keyframes spinning {
@@ -90,16 +112,62 @@ body {
 
 /* Controls styles */
 
-.controls-container {
+.counter__container {
 	width: 100%;
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
+	align-items: center;
+	color: white;
+	font-weight: 700;
+	font-size: 1em;
+	word-wrap: break-word;
+	white-space: nowrap;
+	margin: 0;
+	margin-right: auto;
+	padding: 20px;
+	text-shadow: 3px 3px 3px black;
+	user-select: none;
+}
+
+.counter__container--time {
+	font-size: 1.5em;
+	transition: all 0.3s ease-in-out;
+}
+
+.counter__container--moves {
+	font-size: 1.5em;
+	transition: all 0.3s ease-in-out;
+}
+
+.controls__container {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
 	align-items: center;
 	gap: 10px;
+	padding: 20px;
+}
+.controls__rolling {
+	user-select: none;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
 	padding: 10px;
-	margin-bottom: 20px;
+	margin-left: auto;
+	text-align: center;
+	font-size: 22px;
+	color: white;
+	text-shadow: 1px 1px 3px black;
+	box-shadow: rgb(0 0 0 / 56%) 3px 6px 5px 3px;
+	border: 3px solid rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+	background-image: url('../assets/img/wood7.jpg');
+	background-size: cover;
+	background-position: center;
+	animation: spinning 3s infinite;
 }
 .select-wrapper select {
+	user-select: none;
 	cursor: pointer;
 	font-weight: 700;
 	font-size: 16px;
@@ -123,6 +191,7 @@ body {
 	background-position: center;
 	border: 2px solid rgba(107, 82, 52, 0.5);
 	border-radius: 5px;
+	box-shadow: rgb(0 0 0 / 56%) 3px 6px 5px 3px;
 	font-size: 12px;
 	overflow: hidden;
 	transition: all 0.2s ease-in-out;
@@ -150,6 +219,10 @@ body {
 }
 
 .controls__btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
 	outline: none;
 	user-select: none;
 	cursor: pointer;
@@ -159,6 +232,7 @@ body {
 	font-weight: 700;
 	border: 2px solid rgba(107, 82, 52, 0.5);
 	border-radius: 5px;
+	box-shadow: rgb(0 0 0 / 56%) 3px 6px 5px 3px;
 	background-blend-mode: multiply;
 	background-image: url('../assets/img/wood4.jpg');
 	background-size: cover;
@@ -172,23 +246,50 @@ body {
 	box-shadow: rgb(0 0 0 / 56%) 0px 1px 3px 1px;
 }
 
+.controls__btn:last-of-type {
+	padding: 4px;
+}
+
+.sound__img {
+	filter: invert(1);
+}
+
+@media screen and (max-width: 860px) {
+	.counter__container {
+		justify-content: center;
+		gap: 30px;
+	}
+	.controls__container {
+		justify-content: center;
+	}
+	.controls__rolling {
+		margin: 0;
+	}
+}
+
 /* Main styles */
 
 .main__container {
 	width: 100%;
 	display: flex;
-	justify-content: center;
+	padding: 20px;
+}
+
+@media screen and (max-width: 860px) {
+	.main__container {
+		justify-content: center;
+	}
 }
 
 .table {
-	max-width: 600px;
-	width: 100%;
-	height: 600px;
-	margin: 0 auto;
+	width: 500px;
+	height: 500px;
 	margin-bottom: 100px;
 	padding: 5px;
-	border: 10px solid rgba(65 49 28 / 85%);
-	background-color: rgb(0 0 0 / 66%);
+	border: 15px solid rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	background-image: url('../assets/img/wood2.jpg');
+	background-blend-mode: multiply;
 	position: relative;
 	transition: all 0.3s ease-in-out;
 }
@@ -207,7 +308,7 @@ body {
 	width: 25%;
 	height: 25%;
 	color: white;
-	font-size: 42px;
+	font-size: 36px;
 	font-weight: 700;
 	text-shadow: 1px 1px 3px black;
 	border: 4px solid rgba(107, 82, 52, 0.7);
@@ -224,4 +325,18 @@ body {
 	background-color: rgb(255, 255, 255);
 	box-shadow: inset 2px 2px rgba(255, 255, 255, 0.4);
 	border: 2px solid rgba(68, 47, 20, 0.6);
+}
+
+@media screen and (max-width: 680px) {
+	.table {
+		height: 280px;
+		width: 280px;
+	}
+	.table__btn {
+		font-size: 20px;
+		border: 1px solid rgba(107, 82, 52, 0.7);
+	}
+	.table__btn:hover {
+		border: 1px solid rgba(68, 47, 20, 0.6);
+	}
 }

@@ -1,3 +1,4 @@
+import controlsContainer, { counterContainer } from './controls.js';
 import { showModalSuccess } from './modalSuccess.js';
 import { setMatrixBtnsPosition } from './utils/btnPositioning.js';
 import { state } from './utils/constants.js';
@@ -14,9 +15,18 @@ import {
 	swapItems
 } from './utils/matrix.js';
 
+export const mainWrapper = createElem({
+	tag: 'div',
+	classN: 'main__wrapper'
+});
+
+mainWrapper.appendChild(counterContainer);
+mainWrapper.appendChild(controlsContainer);
+
 const mainContainer = createElem({
 	tag: 'div',
-	classN: 'main__container'
+	classN: 'main__container',
+	parent: mainWrapper
 });
 
 export const table = createElem({
@@ -41,6 +51,8 @@ export const btnMatrix = {
 	value: getMatrixFromArray(tableBtnValues.value, state.currentFrameSize)
 };
 
+const clickAudio = new Audio('assets/sounds/click.mp3');
+
 setMatrixBtnsPosition(btnMatrix.value, tableBtns.value);
 
 table.addEventListener('click', ({ target }) => {
@@ -60,6 +72,7 @@ table.addEventListener('click', ({ target }) => {
 	if (isValidToSwap) {
 		swapItems(clickedBtnCoords, blankBtnCoords, btnMatrix.value);
 		setMatrixBtnsPosition(btnMatrix.value, tableBtns.value);
+		if (state.isSoundOn) clickAudio.play();
 		if (isSuccess(btnMatrix.value)) {
 			showModalSuccess();
 		}
