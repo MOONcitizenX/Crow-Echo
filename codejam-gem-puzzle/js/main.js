@@ -1,6 +1,11 @@
+import { setMatrixBtnsPosition } from './utils/btnPositioning.js';
 import { state } from './utils/constants.js';
-import { createElem, createElemsArray } from './utils/createElements.js';
-import { randomNum } from './utils/randomNum.js';
+import {
+	createElem,
+	createElemsArray,
+	generateBtnsCallback
+} from './utils/createElements.js';
+import { getMatrixFromArray } from './utils/matrix.js';
 
 const mainContainer = createElem({
 	tag: 'div',
@@ -15,19 +20,17 @@ export const table = createElem({
 
 export const tableBtns = createElemsArray({
 	arraySize: state.currentFrameSize * state.currentFrameSize,
-	callback: (el, ind) => {
-		el = createElem({
-			tag: 'button',
-			classN: 'table__btn',
-			txtContent: ind + 1
-		});
-		el.style.backgroundImage = `url("./assets/img/wood${randomNum(
-			2,
-			7
-		)}.jpg")`;
-		return el;
-	},
+	callback: generateBtnsCallback,
 	parent: table
 });
+
+export const tableBtnValues = tableBtns.map((el) => +el.dataset.matrixId);
+
+export const btnMatrix = getMatrixFromArray(
+	tableBtnValues,
+	state.currentFrameSize
+);
+
+setMatrixBtnsPosition(btnMatrix, tableBtns);
 
 export default mainContainer;
