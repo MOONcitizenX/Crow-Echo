@@ -1,5 +1,8 @@
+import { btnMatrix, table, tableBtns, tableBtnValues } from '../main.js';
+import { setMatrixBtnsPosition } from './btnPositioning.js';
 import { state } from './constants.js';
-import { randomNum } from './randomizer.js';
+import { getMatrixFromArray } from './matrix.js';
+import { randomNum, shuffleArray } from './randomizer.js';
 
 export const createElem = ({
 	tag,
@@ -54,4 +57,23 @@ export const generateBtnsCallback = (el, ind, arr) => {
 	});
 	if (ind === arr.length - 1) el.style.display = 'none';
 	return el;
+};
+
+export const generateNewTable = () => {
+	table.innerHTML = '';
+	tableBtns.value = createElemsArray({
+		arraySize: state.currentFrameSize * state.currentFrameSize,
+		callback: generateBtnsCallback,
+		parent: table
+	});
+
+	state.blankTableItem = tableBtns.value.at(-1).dataset.matrixId;
+	tableBtnValues.value = tableBtns.value.map((el) => +el.dataset.matrixId);
+	state.winnerCombination = tableBtnValues.value;
+	btnMatrix.value = getMatrixFromArray(
+		shuffleArray(tableBtnValues.value),
+		state.currentFrameSize
+	);
+
+	setMatrixBtnsPosition(btnMatrix.value, tableBtns.value);
 };
