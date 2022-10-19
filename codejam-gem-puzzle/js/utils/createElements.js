@@ -52,7 +52,7 @@ export const generateBtnsCallback = (el, ind, arr) => {
 		attributes: {
 			style: `width:${100 / state.currentFrameSize}%; height:${
 				100 / state.currentFrameSize
-			}%; background-image:url("./assets/img/wood${randomNum(2, 7)}.jpg")`
+			}%; background-image:url("./assets/img/wood${randomNum(1, 7)}.jpg")`
 		}
 	});
 	if (ind === arr.length - 1) el.style.display = 'none';
