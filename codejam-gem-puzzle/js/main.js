@@ -2,6 +2,7 @@ import controlsContainer, { counterContainer } from './controls.js';
 import { showModalSuccess } from './modalSuccess.js';
 import { setMatrixBtnsPosition } from './utils/btnPositioning.js';
 import { state } from './utils/constants.js';
+import { countMoves } from './utils/counter.js';
 import {
 	createElem,
 	createElemsArray,
@@ -72,6 +73,8 @@ table.addEventListener('click', ({ target }) => {
 	if (isValidToSwap) {
 		swapItems(clickedBtnCoords, blankBtnCoords, btnMatrix.value);
 		setMatrixBtnsPosition(btnMatrix.value, tableBtns.value);
+		countMoves();
+		state.currentMatrix = btnMatrix.value;
 		if (state.isSoundOn) clickAudio.play();
 		if (isSuccess(btnMatrix.value)) {
 			showModalSuccess();

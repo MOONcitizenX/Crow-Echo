@@ -1,11 +1,13 @@
-import { state } from './constants';
+import { state } from './constants.js';
 
-export const getLocalStorageItems = () => {
-	if (localStorage.getItem('state')) {
-		state = JSON.parse(localStorage.getItem('state'));
+export const getLocalStorageItems = (name) => {
+	if (localStorage.getItem(name)) {
+		const currentState = JSON.parse(localStorage.getItem(name));
+		return currentState;
 	}
+	return;
 };
 
-export const setLocalStorageItems = () => {
-	localStorage.setItem('state', JSON.stringify(state));
+export const setLocalStorageItems = (name, value) => {
+	localStorage.setItem(name, JSON.stringify(value));
 };

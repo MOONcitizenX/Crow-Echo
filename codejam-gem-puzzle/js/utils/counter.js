@@ -1,23 +1,32 @@
+import { counterMoves, counterTime } from '../controls.js';
 import { state } from './constants.js';
 
 const timeCounter = () => {
-	state.timeSpent += 1;
-	let seconds =
-		Math.floor(state.timeSpent) - Math.floor(state.timeSpent / 60) * 60;
-	let minutes = Math.floor(state.timeSpent / 60);
-	outprintTime(minutes, seconds);
+	state.time += 1;
+	const seconds = Math.floor(state.time) - Math.floor(state.time / 60) * 60;
+	const minutes = Math.floor(state.time / 60);
+	const message = `${minutes.toString().padStart(2, '0')}:${seconds
+		.toString()
+		.padStart(2, '0')}`;
+	outPrint(counterTime, 'Time: ', message);
 };
 
 export const startTimer = () => {
-	if (state.timeSpent <= 0) {
-		setInterval(timeCounter, 1000);
+	if (!state.isGameStarted) {
+		state.isGameStarted = setInterval(timeCounter, 1000);
 	}
 };
 
 export const stopTimer = () => {
-	clearInterval(timeCounter);
+	clearInterval(state.isGameStarted);
+	state.isGameStarted = null;
 };
 
-export const outprintTime = (minutes, seconds) => {
-	console.log(minutes, seconds);
+export const outPrint = (elem, text, number = 0) => {
+	elem.textContent = text + number;
+};
+
+export const countMoves = () => {
+	state.moves++;
+	outPrint(counterMoves, 'Moves: ', state.moves);
 };

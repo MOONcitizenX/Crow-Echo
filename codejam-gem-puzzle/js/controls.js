@@ -1,13 +1,18 @@
 import { btnMatrix, table, tableBtns, tableBtnValues } from './main.js';
 import { setMatrixBtnsPosition } from './utils/btnPositioning.js';
-import { state } from './utils/constants.js';
-import { startTimer } from './utils/counter.js';
+import { saveGameState, state } from './utils/constants.js';
+import { outPrint, startTimer, stopTimer } from './utils/counter.js';
 import {
 	createElem,
 	createElemsArray,
 	generateBtnsCallback,
-	generateNewTable
+	generateNewTable,
+	generateSavedTable
 } from './utils/createElements.js';
+import {
+	getLocalStorageItems,
+	setLocalStorageItems
+} from './utils/localStorage.js';
 import { getMatrixFromArray } from './utils/matrix.js';
 
 const controlButtonsArray = ['New game', 'Save', 'Top score', ''];
@@ -17,13 +22,13 @@ export const counterContainer = createElem({
 	tag: 'div',
 	classN: 'counter__container'
 });
-const counterTime = createElem({
+export const counterTime = createElem({
 	tag: 'div',
 	classN: 'counter__container--time',
 	parent: counterContainer,
 	txtContent: 'Time: 00:00'
 });
-const counterMoves = createElem({
+export const counterMoves = createElem({
 	tag: 'div',
 	classN: 'counter__container--moves',
 	parent: counterContainer,
@@ -106,13 +111,28 @@ const rollingChunk = createElem({
 });
 
 const shuffleAudio = new Audio('assets/sounds/shuffle.mp3');
+
 controlsNewGame.addEventListener('click', () => {
 	if (state.isSoundOn) shuffleAudio.play();
 	generateNewTable();
-	startTimer();
+	state.time = 0;
+	state.moves = 0;
+	outPrint(counterMoves, 'Moves: ', '0');
+	outPrint(counterTime, 'Time: ', '00:00');
+	stopTimer();
+	startTimer(0);
 });
-controlsSave.addEventListener('click', () => {});
+
+controlsSave.addEventListener('click', () => {
+	if (state.isGameSaved) {
+		loadCurrentGame();
+	} else {
+		saveCurrentGame();
+	}
+});
+
 controlsTopScore.addEventListener('click', () => {});
+
 controlsSound.addEventListener('click', () => {
 	state.isSoundOn = !state.isSoundOn;
 	if (state.isSoundOn) {
@@ -121,5 +141,28 @@ controlsSound.addEventListener('click', () => {
 		soundIcon.src = './assets/img/vol_muted.svg';
 	}
 });
+
+const saveCurrentGame = () => {
+	state.isGameSaved = true;
+	controlsSave.textContent = 'Continue';
+	saveGameState();
+	setLocalStorageItems('savedGame', state.savedGame);
+	stopTimer();
+};
+
+const loadCurrentGame = () => {
+	state.isGameSaved = false;
+	controlsSave.textContent = 'Save';
+	state.savedGame = getLocalStorageItems('savedGame');
+	state.time = state.savedGame.seconds;
+	startTimer();
+	state.moves = state.savedGame.moves;
+	outPrint(counterMoves, 'Moves: ', state.moves);
+	state.currentFrameSize = state.savedGame.frameSize;
+	state.blankTableItem = state.savedGame.blankTableItem;
+	controlsSelectOptions[state.currentFrameSize - 3].selected = true;
+	generateSavedTable();
+	localStorage.removeItem('savedGame');
+};
 
 export default controlsContainer;
