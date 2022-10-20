@@ -24,6 +24,13 @@ export const mainWrapper = createElem({
 	classN: 'main__wrapper'
 });
 
+export const wrapper = createElem({
+	tag: 'div',
+	classN: 'wrapper'
+});
+
+wrapper.appendChild(mainWrapper);
+
 mainWrapper.appendChild(counterContainer);
 mainWrapper.appendChild(controlsContainer);
 

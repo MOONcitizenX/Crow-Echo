@@ -1,4 +1,4 @@
-import wrapper from './header.js';
+import { wrapper } from './main.js';
 import { darkBGscore } from './modalScore.js';
 import { darkBGWin } from './modalSuccess.js';
 

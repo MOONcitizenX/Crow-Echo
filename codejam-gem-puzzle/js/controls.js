@@ -121,18 +121,17 @@ const soundIcon = createElem({
 	}
 });
 
-const rollingChunk = createElem({
-	tag: 'div',
-	classN: 'controls__rolling',
-	txtContent: ':)',
-	parent: controlsContainer
-});
-
 const shuffleAudio = new Audio('assets/sounds/shuffle.mp3');
 
 controlsNewGame.addEventListener('click', () => {
-	if (state.isSoundOn) shuffleAudio.play();
-	startNewGame();
+	table.classList.add('table--active');
+	setTimeout(() => {
+		if (state.isSoundOn) shuffleAudio.play();
+		startNewGame();
+	}, 500);
+	setTimeout(() => {
+		table.classList.remove('table--active');
+	}, 1500);
 });
 
 export const startNewGame = () => {
@@ -147,7 +146,14 @@ export const startNewGame = () => {
 
 controlsSave.addEventListener('click', () => {
 	if (state.isGameSaved) {
-		loadCurrentGame();
+		table.classList.add('table--active');
+		setTimeout(() => {
+			if (state.isSoundOn) shuffleAudio.play();
+			loadCurrentGame();
+		}, 500);
+		setTimeout(() => {
+			table.classList.remove('table--active');
+		}, 1500);
 	} else {
 		saveCurrentGame();
 	}

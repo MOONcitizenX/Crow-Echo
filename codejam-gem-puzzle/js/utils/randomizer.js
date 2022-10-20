@@ -20,23 +20,22 @@ export const shuffleArray = (unshuffledArr) => {
 
 const isSolvable = (arr) => {
 	let count = 0;
-	for (let i = 0; i < arr.length; i++) {
-		const currentCount = arr.filter((el, ind) => {
-			return el < arr[i] && ind > i;
+	const trueArray = arr.filter((el) => el !== arr.length);
+	for (let i = 0; i < trueArray.length; i++) {
+		const currentCount = trueArray.filter((el, ind) => {
+			return el < trueArray[i] && ind > i;
 		}).length;
 		count += currentCount;
 	}
 	const tempMatrix = getMatrixFromArray(arr, state.currentFrameSize);
 	const blankPosition =
 		tempMatrix.indexOf(
-			tempMatrix.filter((el) =>
-				el.includes(state.currentFrameSize * state.currentFrameSize)
-			)[0]
+			tempMatrix.filter((el) => el.includes(arr.length))[0]
 		) + 1;
-	if (state.currentFrameSize % 2 === 1) {
+	if (arr.length % 2 === 1) {
 		return count % 2 === 0;
 	} else {
 		count += blankPosition;
-		return count % 2 === 1;
+		return count % 2 === 0;
 	}
 };

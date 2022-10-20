@@ -8,12 +8,12 @@ import {
 
 export const darkBGWin = createElem({
 	tag: 'div',
-	classN: 'darkBG darkBG--active'
+	classN: 'darkBG'
 });
 
 export const modalWin = createElem({
 	tag: 'div',
-	classN: 'modal-window modal-window--active',
+	classN: 'modal-window',
 	parent: darkBGWin
 });
 
@@ -70,6 +70,15 @@ const winSubmit = createElem({
 		type: 'submit'
 	},
 	parent: winForm
+});
+
+const winSaveMessageSmall = createElem({
+	tag: 'p',
+	classN: 'modal__message-small',
+	txtContent: `Hooray! You solved the puzzle in ${getTimeFromSeconds()} and ${
+		state.moves
+	} moves!`,
+	parent: modalWin
 });
 
 winForm.addEventListener('submit', (e) => {

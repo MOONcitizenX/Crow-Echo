@@ -43,7 +43,7 @@ export const showTopScore = () => {
 			createElem({
 				tag: 'h4',
 				classN: 'winner__name',
-				txtContent: `${item.name}: `,
+				txtContent: `<${item.name}>: `,
 				parent: listItem
 			});
 			createElem({
