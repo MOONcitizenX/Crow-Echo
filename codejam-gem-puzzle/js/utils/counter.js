@@ -3,12 +3,17 @@ import { state } from './constants.js';
 
 const timeCounter = () => {
 	state.time += 1;
+
+	outPrint(counterTime, 'Time: ', getTimeFromSeconds());
+};
+
+export const getTimeFromSeconds = () => {
 	const seconds = Math.floor(state.time) - Math.floor(state.time / 60) * 60;
 	const minutes = Math.floor(state.time / 60);
 	const message = `${minutes.toString().padStart(2, '0')}:${seconds
 		.toString()
 		.padStart(2, '0')}`;
-	outPrint(counterTime, 'Time: ', message);
+	return message;
 };
 
 export const startTimer = () => {

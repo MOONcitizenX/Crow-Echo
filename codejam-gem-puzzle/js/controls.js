@@ -1,4 +1,5 @@
 import { btnMatrix, table, tableBtns, tableBtnValues } from './main.js';
+import { darkBGscore, modalScore } from './modalScore.js';
 import { setMatrixBtnsPosition } from './utils/btnPositioning.js';
 import { saveGameState, state } from './utils/constants.js';
 import { outPrint, startTimer, stopTimer } from './utils/counter.js';
@@ -143,7 +144,11 @@ controlsSave.addEventListener('click', () => {
 	}
 });
 
-controlsTopScore.addEventListener('click', () => {});
+controlsTopScore.addEventListener('click', () => {
+	document.body.classList.add('body-overflow');
+	darkBGscore.classList.add('darkBG--active');
+	modalScore.classList.add('modal-window--active');
+});
 
 controlsSound.addEventListener('click', () => {
 	state.isSoundOn = !state.isSoundOn;
