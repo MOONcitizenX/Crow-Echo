@@ -56,7 +56,8 @@ const winNameInput = createElem({
 	classN: 'modal__name-input',
 	attributes: {
 		placeholder: 'Enter your name',
-		required: 'true'
+		required: 'true',
+		maxlength: '18'
 	},
 	parent: winForm
 });
@@ -75,9 +76,29 @@ winForm.addEventListener('submit', (e) => {
 	e.preventDefault();
 	if (getLocalStorageItems('topScoreList')) {
 		const topList = getLocalStorageItems('topScoreList');
+		const currentResult = {
+			name: e.target[0].value,
+			info: `${state.moves} moves, ${getTimeFromSeconds()} minutes`,
+			value: state.moves / state.time
+		};
+		topList.push(currentResult);
+		topList.sort((a, b) => a.value - b.value);
+		setLocalStorageItems('topScoreList', topList.slice(0, 10));
+		winNameInput.value = '';
 	} else {
-		setLocalStorageItems('topScoreList');
+		const topList = [
+			{
+				name: e.target[0].value,
+				info: `${state.moves} moves, ${getTimeFromSeconds()} minutes`,
+				value: state.moves / state.time
+			}
+		];
+		setLocalStorageItems('topScoreList', topList);
+		winNameInput.value = '';
 	}
+	darkBGWin.classList.remove('darkBG--active');
+	modalWin.classList.remove('modal-window--active');
+	document.body.classList.remove('body-overflow');
 });
 
 export const showModalSuccess = () => {

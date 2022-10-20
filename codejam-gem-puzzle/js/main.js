@@ -1,4 +1,7 @@
-import controlsContainer, { counterContainer } from './controls.js';
+import controlsContainer, {
+	counterContainer,
+	startNewGame
+} from './controls.js';
 import { showModalSuccess } from './modalSuccess.js';
 import { setMatrixBtnsPosition } from './utils/btnPositioning.js';
 import { state } from './utils/constants.js';
@@ -81,5 +84,6 @@ table.addEventListener('click', ({ target }) => {
 		}
 	}
 });
+startNewGame();
 
 export default mainContainer;

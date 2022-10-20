@@ -1,5 +1,5 @@
 import { btnMatrix, table, tableBtns, tableBtnValues } from './main.js';
-import { darkBGscore, modalScore } from './modalScore.js';
+import { darkBGscore, modalScore, showTopScore } from './modalScore.js';
 import { setMatrixBtnsPosition } from './utils/btnPositioning.js';
 import { saveGameState, state } from './utils/constants.js';
 import { outPrint, startTimer, stopTimer } from './utils/counter.js';
@@ -93,7 +93,7 @@ const [controlsNewGame, controlsSave, controlsTopScore, controlsSound] =
 		parent: controlsContainer
 	});
 
-export const checkIsGameSaved = () => {
+export const checkIsGameSaved = (() => {
 	const data = getLocalStorageItems('savedGame');
 	if (data) {
 		state.isGameSaved = true;
@@ -101,9 +101,14 @@ export const checkIsGameSaved = () => {
 		saveGameState();
 		stopTimer();
 	}
-};
+})();
 
-checkIsGameSaved();
+export const checkIsTopScoreList = (() => {
+	const topList = getLocalStorageItems('topScoreList');
+	if (topList) {
+		state.topScoreList = topList;
+	}
+})();
 
 const soundIcon = createElem({
 	tag: 'img',
@@ -127,6 +132,10 @@ const shuffleAudio = new Audio('assets/sounds/shuffle.mp3');
 
 controlsNewGame.addEventListener('click', () => {
 	if (state.isSoundOn) shuffleAudio.play();
+	startNewGame();
+});
+
+export const startNewGame = () => {
 	generateNewTable();
 	state.time = 0;
 	state.moves = 0;
@@ -134,7 +143,7 @@ controlsNewGame.addEventListener('click', () => {
 	outPrint(counterTime, 'Time: ', '00:00');
 	stopTimer();
 	startTimer(0);
-});
+};
 
 controlsSave.addEventListener('click', () => {
 	if (state.isGameSaved) {
@@ -145,6 +154,7 @@ controlsSave.addEventListener('click', () => {
 });
 
 controlsTopScore.addEventListener('click', () => {
+	showTopScore();
 	document.body.classList.add('body-overflow');
 	darkBGscore.classList.add('darkBG--active');
 	modalScore.classList.add('modal-window--active');

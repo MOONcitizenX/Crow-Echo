@@ -413,7 +413,7 @@ body {
 	height: 95%;
 	max-height: 500px;
 
-	padding: 20px;
+	padding: 70px 20px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -450,6 +450,9 @@ body {
 	font-weight: 700;
 	color: rgb(61 20 9 / 84%);
 	margin-bottom: 20px;
+}
+.modal__grats--score {
+	margin: 0;
 }
 
 .modal__message {
@@ -531,4 +534,27 @@ body {
 		height: 95%;
 		max-height: 300px;
 	}
+}
+
+.modal__list {
+	list-style: none;
+	counter-reset: my-awesome-counter;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.modal__list-item {
+	counter-increment: my-awesome-counter;
+	display: flex;
+	gap: 5px;
+	color: rgb(61 20 9 / 84%);
+	font-size: 20px;
+}
+
+.modal__list-item::before {
+	content: counter(my-awesome-counter) '. ';
+	color: rgb(61 20 9 / 84%);
+	font-weight: bold;
 }

@@ -16,9 +16,6 @@ export const state = {
 		matrix: [],
 		winnerCombination: [],
 		blankTableItem: null
-	},
-	topScoreList: {
-		pos1: ''
 	}
 };
 
