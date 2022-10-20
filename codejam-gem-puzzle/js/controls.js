@@ -92,6 +92,18 @@ const [controlsNewGame, controlsSave, controlsTopScore, controlsSound] =
 		parent: controlsContainer
 	});
 
+export const checkIsGameSaved = () => {
+	const data = getLocalStorageItems('savedGame');
+	if (data) {
+		state.isGameSaved = true;
+		controlsSave.textContent = 'Continue';
+		saveGameState();
+		stopTimer();
+	}
+};
+
+checkIsGameSaved();
+
 const soundIcon = createElem({
 	tag: 'img',
 	classN: 'sound__img',
