@@ -72,7 +72,8 @@ export const generateNewTable = () => {
 		callback: generateBtnsCallback,
 		parent: table
 	});
-	state.blankTableItem = tableBtns.value.at(-1).dataset.matrixId;
+	state.blankTableItem =
+		tableBtns.value[tableBtns.value.length - 1].dataset.matrixId;
 	tableBtnValues.value = tableBtns.value.map((el) => +el.dataset.matrixId);
 	state.winnerCombination = tableBtnValues.value;
 	btnMatrix.value = getMatrixFromArray(
