@@ -1,4 +1,5 @@
 import { state } from './utils/constants.js';
+import { startTimer } from './utils/counter.js';
 import { createElem } from './utils/createElements.js';
 import { getLocalStorageItems } from './utils/localStorage.js';
 
@@ -25,7 +26,7 @@ export const showTopScore = () => {
 		const topScoreMessage = createElem({
 			tag: 'p',
 			classN: 'modal__message',
-			txtContent: `Sorted by speed: moves / time`,
+			txtContent: `Sorted by time`,
 			parent: modalScore
 		});
 		const topScoreList = createElem({
@@ -69,5 +70,6 @@ darkBGscore.addEventListener('click', ({ target }) => {
 		modalScore.classList.remove('modal-window--active');
 		document.body.classList.remove('body-overflow');
 		modalScore.innerHTML = '';
+		if (!state.isGameSaved) startTimer();
 	}
 });

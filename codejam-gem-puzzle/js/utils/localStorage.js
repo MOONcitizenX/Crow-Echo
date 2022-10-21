@@ -1,5 +1,3 @@
-import { state } from './constants.js';
-
 export const getLocalStorageItems = (name) => {
 	if (localStorage.getItem(name)) {
 		const currentState = JSON.parse(localStorage.getItem(name));

@@ -1,4 +1,5 @@
 import controlsContainer, {
+	controlsContainerBottom,
 	counterContainer,
 	startNewGame
 } from './controls.js';
@@ -33,6 +34,7 @@ wrapper.appendChild(mainWrapper);
 
 mainWrapper.appendChild(counterContainer);
 mainWrapper.appendChild(controlsContainer);
+mainWrapper.appendChild(controlsContainerBottom);
 
 const mainContainer = createElem({
 	tag: 'div',

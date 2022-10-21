@@ -1,12 +1,10 @@
-import { btnMatrix, table, tableBtns, tableBtnValues } from './main.js';
+import { table } from './main.js';
 import { darkBGscore, modalScore, showTopScore } from './modalScore.js';
-import { setMatrixBtnsPosition } from './utils/btnPositioning.js';
 import { saveGameState, state } from './utils/constants.js';
 import { outPrint, startTimer, stopTimer } from './utils/counter.js';
 import {
 	createElem,
 	createElemsArray,
-	generateBtnsCallback,
 	generateNewTable,
 	generateSavedTable
 } from './utils/createElements.js';
@@ -14,9 +12,8 @@ import {
 	getLocalStorageItems,
 	setLocalStorageItems
 } from './utils/localStorage.js';
-import { getMatrixFromArray } from './utils/matrix.js';
 
-const controlButtonsArray = ['New game', 'Save', 'Top score', ''];
+const controlButtonsArray = ['Top score', 'Save', 'New game'];
 const frameSizeSelect = ['3x3', '4x4', '5x5', '6x6', '7x7', '8x8'];
 
 export const counterContainer = createElem({
@@ -75,23 +72,42 @@ controlsSelect.addEventListener('change', ({ target }) => {
 	if (+target.value !== state.currentFrameSize) {
 		state.currentFrameSize = +target.value;
 		if (state.isSoundOn) shuffleAudio.play();
-		generateNewTable();
+		// generateNewTable();
+
+		table.classList.add('table--active');
+		setTimeout(() => {
+			if (state.isSoundOn) shuffleAudio.play();
+			startNewGame();
+		}, 500);
+		setTimeout(() => {
+			table.classList.remove('table--active');
+		}, 1500);
 	}
 });
 
-const [controlsNewGame, controlsSave, controlsTopScore, controlsSound] =
-	createElemsArray({
-		arraySize: controlButtonsArray.length,
-		callback: (el, ind) => {
-			el = createElem({
-				tag: 'button',
-				classN: 'controls__btn',
-				txtContent: controlButtonsArray[ind]
-			});
-			return el;
-		},
-		parent: controlsContainer
-	});
+export const controlsContainerBottom = createElem({
+	tag: 'div',
+	classN: 'controls__container controls--bottom'
+});
+
+const controlsSound = createElem({
+	tag: 'button',
+	classN: 'controls__btn sound__btn',
+	parent: controlsContainer
+});
+
+const [controlsTopScore, controlsSave, controlsNewGame] = createElemsArray({
+	arraySize: controlButtonsArray.length,
+	callback: (el, ind) => {
+		el = createElem({
+			tag: 'button',
+			classN: 'controls__btn',
+			txtContent: controlButtonsArray[ind]
+		});
+		return el;
+	},
+	parent: controlsContainerBottom
+});
 
 export const checkIsGameSaved = (() => {
 	const data = getLocalStorageItems('savedGame');
@@ -160,6 +176,7 @@ controlsSave.addEventListener('click', () => {
 });
 
 controlsTopScore.addEventListener('click', () => {
+	stopTimer();
 	showTopScore();
 	document.body.classList.add('body-overflow');
 	darkBGscore.classList.add('darkBG--active');

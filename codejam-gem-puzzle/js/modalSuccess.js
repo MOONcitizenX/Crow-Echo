@@ -8,19 +8,19 @@ import {
 
 export const darkBGWin = createElem({
 	tag: 'div',
-	classN: 'darkBG'
+	classN: 'darkBG darkBG--active'
 });
 
 export const modalWin = createElem({
 	tag: 'div',
-	classN: 'modal-window',
+	classN: 'modal-window modal-window--active',
 	parent: darkBGWin
 });
 
 const winMessage = createElem({
 	tag: 'h2',
 	classN: 'modal__grats',
-	txtContent: 'Congratilations!',
+	txtContent: 'Congratulations!',
 	parent: modalWin
 });
 
@@ -88,10 +88,11 @@ winForm.addEventListener('submit', (e) => {
 		const currentResult = {
 			name: e.target[0].value,
 			info: `${state.moves} moves, ${getTimeFromSeconds()} minutes`,
-			value: state.moves / state.time
+			value: state.time
 		};
 		topList.push(currentResult);
 		topList.sort((a, b) => a.value - b.value);
+		console.log(topList);
 		setLocalStorageItems('topScoreList', topList.slice(0, 10));
 		winNameInput.value = '';
 	} else {
@@ -99,7 +100,7 @@ winForm.addEventListener('submit', (e) => {
 			{
 				name: e.target[0].value,
 				info: `${state.moves} moves, ${getTimeFromSeconds()} minutes`,
-				value: state.moves / state.time
+				value: state.time
 			}
 		];
 		setLocalStorageItems('topScoreList', topList);
@@ -127,5 +128,34 @@ darkBGWin.addEventListener('click', ({ target }) => {
 		darkBGWin.classList.remove('darkBG--active');
 		modalWin.classList.remove('modal-window--active');
 		document.body.classList.remove('body-overflow');
+		if (winNameInput.value === '') {
+			if (getLocalStorageItems('topScoreList')) {
+				const topList = getLocalStorageItems('topScoreList');
+				const currentResult = {
+					name: 'Anonymous',
+					info: `${
+						state.moves
+					} moves, ${getTimeFromSeconds()} minutes`,
+					value: state.time
+				};
+				topList.push(currentResult);
+				topList.sort((a, b) => a.value - b.value);
+				console.log(topList);
+				setLocalStorageItems('topScoreList', topList.slice(0, 10));
+				winNameInput.value = '';
+			} else {
+				const topList = [
+					{
+						name: 'Anonymous',
+						info: `${
+							state.moves
+						} moves, ${getTimeFromSeconds()} minutes`,
+						value: state.time
+					}
+				];
+				setLocalStorageItems('topScoreList', topList);
+				winNameInput.value = '';
+			}
+		}
 	}
 });
