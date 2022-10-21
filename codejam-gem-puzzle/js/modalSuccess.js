@@ -1,3 +1,4 @@
+import { tableBtns } from './main.js';
 import { state } from './utils/constants.js';
 import { getTimeFromSeconds, stopTimer } from './utils/counter.js';
 import { createElem } from './utils/createElements.js';
@@ -92,7 +93,6 @@ winForm.addEventListener('submit', (e) => {
 		};
 		topList.push(currentResult);
 		topList.sort((a, b) => a.value - b.value);
-		console.log(topList);
 		setLocalStorageItems('topScoreList', topList.slice(0, 10));
 		winNameInput.value = '';
 	} else {
@@ -106,6 +106,7 @@ winForm.addEventListener('submit', (e) => {
 		setLocalStorageItems('topScoreList', topList);
 		winNameInput.value = '';
 	}
+	tableBtns.value.forEach((el) => el.classList.add('table__btn--disabled'));
 	darkBGWin.classList.remove('darkBG--active');
 	modalWin.classList.remove('modal-window--active');
 	document.body.classList.remove('body-overflow');
@@ -140,7 +141,6 @@ darkBGWin.addEventListener('click', ({ target }) => {
 				};
 				topList.push(currentResult);
 				topList.sort((a, b) => a.value - b.value);
-				console.log(topList);
 				setLocalStorageItems('topScoreList', topList.slice(0, 10));
 				winNameInput.value = '';
 			} else {
@@ -156,6 +156,36 @@ darkBGWin.addEventListener('click', ({ target }) => {
 				setLocalStorageItems('topScoreList', topList);
 				winNameInput.value = '';
 			}
+		} else {
+			if (getLocalStorageItems('topScoreList')) {
+				const topList = getLocalStorageItems('topScoreList');
+				const currentResult = {
+					name: winNameInput.value,
+					info: `${
+						state.moves
+					} moves, ${getTimeFromSeconds()} minutes`,
+					value: state.time
+				};
+				topList.push(currentResult);
+				topList.sort((a, b) => a.value - b.value);
+				setLocalStorageItems('topScoreList', topList.slice(0, 10));
+				winNameInput.value = '';
+			} else {
+				const topList = [
+					{
+						name: winNameInput.value,
+						info: `${
+							state.moves
+						} moves, ${getTimeFromSeconds()} minutes`,
+						value: state.time
+					}
+				];
+				setLocalStorageItems('topScoreList', topList);
+				winNameInput.value = '';
+			}
 		}
+		tableBtns.value.forEach((el) =>
+			el.classList.add('table__btn--disabled')
+		);
 	}
 });
