@@ -8,12 +8,12 @@ import {
 
 export const darkBGWin = createElem({
 	tag: 'div',
-	classN: 'darkBG darkBG--active'
+	classN: 'darkBG'
 });
 
 export const modalWin = createElem({
 	tag: 'div',
-	classN: 'modal-window modal-window--active',
+	classN: 'modal-window',
 	parent: darkBGWin
 });
 
