@@ -129,61 +129,31 @@ darkBGWin.addEventListener('click', ({ target }) => {
 		darkBGWin.classList.remove('darkBG--active');
 		modalWin.classList.remove('modal-window--active');
 		document.body.classList.remove('body-overflow');
-		if (winNameInput.value === '') {
-			if (getLocalStorageItems('topScoreList')) {
-				const topList = getLocalStorageItems('topScoreList');
-				const currentResult = {
-					name: 'Anonymous',
-					info: `${
-						state.moves
-					} moves, ${getTimeFromSeconds()} minutes`,
-					value: state.time
-				};
-				topList.push(currentResult);
-				topList.sort((a, b) => a.value - b.value);
-				setLocalStorageItems('topScoreList', topList.slice(0, 10));
-				winNameInput.value = '';
-			} else {
-				const topList = [
-					{
-						name: 'Anonymous',
-						info: `${
-							state.moves
-						} moves, ${getTimeFromSeconds()} minutes`,
-						value: state.time
-					}
-				];
-				setLocalStorageItems('topScoreList', topList);
-				winNameInput.value = '';
-			}
+		if (getLocalStorageItems('topScoreList')) {
+			const topList = getLocalStorageItems('topScoreList');
+			const currentResult = {
+				name: winNameInput.value || 'Anonymous',
+				info: `${state.moves} moves, ${getTimeFromSeconds()} minutes`,
+				value: state.time
+			};
+			topList.push(currentResult);
+			topList.sort((a, b) => a.value - b.value);
+			setLocalStorageItems('topScoreList', topList.slice(0, 10));
+			winNameInput.value = '';
 		} else {
-			if (getLocalStorageItems('topScoreList')) {
-				const topList = getLocalStorageItems('topScoreList');
-				const currentResult = {
-					name: winNameInput.value,
+			const topList = [
+				{
+					name: winNameInput.value || 'Anonymous',
 					info: `${
 						state.moves
 					} moves, ${getTimeFromSeconds()} minutes`,
 					value: state.time
-				};
-				topList.push(currentResult);
-				topList.sort((a, b) => a.value - b.value);
-				setLocalStorageItems('topScoreList', topList.slice(0, 10));
-				winNameInput.value = '';
-			} else {
-				const topList = [
-					{
-						name: winNameInput.value,
-						info: `${
-							state.moves
-						} moves, ${getTimeFromSeconds()} minutes`,
-						value: state.time
-					}
-				];
-				setLocalStorageItems('topScoreList', topList);
-				winNameInput.value = '';
-			}
+				}
+			];
+			setLocalStorageItems('topScoreList', topList);
+			winNameInput.value = '';
 		}
+
 		tableBtns.value.forEach((el) =>
 			el.classList.add('table__btn--disabled')
 		);
