@@ -334,7 +334,10 @@ body {
 
 	user-select: none;
 	outline: none;
+	cursor: move; /* fallback if grab cursor is unsupported */
 	cursor: grab;
+	cursor: -moz-grab;
+	cursor: -webkit-grab;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -386,6 +389,12 @@ body {
 
 .table__btn--disabled {
 	pointer-events: none;
+}
+
+#dragged:active {
+	cursor: grabbing;
+	cursor: -moz-grabbing;
+	cursor: -webkit-grabbing;
 }
 
 @media screen and (max-width: 680px) {

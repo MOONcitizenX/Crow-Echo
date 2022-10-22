@@ -1,3 +1,4 @@
+import { tableBtns } from './main.js';
 import { state } from './utils/constants.js';
 import { startTimer } from './utils/counter.js';
 import { createElem } from './utils/createElements.js';
@@ -70,6 +71,12 @@ darkBGscore.addEventListener('click', ({ target }) => {
 		modalScore.classList.remove('modal-window--active');
 		document.body.classList.remove('body-overflow');
 		modalScore.innerHTML = '';
-		if (!state.isGameSaved) startTimer();
+		if (
+			!state.isGameSaved &&
+			!tableBtns.value.some((el) =>
+				el.classList.contains('table__btn--disabled')
+			)
+		)
+			startTimer();
 	}
 });

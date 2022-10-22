@@ -52,7 +52,11 @@ export const generateBtnsCallback = (el, ind, arr) => {
 		attributes: {
 			style: `width:${100 / state.currentFrameSize}%; height:${
 				100 / state.currentFrameSize
-			}%; background-image:url("./assets/img/wood${randomNum(1, 7)}.jpg")`
+			}%; background-image:url("./assets/img/wood${randomNum(
+				1,
+				7
+			)}.jpg")`,
+			draggable: 'true'
 		}
 	});
 	if (arr.length < 10) el.style.fontSize = '7em';
