@@ -93,6 +93,54 @@ table.addEventListener('click', ({ target }) => {
 		}
 	}
 });
+
+table.addEventListener('dragstart', (e) => {
+	e.target.setAttribute('id', 'dragged');
+});
+table.addEventListener('dragend', (e) => {
+	e.preventDefault();
+	e.target.removeAttribute('id');
+});
+table.addEventListener('dragover', (e) => {
+	e.preventDefault();
+	if (e.target.closest('.table__btn')) {
+		e.dataTransfer.dropEffect = 'none';
+	} else {
+		e.dataTransfer.dropEffect = 'copy';
+	}
+});
+
+table.addEventListener('drop', (e) => {
+	const draggedBtn = document.getElementById('dragged');
+	if (e.target == table) {
+		e.preventDefault();
+
+		const draggedBtnCoords = findItemCoords(
+			draggedBtn.dataset.matrixId,
+			btnMatrix.value
+		);
+		const blankBtnCoords = findItemCoords(
+			state.blankTableItem,
+			btnMatrix.value
+		);
+
+		const isValidToSwap = checkIsValidToSwap(
+			draggedBtnCoords,
+			blankBtnCoords
+		);
+		if (isValidToSwap) {
+			swapItems(draggedBtnCoords, blankBtnCoords, btnMatrix.value);
+			setMatrixBtnsPosition(btnMatrix.value, tableBtns.value);
+			countMoves();
+			state.currentMatrix = btnMatrix.value;
+			if (state.isSoundOn) clickAudio.play();
+			if (isSuccess(btnMatrix.value)) {
+				showModalSuccess();
+			}
+		}
+	}
+});
+
 startNewGame();
 
 export default mainContainer;

@@ -436,8 +436,9 @@ body {
 
 	user-select: none;
 	outline: none;
-	cursor: -webkit-grab;
+	cursor: move; /* fallback if grab cursor is unsupported */
 	cursor: grab;
+	cursor: -webkit-grab;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -495,6 +496,11 @@ body {
 
 .table__btn--disabled {
 	pointer-events: none;
+}
+
+#dragged:active {
+	cursor: grabbing;
+	cursor: -webkit-grabbing;
 }
 
 @media screen and (max-width: 680px) {
