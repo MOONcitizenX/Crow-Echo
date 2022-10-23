@@ -9,12 +9,12 @@ import {
 
 export const darkBGWin = createElem({
 	tag: 'div',
-	classN: 'darkBG'
+	classN: 'darkBG darkBG--active'
 });
 
 export const modalWin = createElem({
 	tag: 'div',
-	classN: 'modal-window',
+	classN: 'modal-window modal-window--active',
 	parent: darkBGWin
 });
 
@@ -82,30 +82,45 @@ const winSaveMessageSmall = createElem({
 	parent: modalWin
 });
 
-winForm.addEventListener('submit', (e) => {
-	e.preventDefault();
+const updateLocalStorageTopScore = (frameSize) => {
 	if (getLocalStorageItems('topScoreList')) {
 		const topList = getLocalStorageItems('topScoreList');
 		const currentResult = {
-			name: e.target[0].value,
-			info: `${state.moves} moves, ${getTimeFromSeconds()} minutes`,
+			name: winNameInput.value || 'Anonymous',
+			info: `${state.moves} moves, ${getTimeFromSeconds()}`,
 			value: state.time
 		};
-		topList.push(currentResult);
-		topList.sort((a, b) => a.value - b.value);
-		setLocalStorageItems('topScoreList', topList.slice(0, 10));
+		topList[`frame${frameSize}`].push(currentResult);
+		topList[`frame${frameSize}`].sort((a, b) => a.value - b.value);
+		topList[`frame${frameSize}`].splice(10);
+		setLocalStorageItems('topScoreList', topList);
 		winNameInput.value = '';
 	} else {
-		const topList = [
-			{
-				name: e.target[0].value,
-				info: `${state.moves} moves, ${getTimeFromSeconds()} minutes`,
-				value: state.time
-			}
-		];
+		const topList = {
+			frame3: [],
+			frame4: [],
+			frame5: [],
+			frame6: [],
+			frame7: [],
+			frame8: []
+		};
+
+		const currentResult = {
+			name: winNameInput.value || 'Anonymous',
+			info: `${state.moves} moves, ${getTimeFromSeconds()}`,
+			value: state.time
+		};
+
+		topList[`frame${frameSize}`].push(currentResult);
+
 		setLocalStorageItems('topScoreList', topList);
 		winNameInput.value = '';
 	}
+};
+
+winForm.addEventListener('submit', (e) => {
+	e.preventDefault();
+	updateLocalStorageTopScore(state.currentFrameSize);
 	tableBtns.value.forEach((el) => el.classList.add('table__btn--disabled'));
 	darkBGWin.classList.remove('darkBG--active');
 	modalWin.classList.remove('modal-window--active');
@@ -119,7 +134,7 @@ export const showModalSuccess = () => {
 		modalWin.classList.add('modal-window--active');
 		winScore.textContent = `${
 			state.moves
-		} moves and ${getTimeFromSeconds()} minutes`;
+		} moves and ${getTimeFromSeconds()}`;
 		stopTimer();
 	}, 300);
 };
@@ -129,30 +144,7 @@ darkBGWin.addEventListener('click', ({ target }) => {
 		darkBGWin.classList.remove('darkBG--active');
 		modalWin.classList.remove('modal-window--active');
 		document.body.classList.remove('body-overflow');
-		if (getLocalStorageItems('topScoreList')) {
-			const topList = getLocalStorageItems('topScoreList');
-			const currentResult = {
-				name: winNameInput.value || 'Anonymous',
-				info: `${state.moves} moves, ${getTimeFromSeconds()} minutes`,
-				value: state.time
-			};
-			topList.push(currentResult);
-			topList.sort((a, b) => a.value - b.value);
-			setLocalStorageItems('topScoreList', topList.slice(0, 10));
-			winNameInput.value = '';
-		} else {
-			const topList = [
-				{
-					name: winNameInput.value || 'Anonymous',
-					info: `${
-						state.moves
-					} moves, ${getTimeFromSeconds()} minutes`,
-					value: state.time
-				}
-			];
-			setLocalStorageItems('topScoreList', topList);
-			winNameInput.value = '';
-		}
+		updateLocalStorageTopScore(state.currentFrameSize);
 
 		tableBtns.value.forEach((el) =>
 			el.classList.add('table__btn--disabled')
