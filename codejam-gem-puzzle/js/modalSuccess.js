@@ -135,6 +135,9 @@ export const showModalSuccess = () => {
 		winScore.textContent = `${
 			state.moves
 		} moves and ${getTimeFromSeconds()}`;
+		winSaveMessageSmall.textContent = `Hooray! You solved the puzzle in ${getTimeFromSeconds()} and ${
+			state.moves
+		} moves!`;
 		stopTimer();
 	}, 300);
 };
