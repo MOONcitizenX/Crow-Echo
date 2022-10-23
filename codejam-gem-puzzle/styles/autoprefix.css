@@ -551,7 +551,7 @@ body {
 	height: 95%;
 	max-height: 500px;
 
-	padding: 70px 30px;
+	padding: 75px 30px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -784,6 +784,7 @@ body {
 		max-width: 400px;
 		height: 95%;
 		max-height: 400px;
+		padding: 60px 20px;
 	}
 }
 @media screen and (max-width: 440px) {
@@ -792,6 +793,7 @@ body {
 		max-width: 300px;
 		height: 95%;
 		max-height: 300px;
+		padding: 45px 20px;
 	}
 }
 
