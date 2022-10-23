@@ -58,7 +58,11 @@ const scoreInfoContainer = createElem({
 });
 
 export const showTopScore = () => {
-	// modalScore.append(scoreSizeBtns);
+	checkAndDisplayResults(
+		[...document.querySelectorAll('.radio__round')].find(
+			(el) => el.checked === true
+		).value
+	);
 };
 
 const checkAndDisplayResults = (value) => {
