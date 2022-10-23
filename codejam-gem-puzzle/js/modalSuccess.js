@@ -9,12 +9,12 @@ import {
 
 export const darkBGWin = createElem({
 	tag: 'div',
-	classN: 'darkBG darkBG--active'
+	classN: 'darkBG'
 });
 
 export const modalWin = createElem({
 	tag: 'div',
-	classN: 'modal-window modal-window--active',
+	classN: 'modal-window',
 	parent: darkBGWin
 });
 
@@ -82,7 +82,7 @@ const winSaveMessageSmall = createElem({
 	parent: modalWin
 });
 
-const updateLocalStorageTopScore = (frameSize) => {
+export const updateLocalStorageTopScore = (frameSize) => {
 	if (getLocalStorageItems('topScoreList')) {
 		const topList = getLocalStorageItems('topScoreList');
 		const currentResult = {

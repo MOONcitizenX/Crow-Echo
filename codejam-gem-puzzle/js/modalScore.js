@@ -68,7 +68,7 @@ export const showTopScore = () => {
 const checkAndDisplayResults = (value) => {
 	const data = getLocalStorageItems('topScoreList');
 	scoreInfoContainer.innerHTML = '';
-	if (data[`frame${value}`].length) {
+	if (data && data[`frame${value}`].length) {
 		const winnersNum = data[`frame${value}`].length;
 		const topScoreHeader = createElem({
 			tag: 'h2',
@@ -118,7 +118,6 @@ const checkAndDisplayResults = (value) => {
 		});
 	}
 };
-checkAndDisplayResults(3);
 
 darkBGscore.addEventListener('click', ({ target }) => {
 	if (!target.closest('.modal-window')) {
