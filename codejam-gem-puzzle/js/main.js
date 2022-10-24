@@ -1,6 +1,7 @@
 import controlsContainer, {
 	controlsContainerBottom,
 	counterContainer,
+	playSound,
 	startNewGame
 } from './controls.js';
 import { showModalSuccess } from './modalSuccess.js';
@@ -87,7 +88,7 @@ table.addEventListener('click', ({ target }) => {
 		setMatrixBtnsPosition(btnMatrix.value, tableBtns.value);
 		countMoves();
 		state.currentMatrix = btnMatrix.value;
-		if (state.isSoundOn) clickAudio.play();
+		playSound(clickAudio);
 		if (isSuccess(btnMatrix.value)) {
 			showModalSuccess();
 		}
