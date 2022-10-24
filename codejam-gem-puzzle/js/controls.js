@@ -68,19 +68,39 @@ const controlsSelectOptions = createElemsArray({
 	parent: controlsSelect
 });
 
+export const playSound = (sound) => {
+	if (state.isSoundOn) {
+		sound.currentTime = 0;
+		sound.play();
+	}
+};
+
+const disableControls = (flag) => {
+	if (flag === true) {
+		controlsSelect.style.pointerEvents = 'none';
+		controlsNewGame.style.pointerEvents = 'none';
+		controlsSave.style.pointerEvents = 'none';
+	} else {
+		controlsSelect.style.pointerEvents = 'all';
+		controlsNewGame.style.pointerEvents = 'all';
+		controlsSave.style.pointerEvents = 'all';
+	}
+};
+
 controlsSelect.addEventListener('change', ({ target }) => {
 	if (+target.value !== state.currentFrameSize) {
+		disableControls(true);
 		state.currentFrameSize = +target.value;
-		if (state.isSoundOn) shuffleAudio.play();
-		// generateNewTable();
+		playSound(shuffleAudio);
 
 		table.classList.add('table--active');
 		setTimeout(() => {
-			if (state.isSoundOn) shuffleAudio.play();
+			playSound(shuffleAudio);
 			startNewGame();
 		}, 500);
 		setTimeout(() => {
 			table.classList.remove('table--active');
+			disableControls(false);
 		}, 1500);
 	}
 });
@@ -141,12 +161,14 @@ const shuffleAudio = new Audio('assets/sounds/shuffle.mp3');
 
 controlsNewGame.addEventListener('click', () => {
 	table.classList.add('table--active');
+	disableControls(true);
 	setTimeout(() => {
-		if (state.isSoundOn) shuffleAudio.play();
+		playSound(shuffleAudio);
 		startNewGame();
 	}, 500);
 	setTimeout(() => {
 		table.classList.remove('table--active');
+		disableControls(false);
 	}, 1500);
 });
 
@@ -163,12 +185,14 @@ export const startNewGame = () => {
 controlsSave.addEventListener('click', () => {
 	if (state.isGameSaved) {
 		table.classList.add('table--active');
+		disableControls(true);
 		setTimeout(() => {
-			if (state.isSoundOn) shuffleAudio.play();
+			playSound(shuffleAudio);
 			loadCurrentGame();
 		}, 500);
 		setTimeout(() => {
 			table.classList.remove('table--active');
+			disableControls(false);
 		}, 1500);
 	} else {
 		saveCurrentGame();
