@@ -56,7 +56,8 @@ export const generateBtnsCallback = (el, ind, arr) => {
 				1,
 				7
 			)}.jpg")`,
-			draggable: 'true'
+			draggable: 'true',
+			tabIndex: '-1'
 		}
 	});
 	if (arr.length < 10) el.style.fontSize = '7em';
