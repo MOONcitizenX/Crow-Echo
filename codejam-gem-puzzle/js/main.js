@@ -7,7 +7,7 @@ import controlsContainer, {
 import { showModalSuccess } from './modalSuccess.js';
 import { setMatrixBtnsPosition } from './utils/btnPositioning.js';
 import { state } from './utils/constants.js';
-import { countMoves } from './utils/counter.js';
+import { countMoves, startTimer } from './utils/counter.js';
 import {
 	createElem,
 	createElemsArray,
@@ -81,6 +81,7 @@ table.addEventListener('click', ({ target }) => {
 		state.blankTableItem,
 		btnMatrix.value
 	);
+	startTimer();
 
 	const isValidToSwap = checkIsValidToSwap(clickedBtnCoords, blankBtnCoords);
 	if (isValidToSwap) {
