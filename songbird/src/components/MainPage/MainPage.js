@@ -1,10 +1,9 @@
-import { Component } from '../Component';
-
-export class MainPage extends Component {
-	constructor() {
-		super({
-			tag: 'main',
-			className: 'main'
-		});
-	}
+import { BaseElement } from '../../BaseElement';
+export class MainPage extends BaseElement {
+    constructor() {
+        super({
+            tag: 'main',
+            className: 'main'
+        });
+    }
 }
