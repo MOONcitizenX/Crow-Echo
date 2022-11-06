@@ -2,6 +2,7 @@ import { BaseElement } from '../../BaseElement';
 import { LangSwitch } from './LangSwitch';
 import { Logo } from './Logo';
 import { ThemeSwitch } from './ThemeSwitch';
+import featherImg from '../../assets/svg/feather_header.svg';
 export class TopContainer extends BaseElement {
     constructor(langState, themeState) {
         super({
@@ -18,6 +19,13 @@ export class TopContainer extends BaseElement {
         langSwitch.render();
         const themeSwitch = new ThemeSwitch(this.theme);
         themeSwitch.render();
-        this.elem.append(logo.elem, langSwitch.elem, themeSwitch.elem);
+        const feather = new BaseElement({
+            tag: 'img',
+            className: 'header__feather',
+            attr: {
+                src: featherImg
+            }
+        });
+        this.elem.append(logo.elem, langSwitch.elem, themeSwitch.elem, feather.elem);
     }
 }
