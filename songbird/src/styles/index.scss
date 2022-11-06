@@ -22,3 +22,36 @@
 			url('../assets/fonts/roboto-v30-latin_cyrillic-700.woff')
 			format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
+@font-face {
+	font-family: 'Sant Joan Despi';
+	font-style: normal;
+	font-weight: 400;
+	src: local(''),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */
+			url('../assets/fonts/SantJoanDespi-Regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@import './vars.scss';
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+
+	background-color: var(--bg-color);
+
+	font-family: 'Roboto', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 28px;
+
+	transition: all 0.2s ease-in-out;
+}

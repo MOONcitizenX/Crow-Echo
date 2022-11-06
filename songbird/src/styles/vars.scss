@@ -1,0 +1,16 @@
+$main-color: #17212b;
+$frame-color: #99b5d8;
+$text-color: #17212b;
+$text-active-color: #ffffff;
+$hover-color: #5788c5;
+$red-color: #f0010f;
+$gray-color: #eff3f8;
+
+:root {
+	--bg-color: #17212b;
+	--text-active-color: #ffffff;
+	.light {
+		--bg-color: #fff;
+		--text-active-color: #000000;
+	}
+}

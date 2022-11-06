@@ -1,0 +1,163 @@
+@import '../../styles/vars.scss';
+
+.header {
+	padding: 20px;
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+
+	font-size: 24px;
+	line-height: 38px;
+	&__top-container {
+		display: flex;
+		align-items: center;
+		gap: 50px;
+	}
+	&__logo {
+		margin-right: auto;
+		user-select: none;
+		font-family: 'Sant Joan Despi';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 74px;
+		line-height: 89px;
+		&_crow {
+			color: var(--text-active-color);
+		}
+		&_echo {
+			color: $red-color;
+		}
+	}
+}
+
+.nav {
+	width: 100%;
+
+	margin-right: auto;
+	display: flex;
+	align-items: center;
+	&__item {
+		width: 100%;
+		padding: 5px;
+		text-align: center;
+		color: $main-color;
+		cursor: pointer;
+		user-select: none;
+		background-color: $frame-color;
+		transition: all 0.2s ease-in-out;
+		&:hover {
+			background-color: $hover-color;
+			color: $text-active-color;
+		}
+		&_main {
+			border-top-left-radius: 13px;
+			border-bottom-left-radius: 13px;
+		}
+		&_play {
+			border-top-right-radius: 13px;
+			border-bottom-right-radius: 13px;
+		}
+		&_active {
+			background-color: $hover-color;
+			color: $text-active-color;
+		}
+	}
+}
+
+.lang-switch {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 152px;
+	height: 40px;
+	border-radius: 22px;
+	background-color: $frame-color;
+	border: 2px solid $frame-color;
+	overflow: hidden;
+	cursor: pointer;
+	user-select: none;
+	transition: all 0.2s ease-in-out;
+	&_active {
+		.lang-switch__btn_ru {
+			background-color: transparent;
+			color: $text-active-color;
+		}
+		.lang-switch__btn_en {
+			background-color: var(--bg-color);
+			color: $frame-color;
+		}
+
+		/* slide div*/
+	}
+	&__btn {
+		&_ru {
+			width: 100%;
+			font-size: 18px;
+			text-align: center;
+			padding: 2px 20px;
+			background-color: var(--bg-color);
+			color: $frame-color;
+		}
+		&_en {
+			width: 100%;
+			font-size: 18px;
+			text-align: center;
+			padding: 2px 20px;
+			background-color: transparent;
+			color: $text-active-color;
+		}
+	}
+	&__content {
+		color: $text-active-color;
+	}
+	&:hover {
+		background-color: $hover-color;
+		border: 2px solid $hover-color;
+	}
+}
+
+// THEME
+
+.theme-switch {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&__input {
+		height: 0;
+		width: 0;
+		visibility: hidden;
+	}
+	&__label {
+		cursor: pointer;
+		text-indent: -9999px;
+		width: 87px;
+		height: 45px;
+		background: $frame-color;
+		display: block;
+		border-radius: 22px;
+		position: relative;
+		&:after {
+			content: '';
+			position: absolute;
+			top: 2px;
+			left: 2px;
+			width: 41px;
+			height: 41px;
+			background-color: $gray-color;
+			background-image: url(../../assets/svg/moon.svg);
+			background-repeat: no-repeat;
+			background-position: center;
+			border-radius: 50%;
+			transition: all 0.2s ease-in-out;
+		}
+	}
+}
+
+.theme-switch__input:checked + .theme-switch__label:after {
+	left: calc(100% - 2px);
+	transform: translateX(-100%);
+	background-image: url(../../assets/svg/sun.svg);
+}
