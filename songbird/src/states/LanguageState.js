@@ -1,4 +1,4 @@
-import { Observable } from './Observable';
+import { Observable } from '../utils/Observable';
 
 export class LanguageState extends Observable {
 	constructor(initialVal) {
