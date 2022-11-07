@@ -1,9 +1,10 @@
 import { BaseElement } from '../../BaseElement';
+
 export class MainPage extends BaseElement {
-    constructor() {
-        super({
-            tag: 'main',
-            className: 'main'
-        });
-    }
+	constructor() {
+		super({
+			tag: 'main',
+			className: 'main'
+		});
+	}
 }
