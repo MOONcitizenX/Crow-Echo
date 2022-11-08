@@ -11,7 +11,8 @@ export class App {
 		const root = document.getElementById('root');
 		const header = new Header(langState, themeState);
 		header.render();
-		const main = new MainPage();
+		const main = new MainPage(langState);
+		main.renderHome();
 		const footer = new Footer();
 		footer.render();
 		if (root) {

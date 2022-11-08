@@ -4,7 +4,7 @@
 	width: 100%;
 	background: linear-gradient(180deg, #99b5d8 0%, rgba(153, 181, 216, 0) 100%),
 		$hover-color;
-	color: $text-active-color;
+	color: var(--text-active-color);
 	&__container {
 		padding: 18px 20px;
 
@@ -25,12 +25,24 @@
 	&__link {
 		transition: all 0.2s ease-in-out;
 	}
-	&__link:hover,
+	&__link:hover {
+		color: var(--bg-color);
+	}
 	&__logo_img:hover {
-		filter: brightness(0) saturate(100%) invert(7%) sepia(4%)
-			saturate(6869%) hue-rotate(171deg) brightness(98%) contrast(88%);
+		filter: brightness(0) saturate(100%) invert(8%) sepia(41%)
+			saturate(649%) hue-rotate(169deg) brightness(90%) contrast(90%);
 	}
 	&__year {
 		user-select: none;
+		transition: all 0.2s ease-in-out;
+	}
+}
+
+.light .footer__logo_img {
+	filter: brightness(0) saturate(100%) invert(8%) sepia(41%) saturate(649%)
+		hue-rotate(169deg) brightness(90%) contrast(90%);
+	&:hover {
+		filter: brightness(0) saturate(100%) invert(100%) sepia(99%)
+			saturate(2%) hue-rotate(121deg) brightness(102%) contrast(101%);
 	}
 }
