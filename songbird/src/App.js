@@ -1,8 +1,8 @@
 import { Footer } from './components/Footer/Footer';
 import { Header } from './components/Header/Header';
 import { MainPage } from './components/MainPage/MainPage';
-import { LanguageState } from './utils/LanguageState';
-import { ThemeState } from './utils/ThemeState';
+import { LanguageState } from './states/LanguageState';
+import { ThemeState } from './states/ThemeState';
 
 export class App {
 	runApp() {
@@ -13,6 +13,7 @@ export class App {
 		header.render();
 		const main = new MainPage();
 		const footer = new Footer();
+		footer.render();
 		if (root) {
 			root.append(header.elem, main.elem, footer.elem);
 		}
