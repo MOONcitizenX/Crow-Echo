@@ -18,17 +18,17 @@ export class ThemeSwitch extends BaseElement {
 			className: 'theme-switch__input',
 			attr: {
 				type: 'checkbox',
-				id: 'themeSwitch'
+				id: 'themeSwitch',
+				onchange: () => {
+					themeState.set(themeState.get() === 'dark' ? 'light' : 'dark');
+				}
 			}
 		});
 		this.label = new BaseElement({
 			tag: 'label',
 			className: 'theme-switch__label',
 			attr: {
-				htmlFor: 'themeSwitch',
-				onclick: () => {
-					themeState.set(themeState.get() === 'dark' ? 'light' : 'dark');
-				}
+				htmlFor: 'themeSwitch'
 			}
 		});
 	}
