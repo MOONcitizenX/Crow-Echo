@@ -55,3 +55,18 @@ body {
 
 	transition: all 0.2s ease-in-out;
 }
+
+a,
+a:hover,
+a:focus,
+a:active {
+	text-decoration: none;
+	color: inherit;
+}
+
+#root {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
