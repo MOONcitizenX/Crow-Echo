@@ -18,6 +18,6 @@ export class Logo extends BaseElement {
 		});
 	}
 	render() {
-		this.elem.append(this.spanCrow.elem, this.spanEcho.elem);
+		this.addChildren(this.spanCrow.elem, this.spanEcho.elem);
 	}
 }

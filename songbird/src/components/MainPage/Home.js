@@ -29,6 +29,6 @@ export class Home extends BaseElement {
 	render() {
 		this.update(this.lang.get());
 		this.lang.add(this.update);
-		this.elem.append(this.quote.elem, this.crowsImg.elem, this.crow.elem);
+		this.addChildren(this.quote, this.crowsImg.elem, this.crow.elem);
 	}
 }

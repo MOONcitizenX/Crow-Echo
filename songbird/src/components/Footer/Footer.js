@@ -12,6 +12,6 @@ export class Footer extends BaseElement {
 	render() {
 		const container = new FooterContainer();
 		container.render();
-		this.elem.append(container.elem);
+		this.addChildren(container.elem);
 	}
 }

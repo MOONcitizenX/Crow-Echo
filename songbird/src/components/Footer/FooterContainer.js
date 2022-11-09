@@ -39,6 +39,6 @@ export class FooterContainer extends BaseElement {
 	}
 	render() {
 		this.logo.elem.append(this.logoImg.elem);
-		this.elem.append(this.logo.elem, this.year.elem, this.link.elem);
+		this.addChildren(this.logo.elem, this.year.elem, this.link.elem);
 	}
 }

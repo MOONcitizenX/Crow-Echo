@@ -33,6 +33,6 @@ export class ThemeSwitch extends BaseElement {
 		});
 	}
 	render() {
-		this.elem.append(this.input.elem, this.label.elem);
+		this.addChildren(this.input.elem, this.label.elem);
 	}
 }

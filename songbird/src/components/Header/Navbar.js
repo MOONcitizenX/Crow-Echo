@@ -27,7 +27,7 @@ export class Navbar extends BaseElement {
 		});
 	}
 	render() {
-		this.elem.append(this.mainLink.elem, this.quizLink.elem, this.galleryLink.elem);
+		this.addChildren(this.mainLink.elem, this.quizLink.elem, this.galleryLink.elem);
 		this.update(this.lang.get());
 		this.lang.add(this.update);
 	}

@@ -27,6 +27,6 @@ export class TopContainer extends BaseElement {
 				src: featherImg
 			}
 		});
-		this.elem.append(logo.elem, langSwitch.elem, themeSwitch.elem, feather.elem);
+		this.addChildren(logo.elem, langSwitch.elem, themeSwitch.elem, feather.elem);
 	}
 }

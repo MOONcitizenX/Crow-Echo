@@ -31,6 +31,6 @@ export class LangSwitch extends BaseElement {
 		this.update(this.lang.get());
 	}
 	render() {
-		this.elem.append(this.switchTextRu.elem, this.switchTextEn.elem);
+		this.addChildren(this.switchTextRu.elem, this.switchTextEn.elem);
 	}
 }

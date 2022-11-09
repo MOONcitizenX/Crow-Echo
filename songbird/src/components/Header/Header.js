@@ -17,6 +17,6 @@ export class Header extends BaseElement {
 		topContainer.render();
 		const nav = new Navbar(this.lang);
 		nav.render();
-		this.elem.append(topContainer.elem, nav.elem);
+		this.addChildren(topContainer.elem, nav.elem);
 	}
 }
