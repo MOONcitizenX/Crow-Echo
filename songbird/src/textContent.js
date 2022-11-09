@@ -4,24 +4,28 @@ const textContent = {
 		quiz: 'Викторина',
 		gallery: 'Галерея',
 		quote: '"Если бы у людей были крылья и черные перья, немногие из них были бы достаточно умны, чтобы стать воронами."',
-		warmup: 'Разминка',
-		sparrows: 'Воробьиные',
-		forest_birds: 'Лесные птицы',
-		songbirds: 'Певчие птицы',
-		birds_of_prey: 'Хищные птицы',
-		seabirds: 'Морские птицы'
+		quiz_levels: [
+			'Разминка',
+			'Воробьиные',
+			'Лесные птицы',
+			'Певчие птицы',
+			'Хищные птицы',
+			'Морские птицы'
+		]
 	},
 	en: {
 		home: 'Home',
 		quiz: 'Quiz',
 		gallery: 'Gallery',
 		quote: '"If men had wings and bore black feathers, Few of them would be clever enough to be crows."',
-		warmup: 'Warmup',
-		sparrows: 'Sparrows',
-		forest_birds: 'Forest birds',
-		songbirds: 'Songbirds',
-		birds_of_prey: 'Birds of prey',
-		seabirds: 'Seabirds'
+		quiz_levels: [
+			'Warmup',
+			'Sparrows',
+			'Forest birds',
+			'Songbirds',
+			'Birds of prey',
+			'Seabirds'
+		]
 	}
 };
 
