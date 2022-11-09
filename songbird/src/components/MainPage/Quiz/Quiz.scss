@@ -1,0 +1,51 @@
+@import '../../../styles/vars.scss';
+
+.quiz {
+	width: 100%;
+	padding: 45px 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 45px;
+	&__question-card {
+		padding: 18px 74px 18px 43px;
+		position: relative;
+		width: 100%;
+		background-color: $frame-color;
+		border-radius: 13px;
+		&_img {
+			width: 227px;
+			height: 227px;
+			border-radius: 50%;
+			background-color: $red-color;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			top: 10px;
+			left: 20px;
+			width: 227px;
+			aspect-ratio: 1/1;
+			background-image: url('../../../assets/svg/pngwing\ 2.svg');
+		}
+	}
+}
+
+.quiz-levels {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	border-radius: 13px;
+	background-color: $frame-color;
+	overflow: hidden;
+	&__item {
+		padding: 5px 0;
+		width: 100%;
+		text-align: center;
+		line-height: 38px;
+		user-select: none;
+		&_active {
+			color: $text-active-color;
+			background-color: $hover-color;
+		}
+	}
+}
