@@ -1,6 +1,6 @@
 export class BaseElement {
 	constructor({ tag = 'div', className = '', textContent = '', attr }) {
-		this.children = [];
+		this._children = [];
 		this._elem = document.createElement(tag);
 		this._elem.className = className;
 		this._elem.textContent = textContent;
@@ -11,6 +11,9 @@ export class BaseElement {
 	get elem() {
 		return this._elem;
 	}
+	get children() {
+		return this._children;
+	}
 	addChildren(...element) {
 		element.forEach((elem) => {
 			if (elem instanceof HTMLElement) {
@@ -18,12 +21,12 @@ export class BaseElement {
 			}
 			else {
 				this._elem.append(elem.elem);
-				this.children.push(elem);
+				this._children.push(elem);
 			}
 		});
 	}
 	destroy() {
-		this.children.forEach((child) => child.destroy());
+		this._children.forEach((child) => child.destroy());
 		this._elem.remove();
 	}
 }
