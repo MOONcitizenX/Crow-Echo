@@ -1,0 +1,23 @@
+@import '../../styles/vars.scss';
+
+.error {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 40px;
+	color: var(--text-active-color);
+	transition: all 0.2s ease-in-out;
+	user-select: none;
+
+	&__message {
+		font-size: 24px;
+	}
+	&__status {
+		font-family: 'Sant Joan Despi';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 120px;
+		line-height: 130px;
+	}
+}

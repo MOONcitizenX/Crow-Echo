@@ -11,7 +11,9 @@ const textContent = {
 			'Певчие птицы',
 			'Хищные птицы',
 			'Морские птицы'
-		]
+		],
+		error_message:
+			'Что-то пошло не так :( Пожалуйста, перейдите на другую страницу.'
 	},
 	en: {
 		home: 'Home',
@@ -25,7 +27,9 @@ const textContent = {
 			'Songbirds',
 			'Birds of prey',
 			'Seabirds'
-		]
+		],
+		error_message:
+			'Something went wrong ;( Please redirect to another page.'
 	}
 };
 
