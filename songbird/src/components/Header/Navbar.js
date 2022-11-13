@@ -57,4 +57,8 @@ export class Navbar extends BaseElement {
 		window.addEventListener('hashchange', this.onHashChangeHandler);
 		this.onHashChangeHandler();
 	}
+	destroy() {
+		this.lang.remove(this.update);
+		super.destroy();
+	}
 }

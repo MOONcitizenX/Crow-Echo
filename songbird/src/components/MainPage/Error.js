@@ -21,11 +21,19 @@ export class Error extends BaseElement {
 			className: 'error__status',
 			textContent: '404'
 		});
+		this.crow = new BaseElement({
+			tag: 'div',
+			className: 'home__crow'
+		});
 		this.lang = langState;
 	}
 	render() {
 		this.update(this.lang.get());
 		this.lang.add(this.update);
-		this.addChildren(this.message, this.status.elem);
+		this.addChildren(this.message, this.status.elem, this.crow.elem);
+	}
+	destroy() {
+		this.lang.remove(this.update);
+		super.destroy();
 	}
 }

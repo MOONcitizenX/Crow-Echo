@@ -26,4 +26,8 @@ export class QuizLevels extends BaseElement {
 		this.lang.add(this.update);
 		this.levels.forEach((el) => this.addChildren(el));
 	}
+	destroy() {
+		this.lang.remove(this.update);
+		super.destroy();
+	}
 }

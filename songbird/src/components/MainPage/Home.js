@@ -31,4 +31,8 @@ export class Home extends BaseElement {
 		this.lang.add(this.update);
 		this.addChildren(this.quote, this.crowsImg.elem, this.crow.elem);
 	}
+	destroy() {
+		this.lang.remove(this.update);
+		super.destroy();
+	}
 }
