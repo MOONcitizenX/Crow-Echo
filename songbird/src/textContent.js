@@ -12,8 +12,9 @@ const textContent = {
 			'Хищные птицы',
 			'Морские птицы'
 		],
-		error_message:
-			'Что-то пошло не так :( Пожалуйста, перейдите на другую страницу.'
+		error_message: 'Что-то пошло не так :( Пожалуйста, перейдите на другую страницу.',
+		score_msg: 'Счет: ',
+		netx_btn: 'Следующий вопрос'
 	},
 	en: {
 		home: 'Home',
@@ -28,9 +29,9 @@ const textContent = {
 			'Birds of prey',
 			'Seabirds'
 		],
-		error_message:
-			'Something went wrong ;( Please redirect to another page.'
+		error_message: 'Something went wrong ;( Please redirect to another page.',
+		score_msg: 'Score: ',
+		netx_btn: 'Next question'
 	}
 };
-
 export default textContent;
