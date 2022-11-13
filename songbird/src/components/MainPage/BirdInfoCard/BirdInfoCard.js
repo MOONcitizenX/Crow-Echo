@@ -1,10 +1,10 @@
 import { BaseElement } from '../../../BaseElement';
 
-export class BirdInfo extends BaseElement {
+export class BirdInfoCard extends BaseElement {
 	constructor(langState) {
 		super({
 			tag: 'div',
-			className: 'quiz__bird-info'
+			className: 'quiz-card'
 		});
 		this.lang = langState;
 	}
