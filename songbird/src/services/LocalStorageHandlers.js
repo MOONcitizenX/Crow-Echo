@@ -6,3 +6,8 @@ export const getLS = (key) => {
 		return JSON.parse(localStorage.getItem(key));
 	}
 };
+export const removeLS = (key) => {
+	if (localStorage.getItem(key)) {
+		localStorage.removeItem(key);
+	}
+};
