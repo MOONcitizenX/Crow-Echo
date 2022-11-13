@@ -1,7 +1,8 @@
 import { BaseElement } from '../../../BaseElement';
 import { QuizLevels } from './QuizLevels';
 import './Quiz.scss';
-import { QuizQuestionCard } from './QuizQuestionCard';
+import { NextLvlBtn } from './NextLvlBtn';
+import { QuizQuestionCard } from './QuestionCard/QuizQuestionCard';
 
 export class Quiz extends BaseElement {
 	constructor(langState) {
@@ -16,6 +17,8 @@ export class Quiz extends BaseElement {
 		levels.render();
 		const quizCard = new QuizQuestionCard(this.lang);
 		quizCard.render();
-		this.addChildren(levels, quizCard);
+		const nextBtn = new NextLvlBtn(this.lang);
+		nextBtn.render();
+		this.addChildren(levels, quizCard, nextBtn);
 	}
 }
