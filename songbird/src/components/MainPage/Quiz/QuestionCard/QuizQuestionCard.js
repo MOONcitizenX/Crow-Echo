@@ -4,14 +4,56 @@ import { getLS } from '../../../../services/LocalStorageHandlers';
 import { PlayerState } from '../../../../states/PlayerState';
 import { QuizScore } from '../QuizScore';
 import { AudioPlayer } from './AudioPlayer';
+import './QuizQuestionCard.scss';
 
 export class QuizQuestionCard extends BaseElement {
-	constructor(langState) {
+	constructor(langState, quizState) {
 		super({
 			tag: 'div',
 			className: 'quiz__question-card'
 		});
+		this.update = (state) => {
+			if (this.playerState.get().src !==
+                birdsData[this.quizState.get().quizLvl][this.quizState.get().quizCorrectAnswer].audio) {
+				this.playerState.set({
+					src: birdsData[state.quizLvl][state.quizCorrectAnswer].audio,
+					timeCurrent: 0,
+					timeWidth: 0,
+					isPaused: true
+				});
+			}
+			if (state.isAnswered) {
+				this.playerState.set({
+					isPaused: true
+				});
+				this.birdName.elem.textContent =
+                    birdsData[state.quizLvl][state.quizCorrectAnswer][`name${this.lang.get() === 'ru' ? '' : '_en'}`];
+				this.image.elem.style.backgroundImage = `url("${birdsData[state.quizLvl][state.quizCorrectAnswer].image}")`;
+				this.image.elem.classList.add('active');
+			}
+			else {
+				this.birdName.elem.textContent = '*******';
+				this.image.elem.classList.remove('active');
+				this.image.elem.style.backgroundImage = 'none';
+			}
+		};
+		this.updateLang = (val) => {
+			if (this.quizState.get().isAnswered) {
+				this.birdName.elem.textContent =
+                    birdsData[this.quizState.get().quizLvl][this.quizState.get().quizCorrectAnswer][`name${val === 'ru' ? '' : '_en'}`];
+			}
+		};
 		this.lang = langState;
+		this.quizState = quizState;
+		this.playerState = new PlayerState({
+			volume: +getLS('quiz_state')?.volume || 0.75,
+			isMuted: getLS('quiz_state')?.isMuted || false,
+			timeCurrent: +getLS('quiz_state')?.timeCurrent || 0,
+			isPaused: getLS('quiz_state')?.isPaused || true,
+			src: getLS('quiz_state')?.src ||
+                birdsData[this.quizState.get().quizLvl][this.quizState.get().quizCorrectAnswer].audio,
+			timeWidth: +getLS('quiz_state')?.timeWidth || 0
+		});
 		this.image = new BaseElement({
 			tag: 'div',
 			className: 'question-card__img'
@@ -31,20 +73,21 @@ export class QuizQuestionCard extends BaseElement {
 		});
 	}
 	render() {
-		const score = new QuizScore(this.lang);
+		const score = new QuizScore(this.lang, this.quizState);
 		score.render();
-		const playerState = new PlayerState({
-			volume: +getLS('quiz_volume') || 0.75,
-			isMuted: getLS('quiz_isMuted') || false,
-			timeCurrent: +getLS('quiz_timeCurrent') || 0,
-			isPaused: getLS('quiz_isPaused') || true,
-			src: getLS('quiz_src') || birdsData[0][1].audio,
-			timeWidth: +getLS('quiz_timeWidth') || 0
-		});
-		const player = new AudioPlayer(playerState, '');
+		const player = new AudioPlayer(this.playerState, '');
 		player.render();
 		this.rightContainerTop.addChildren(this.birdName, score);
 		this.rightContainer.addChildren(this.rightContainerTop, player);
 		this.addChildren(this.image, this.rightContainer);
+		this.quizState.add(this.update);
+		this.update(this.quizState.get());
+		this.lang.add(this.updateLang);
+		this.updateLang(this.lang.get());
+	}
+	destroy() {
+		this.lang.remove(this.updateLang);
+		this.quizState.remove(this.update);
+		super.destroy();
 	}
 }

@@ -14,6 +14,14 @@ export class AudioPlayer extends BaseElement {
 			this.volLine.elem.style.backgroundSize = `${state.volume * 100}% 100%`;
 			this.timeCurrent.elem.textContent = getTimeCodeFromNum(Math.round(state.timeCurrent));
 			this.timeEnd.elem.textContent = getTimeCodeFromNum(Math.round(this.audio.duration));
+			if (this.src !== state.src) {
+				this.audio.src = state.src;
+				this.src = state.src;
+				this.audio.currentTime = state.timeCurrent;
+			}
+			if (state.isPaused) {
+				this.audio.pause();
+			}
 			if (!state.isPaused) {
 				this.playIcon.elem.classList.add('pause');
 			}
@@ -61,7 +69,9 @@ export class AudioPlayer extends BaseElement {
 					}
 					else {
 						this.playerState.set({ isPaused: false });
-						this.audio.play();
+						if (this.audio.readyState >= 2) {
+							this.audio.play();
+						}
 					}
 				}
 			}
@@ -138,6 +148,7 @@ export class AudioPlayer extends BaseElement {
 				}
 			}
 		});
+		this.src = this.playerState.get().src;
 	}
 	render() {
 		this.time.addChildren(this.timeCurrent, this.timeEnd);
