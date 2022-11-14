@@ -34,13 +34,12 @@ export class QuizQuestionCard extends BaseElement {
 		const score = new QuizScore(this.lang);
 		score.render();
 		const playerState = new PlayerState({
-			volume: getLS('quiz_volume') || 0.75,
+			volume: +getLS('quiz_volume') || 0.75,
 			isMuted: getLS('quiz_isMuted') || false,
-			timeCurrent: getLS('quiz_timeCurrent') || '0',
-			timeEnd: getLS('quiz_timeEnd') || birdsData[0][0].duration,
+			timeCurrent: +getLS('quiz_timeCurrent') || 0,
 			isPaused: getLS('quiz_isPaused') || true,
-			src: getLS('quiz_src') || birdsData[0][0].audio,
-			timeWidth: getLS('quiz_timeWidth') || 0
+			src: getLS('quiz_src') || birdsData[0][1].audio,
+			timeWidth: +getLS('quiz_timeWidth') || 0
 		});
 		const player = new AudioPlayer(playerState, '');
 		player.render();

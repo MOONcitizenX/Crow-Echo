@@ -1,5 +1,5 @@
 import { BaseElement } from '../../../../BaseElement';
-import { getPercentFromSeconds, getSecondsFromPercent } from '../../../../utils/TrackTimeHelpers';
+import { getPercentFromSeconds, getSecondsFromPercent, getTimeCodeFromNum } from '../../../../utils/TrackTimeHelpers';
 import './AudioPlayer.scss';
 
 export class AudioPlayer extends BaseElement {
@@ -12,6 +12,8 @@ export class AudioPlayer extends BaseElement {
 		this.update = (state) => {
 			this.timeLine.elem.style.backgroundSize = `${state.timeWidth}% 100%`;
 			this.volLine.elem.style.backgroundSize = `${state.volume * 100}% 100%`;
+			this.timeCurrent.elem.textContent = getTimeCodeFromNum(Math.round(state.timeCurrent));
+			this.timeEnd.elem.textContent = getTimeCodeFromNum(Math.round(this.audio.duration));
 			if (!state.isPaused) {
 				this.playIcon.elem.classList.add('pause');
 			}
@@ -35,7 +37,6 @@ export class AudioPlayer extends BaseElement {
 		};
 		this.audio.ontimeupdate = (e) => {
 			const audio = e.path[0];
-			console.log(e);
 			const { currentTime, duration } = audio;
 			this.playerState.set({
 				timeCurrent: this.audio.currentTime,
@@ -98,7 +99,7 @@ export class AudioPlayer extends BaseElement {
 		this.timeEnd = new BaseElement({
 			tag: 'p',
 			className: 'player__time_end',
-			textContent: this.playerState.get().timeEnd.toString()
+			textContent: '00:00'
 		});
 		this.vol = new BaseElement({
 			tag: 'div',
