@@ -3,7 +3,7 @@ import birdsData from '../../../../birdsData';
 import { getLS } from '../../../../services/LocalStorageHandlers';
 import { PlayerState } from '../../../../states/PlayerState';
 import { QuizScore } from '../QuizScore';
-import { QuestionPlayer } from './QuestionPlayer';
+import { AudioPlayer } from './AudioPlayer';
 
 export class QuizQuestionCard extends BaseElement {
 	constructor(langState) {
@@ -42,7 +42,7 @@ export class QuizQuestionCard extends BaseElement {
 			src: getLS('quiz_src') || birdsData[0][0].audio,
 			timeWidth: getLS('quiz_timeWidth') || 0
 		});
-		const player = new QuestionPlayer(playerState, '');
+		const player = new AudioPlayer(playerState, '');
 		player.render();
 		this.rightContainerTop.addChildren(this.birdName, score);
 		this.rightContainer.addChildren(this.rightContainerTop, player);

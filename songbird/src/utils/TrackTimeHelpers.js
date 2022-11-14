@@ -6,8 +6,8 @@ export const getTimeCodeFromNum = (seconds) => {
 	if (isNaN(seconds)) {
 		return '00:00';
 	}
-	let min = Math.floor(seconds / 60);
-	let sec = Math.floor(seconds - min * 60);
+	const min = Math.floor(seconds / 60);
+	const sec = Math.floor(seconds - min * 60);
 	return `${min.toString().padStart(2, '0')}:${sec
 		.toString()
 		.padStart(2, '0')}`;

@@ -1,8 +1,8 @@
 import { BaseElement } from '../../../../BaseElement';
 import { getPercentFromSeconds, getSecondsFromPercent } from '../../../../utils/TrackTimeHelpers';
-import './QuestionPlayer.scss';
+import './AudioPlayer.scss';
 
-export class QuestionPlayer extends BaseElement {
+export class AudioPlayer extends BaseElement {
 	constructor(playerState, baseClass) {
 		super({
 			tag: 'div',
@@ -28,7 +28,6 @@ export class QuestionPlayer extends BaseElement {
 				this.audio.volume = state.volume;
 				this.volLine.elem.style.backgroundSize = `${state.volume * 100}% 100%`;
 			}
-			console.log(1);
 		};
 		this.audio = new Audio(this.playerState.get().src);
 		this.audio.onended = () => {
@@ -36,6 +35,7 @@ export class QuestionPlayer extends BaseElement {
 		};
 		this.audio.ontimeupdate = (e) => {
 			const audio = e.path[0];
+			console.log(e);
 			const { currentTime, duration } = audio;
 			this.playerState.set({
 				timeCurrent: this.audio.currentTime,
