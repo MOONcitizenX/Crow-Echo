@@ -33,7 +33,7 @@ const birdsData = [
 		{
 			id: 4,
 			name: 'Козодой',
-			name_en: 'nightjar',
+			name_en: 'Nightjar',
 			species: 'Caprimulgus europaeus',
 			description: 'Козодой – неприметная птица, известная благодаря своему голосу. Песня козодоя звучит как монотонная трель похожая на тарахтение мотоцикла. Такое дребезжание слышно от заката до рассвета, его тональность, частота и громкость изменяются.',
 			description_en: 'The nightjar is an inconspicuous bird known for its voice. The song of the nightjar sounds like a monotonous trill similar to the rattle of a motorcycle. This rattling can be heard from dusk to dawn, its tonality, frequency and volume varying.',
@@ -147,7 +147,7 @@ const birdsData = [
 		{
 			id: 3,
 			name: 'Горлица',
-			name_en: 'turtledove',
+			name_en: 'Turtledove',
 			species: 'Streptopelia turtur',
 			description: 'Горлица обитает в смешанных и широколиственных лесах, а также в городских парках и поселках. Птицы часто выбирают места жизни рядом с человеком и легко привыкают к людям. Благодаря мелодичному приятному пению горлиц часто разводят в домашних условиях.',
 			description_en: 'The turtledove lives in mixed and broad-leaved forests, as well as in urban parks and townships. Birds often choose to live near people and easily get used to people. Because of their melodious, pleasant singing, turtledoves are often raised in homes.',
@@ -347,7 +347,7 @@ const birdsData = [
 			species: 'Pelecanus',
 			description: 'Пеликаны — обитатели морей и рек. Ходят они неуклюже, но хорошо летают и плавают. Питаются в основном рыбой, устраивают коллективные охоты — выстроившись полукругом хлопают по воде крыльями и клювами и вытесняют напуганную рыбу на мелководье.',
 			description_en: 'Pelicans are inhabitants of seas and rivers. They walk clumsily, but they fly and swim well. They feed mainly on fish, arrange collective hunts - lining up in a semicircle they flap the water with their wings and beaks and drive frightened fish out into shallow water.',
-			image: 'https://live.staticflickr.com/65535/49159147156_dcbbb5c12a.jpg',
+			image: 'https://live.staticflickr.com/5683/23557106552_5fb77f97a6_z.jpg',
 			audio: 'https://www.xeno-canto.org/sounds/uploaded/XAMHIHFTZG/XC331138-call1.mp3'
 		},
 		{
