@@ -11,7 +11,7 @@ export class FooterContainer extends BaseElement {
 			tag: 'a',
 			className: 'footer__logo',
 			attr: {
-				href: 'https://app.rs.school/',
+				href: 'https://rs.school/js/',
 				target: '_blank'
 			}
 		});
