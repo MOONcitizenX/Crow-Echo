@@ -20,7 +20,7 @@
 	&__container-bottom {
 		width: 100%;
 		display: flex;
-		grid-area: 45px;
+		gap: 45px;
 	}
 	&__next-lvl {
 		width: 100%;
@@ -42,7 +42,7 @@
 		&:hover,
 		&:focus {
 			background-color: $hover-color;
-			color: var(--text-active-color);
+			color: $text-active-color;
 		}
 	}
 }
