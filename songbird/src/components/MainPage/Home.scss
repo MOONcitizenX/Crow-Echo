@@ -25,12 +25,15 @@
 		line-height: 39px;
 		text-align: center;
 	}
+	&__bottom {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 15px;
+	}
 
 	&__crow {
-		background-image: url('../../assets/svg/crow.svg');
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
 		width: 133px;
 		height: 107px;
 		align-self: flex-end;
