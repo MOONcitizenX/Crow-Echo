@@ -11,8 +11,6 @@ export class QuizState extends Observable {
 			...options
 		};
 		this.emit(this.quizState);
-		console.log(this.quizState.scoreTotal, 'score total');
-		console.log(this.quizState.scoreLvl, 'score level');
 	}
 	get() {
 		return this.quizState;
