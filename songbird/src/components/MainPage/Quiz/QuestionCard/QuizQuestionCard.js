@@ -75,7 +75,7 @@ export class QuizQuestionCard extends BaseElement {
 	render() {
 		const score = new QuizScore(this.lang, this.quizState);
 		score.render();
-		const player = new AudioPlayer(this.playerState, '');
+		const player = new AudioPlayer(this.playerState, 'question');
 		player.render();
 		this.rightContainerTop.addChildren(this.birdName, score);
 		this.rightContainer.addChildren(this.rightContainerTop, player);
