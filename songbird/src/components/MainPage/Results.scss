@@ -1,0 +1,38 @@
+@import '../../styles/vars.scss';
+
+.results {
+	padding: 25px 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	&-wrapper {
+		padding: 25px;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+		background-color: $gray-color;
+		border-radius: 13px;
+	}
+	&__text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 15px;
+	}
+	&__img {
+		width: 100%;
+		max-width: 192px;
+	}
+	&__crow {
+		filter: brightness(0) saturate(100%) invert(9%) sepia(7%)
+			saturate(3450%) hue-rotate(170deg) brightness(93%) contrast(90%);
+	}
+}
+
+.light {
+	.results-wrapper {
+		background-color: $frame-color;
+	}
+}
