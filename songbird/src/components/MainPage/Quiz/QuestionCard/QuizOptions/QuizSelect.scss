@@ -13,15 +13,33 @@
 		text-align: center;
 		background-color: $frame-color;
 		transition: all 0.2s ease-in-out;
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 10px;
+			height: 50%;
+			aspect-ratio: 1/1;
+			border-radius: 50%;
+			border: 2px solid #fff;
+			transform: translateY(-50%);
+		}
 	}
 	.wrong-answer {
 		background-color: #c16c84;
 		color: $text-active-color;
 		text-decoration: line-through;
+		&::after {
+			background-color: #893953;
+		}
 	}
 	.right-answer {
 		background-color: $hover-color;
 		color: $text-active-color;
 		text-decoration: underline;
+		&::after {
+			background-color: #004980;
+		}
 	}
 }
