@@ -24,7 +24,8 @@ export class TopContainer extends BaseElement {
 			tag: 'img',
 			className: 'header__feather',
 			attr: {
-				src: featherImg
+				src: featherImg,
+				alt: 'Feather'
 			}
 		});
 		this.addChildren(logo.elem, langSwitch.elem, themeSwitch.elem, feather.elem);

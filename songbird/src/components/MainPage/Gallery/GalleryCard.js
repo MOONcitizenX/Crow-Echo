@@ -31,7 +31,8 @@ export class GalleryCard extends BaseElement {
 			tag: 'img',
 			className: 'bird-card__img',
 			attr: {
-				src: birdsData.flat(2)[this.index].image
+				src: birdsData.flat(2)[this.index].image,
+				alt: birdsData.flat(2)[this.index].name_en
 			}
 		});
 		this.birdNameContainer = new BaseElement({

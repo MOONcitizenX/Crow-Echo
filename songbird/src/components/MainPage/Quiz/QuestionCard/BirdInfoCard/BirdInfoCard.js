@@ -86,7 +86,8 @@ export class BirdInfoCard extends BaseElement {
 			tag: 'img',
 			className: 'bird-card__img',
 			attr: {
-				src: ''
+				src: '',
+				alt: 'Bird'
 			}
 		});
 		this.birdNameContainer = new BaseElement({

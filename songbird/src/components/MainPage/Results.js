@@ -49,14 +49,16 @@ export class Results extends BaseElement {
 			tag: 'img',
 			className: 'results__crow',
 			attr: {
-				src: crow
+				src: crow,
+				alt: 'Crow'
 			}
 		});
 		this.martini = new BaseElement({
 			tag: 'img',
 			className: 'results__img',
 			attr: {
-				src: martini
+				src: martini,
+				alt: 'Cocktail'
 			}
 		});
 		this.newGameBtn = new BaseElement({

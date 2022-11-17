@@ -19,7 +19,8 @@ export class FooterContainer extends BaseElement {
 			tag: 'img',
 			className: 'footer__logo_img',
 			attr: {
-				src: schoolLogo
+				src: schoolLogo,
+				alt: 'RS School'
 			}
 		});
 		this.year = new BaseElement({

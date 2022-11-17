@@ -51,7 +51,8 @@ export class Home extends BaseElement {
 			tag: 'img',
 			className: 'home__crow',
 			attr: {
-				src: crow
+				src: crow,
+				alt: 'Crow'
 			}
 		});
 		this.lang = langState;
