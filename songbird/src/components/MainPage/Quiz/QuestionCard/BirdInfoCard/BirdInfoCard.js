@@ -6,7 +6,7 @@ import { AudioPlayer } from '../AudioPlayer';
 import './BirdInfoCard.scss';
 
 export class BirdInfoCard extends BaseElement {
-	constructor(langState, quizState, baseClass, withDefault) {
+	constructor(langState, baseClass, quizState, withDefault) {
 		super({
 			tag: 'div',
 			className: `${baseClass} bird-card`

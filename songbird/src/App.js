@@ -2,6 +2,7 @@ import { BaseElement } from './BaseElement';
 import { Footer } from './components/Footer/Footer';
 import { Header } from './components/Header/Header';
 import { Error } from './components/MainPage/Error';
+import { Gallery } from './components/MainPage/Gallery/Gallery';
 import { Home } from './components/MainPage/Home';
 import { Quiz } from './components/MainPage/Quiz/Quiz';
 import { Results } from './components/MainPage/Results';
@@ -61,6 +62,10 @@ export class App extends BaseElement {
 	}
 	renderGallery() {
 		this.currentPage?.destroy();
+		const gallery = new Gallery(this.lang);
+		gallery.render();
+		this.currentPage = gallery;
+		this.addChildren(gallery);
 	}
 	renderError() {
 		this.currentPage?.destroy();

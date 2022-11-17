@@ -26,7 +26,7 @@ export class Quiz extends BaseElement {
 		quizCard.render();
 		const select = new QuizSelect(this.lang, this.quizState);
 		select.render();
-		const birdCard = new BirdInfoCard(this.lang, this.quizState, 'quiz-card', true);
+		const birdCard = new BirdInfoCard(this.lang, 'quiz-card', this.quizState, true);
 		birdCard.render();
 		this.bottomContainer.addChildren(select, birdCard);
 		const nextBtn = new NextLvlBtn(this.lang, this.quizState);
