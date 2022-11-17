@@ -1,6 +1,5 @@
 import { BaseElement } from '../../../../BaseElement';
 import birdsData from '../../../../birdsData';
-import { getLS } from '../../../../services/LocalStorageHandlers';
 import { PlayerState } from '../../../../states/PlayerState';
 import { QuizScore } from '../QuizScore';
 import { AudioPlayer } from './AudioPlayer';
@@ -46,13 +45,12 @@ export class QuizQuestionCard extends BaseElement {
 		this.lang = langState;
 		this.quizState = quizState;
 		this.playerState = new PlayerState({
-			volume: +getLS('quiz_state')?.volume || 0.75,
-			isMuted: getLS('quiz_state')?.isMuted || false,
-			timeCurrent: +getLS('quiz_state')?.timeCurrent || 0,
-			isPaused: getLS('quiz_state')?.isPaused || true,
-			src: getLS('quiz_state')?.src ||
-                birdsData[this.quizState.get().quizLvl][this.quizState.get().quizCorrectAnswer].audio,
-			timeWidth: +getLS('quiz_state')?.timeWidth || 0
+			volume: 0.75,
+			isMuted: false,
+			timeCurrent: 0,
+			isPaused: true,
+			src: birdsData[this.quizState.get().quizLvl][this.quizState.get().quizCorrectAnswer].audio,
+			timeWidth: 0
 		});
 		this.image = new BaseElement({
 			tag: 'div',

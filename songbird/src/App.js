@@ -25,20 +25,17 @@ export class App extends BaseElement {
 		this.saveLang = (val) => {
 			setLS('crow_echo_lang', val);
 		};
-		this.saveQuiz = (quizState) => {
-			setLS('quiz_state', quizState);
-		};
 		this.lang = new LanguageState(getLS('crow_echo_lang') || 'ru');
 		this.theme = new ThemeState(getLS('crow_echo_theme') || 'dark');
 		this.quizState = new QuizState({
-			quizLvl: getLS('quiz_state')?.quizLvl || 0,
-			quizCorrectAnswer: getLS('quiz_state')?.quizCorrect || getRandomNum(0, 6),
-			isAnswered: getLS('quiz_state')?.isAnswered || false,
-			scoreTotal: getLS('quiz_state')?.scoreTotal || 0,
-			scoreLvl: getLS('quiz_state')?.scoreLvl || 5,
-			clickedCard: getLS('quiz_state')?.clickedCard || -1,
-			dropStyles: getLS('quiz_state')?.dropStyles || false,
-			success: getLS('quiz_state')?.success || false
+			quizLvl: 0,
+			quizCorrectAnswer: getRandomNum(0, 6),
+			isAnswered: false,
+			scoreTotal: 0,
+			scoreLvl: 5,
+			clickedCard: -1,
+			dropStyles: false,
+			success: false
 		});
 	}
 	renderHome() {
@@ -92,13 +89,10 @@ export class App extends BaseElement {
 		this.saveLang(this.lang.get());
 		this.theme.add(this.saveTheme);
 		this.saveTheme(this.theme.get());
-		this.quizState.add(this.saveQuiz);
-		this.saveQuiz(this.quizState.get());
 	}
 	destroy() {
 		this.theme.remove(this.saveTheme);
 		this.lang.remove(this.saveLang);
-		this.quizState.remove(this.saveQuiz);
 		super.destroy();
 	}
 }

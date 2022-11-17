@@ -1,6 +1,5 @@
 import { BaseElement } from '../../../../../BaseElement';
 import birdsData from '../../../../../birdsData';
-import { getLS } from '../../../../../services/LocalStorageHandlers';
 import { PlayerState } from '../../../../../states/PlayerState';
 import textContent from '../../../../../textContent';
 import { AudioPlayer } from '../AudioPlayer';
@@ -64,8 +63,8 @@ export class BirdInfoCard extends BaseElement {
 		this.lang = langState;
 		this.quizState = quizState;
 		this.playerState = new PlayerState({
-			volume: +getLS('quiz_state')?.volume || 0.75,
-			isMuted: getLS('quiz_state')?.isMuted || false,
+			volume: 0.75,
+			isMuted: false,
 			timeCurrent: 0,
 			isPaused: true,
 			src: '',
