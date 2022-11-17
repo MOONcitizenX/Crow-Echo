@@ -4,7 +4,12 @@ export class Logo extends BaseElement {
 	constructor() {
 		super({
 			tag: 'h1',
-			className: 'header__logo'
+			className: 'header__logo',
+			attr: {
+				onclick: () => {
+					window.location.href = '#home';
+				}
+			}
 		});
 		this.spanCrow = new BaseElement({
 			tag: 'span',
