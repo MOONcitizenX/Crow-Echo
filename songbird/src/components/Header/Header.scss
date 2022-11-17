@@ -54,7 +54,6 @@
 		user-select: none;
 		transition: all 0.2s ease-in-out;
 		&:hover,
-		&:focus,
 		&_active {
 			background-color: $hover-color;
 			color: $text-active-color;

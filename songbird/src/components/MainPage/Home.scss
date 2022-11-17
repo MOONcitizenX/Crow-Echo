@@ -10,12 +10,24 @@
 	padding: 20px 20px 0px;
 
 	&__img {
-		background: $red-color url('../../assets/svg/pngwing\ 3.svg');
-		background-repeat: no-repeat;
-		background-size: cover;
+		background: $red-color;
 		width: 468px;
 		aspect-ratio: 1/1;
 		border-radius: 50%;
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			top: -20px;
+			left: 10px;
+			width: 450px;
+			aspect-ratio: 1/1;
+			background-image: url('../../assets/svg/pngwing\ 3.svg');
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			transition: all 0.2s ease-in-out;
+		}
 	}
 
 	&__quote {
@@ -24,6 +36,7 @@
 		font-size: 34px;
 		line-height: 39px;
 		text-align: center;
+		transition: all 0.2s ease-in-out;
 	}
 	&__bottom {
 		width: 100%;
@@ -45,5 +58,8 @@
 	.home__crow {
 		filter: brightness(0) saturate(100%) invert(9%) sepia(7%)
 			saturate(3450%) hue-rotate(170deg) brightness(93%) contrast(90%);
+	}
+	.home__img::after {
+		filter: invert(1);
 	}
 }
