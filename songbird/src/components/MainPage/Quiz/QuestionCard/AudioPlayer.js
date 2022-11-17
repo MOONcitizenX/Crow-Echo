@@ -69,9 +69,7 @@ export class AudioPlayer extends BaseElement {
 					}
 					else {
 						this.playerState.set({ isPaused: false });
-						if (this.audio.readyState >= 2) {
-							this.audio.play();
-						}
+						this.audio.play();
 					}
 				}
 			}
@@ -161,6 +159,7 @@ export class AudioPlayer extends BaseElement {
 	}
 	destroy() {
 		this.playerState.remove(this.update);
+		this.audio.src = '';
 		super.destroy();
 	}
 }
