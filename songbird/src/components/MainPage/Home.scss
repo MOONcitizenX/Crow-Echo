@@ -41,7 +41,9 @@
 	}
 }
 
-.light .home__crow {
-	filter: brightness(0) saturate(100%) invert(9%) sepia(7%) saturate(3450%)
-		hue-rotate(170deg) brightness(93%) contrast(90%);
+.light {
+	.home__crow {
+		filter: brightness(0) saturate(100%) invert(9%) sepia(7%)
+			saturate(3450%) hue-rotate(170deg) brightness(93%) contrast(90%);
+	}
 }
