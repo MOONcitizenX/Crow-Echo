@@ -82,7 +82,7 @@ export class App extends BaseElement {
 				quiz: () => this.renderQuiz(),
 				results: () => this.renderResults(),
 				gallery: () => this.renderGallery()
-			}, () => this.renderError());
+			}, () => this.renderError(), this.quizState);
 			root.append(header.elem, this.elem, footer.elem);
 		}
 		this.lang.add(this.saveLang);
