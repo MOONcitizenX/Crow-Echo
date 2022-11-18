@@ -23,7 +23,8 @@ const textContent = {
 		finish_game: 'Закончить игру',
 		congrats_msg: 'Поздравляем!',
 		new_game_btn: 'Начать новую игру',
-		results_error: 'Вы не закончили игру. Нажмите "Начать новую игру" чтобы сыграть!'
+		results_error: 'Вы не закончили игру. Нажмите "Начать новую игру" чтобы сыграть!',
+		easter_egg_tooltip: 'Люблю, когда на меня кликают 😉'
 	},
 	en: {
 		home: 'Home',
@@ -49,7 +50,8 @@ const textContent = {
 		finish_game: 'Finish game',
 		congrats_msg: 'Congratulations!',
 		new_game_btn: 'Start new game',
-		results_error: 'You didn\'t finish the game. Press "Start new game" to play!'
+		results_error: 'You didn\'t finish the game. Press "Start new game" to play!',
+		easter_egg_tooltip: 'I love being clicked 😉'
 	}
 };
 export default textContent;
