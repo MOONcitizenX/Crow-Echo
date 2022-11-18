@@ -8,6 +8,14 @@
 		background-color: $red-color;
 		border: 0;
 		position: relative;
+		@include lg {
+			width: 160px;
+			height: 160px;
+		}
+		@include sm {
+			width: 100px;
+			height: 100px;
+		}
 		&::after {
 			content: '';
 			position: absolute;
@@ -16,6 +24,19 @@
 			width: 227px;
 			aspect-ratio: 1/1;
 			background-image: url('../../../../assets/svg/pngwing\ 2.svg');
+			background-position: center;
+			background-size: contain;
+			@include lg {
+				width: 160px;
+
+				top: 10px;
+				left: 0;
+			}
+			@include sm {
+				width: 100px;
+				top: 10px;
+				left: 0;
+			}
 		}
 	}
 	&__container {

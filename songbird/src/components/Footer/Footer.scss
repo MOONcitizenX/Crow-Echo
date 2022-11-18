@@ -1,16 +1,28 @@
 @import '../../styles/vars.scss';
 
 .footer {
-	margin-top: auto;
 	width: 100%;
 	background: linear-gradient(180deg, #99b5d8 0%, rgba(153, 181, 216, 0) 100%),
 		$hover-color;
 	color: var(--text-active-color);
+	justify-self: flex-end;
+	display: flex;
+	justify-content: center;
 	&__container {
+		width: 100%;
 		padding: 9px 20px;
 
 		max-width: 1400px;
-		margin: 0 auto;
+		@include xl {
+			max-width: 990px;
+		}
+		@include lg {
+			max-width: 800px;
+		}
+		@include md {
+			max-width: 600px;
+		}
+
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -36,6 +48,9 @@
 	&__year {
 		user-select: none;
 		transition: all 0.2s ease-in-out;
+		@include sm {
+			font-size: 14px;
+		}
 	}
 }
 

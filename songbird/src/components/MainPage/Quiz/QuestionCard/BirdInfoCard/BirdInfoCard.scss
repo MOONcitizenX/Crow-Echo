@@ -8,7 +8,7 @@
 	padding: 15px;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(3, 1fr);
+	grid-template-rows: max-content max-content auto;
 	column-gap: 20px;
 	.bird-card__default {
 		display: none;

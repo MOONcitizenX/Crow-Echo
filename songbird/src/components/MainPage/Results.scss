@@ -5,6 +5,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 25px;
+
 	&-wrapper {
 		padding: 25px;
 		display: flex;
@@ -13,6 +14,10 @@
 
 		background-color: $gray-color;
 		border-radius: 13px;
+		@include sm {
+			flex-direction: column;
+			gap: 25px;
+		}
 	}
 	&__text {
 		display: flex;
@@ -24,10 +29,24 @@
 	&__img {
 		width: 100%;
 		max-width: 192px;
+		@include md {
+			max-width: 120px;
+		}
+		@include sm {
+			max-width: 80px;
+			align-self: flex-start;
+		}
 	}
 	&__crow {
 		filter: brightness(0) saturate(100%) invert(9%) sepia(7%)
 			saturate(3450%) hue-rotate(170deg) brightness(93%) contrast(90%);
+		@include md {
+			max-width: 120px;
+		}
+		@include sm {
+			max-width: 80px;
+			align-self: flex-end;
+		}
 	}
 }
 

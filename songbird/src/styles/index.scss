@@ -41,6 +41,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	border: 1px solid yellow;
 }
 
 body {
@@ -55,6 +56,10 @@ body {
 	line-height: 28px;
 
 	transition: all 0.2s ease-in-out;
+	@include sm {
+		font-size: 20px;
+		line-height: 24px;
+	}
 }
 
 a,

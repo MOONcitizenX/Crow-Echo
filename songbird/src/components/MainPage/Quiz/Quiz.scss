@@ -2,6 +2,17 @@
 
 .quiz {
 	width: 100%;
+	max-width: 1400px;
+	@include xl {
+		max-width: 990px;
+	}
+	@include lg {
+		max-width: 800px;
+	}
+	@include md {
+		max-width: 600px;
+	}
+	flex: 1;
 	padding: 25px 20px;
 	display: flex;
 	flex-direction: column;
@@ -16,11 +27,25 @@
 
 		background-color: $frame-color;
 		border-radius: 13px;
+		@include lg {
+			padding: 10px 15px;
+			gap: 20px;
+		}
+		@include sm {
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 	&__container-bottom {
 		width: 100%;
 		display: flex;
 		gap: 45px;
+		@include lg {
+			gap: 20px;
+		}
+		@include md {
+			flex-direction: column;
+		}
 	}
 	&__next-lvl {
 		width: 100%;
@@ -33,6 +58,9 @@
 		font-size: 24px;
 		line-height: 28px;
 		transition: all 0.2s ease-in-out;
+		@include md {
+			padding: 6px;
+		}
 		&:disabled {
 			opacity: 0.3;
 			pointer-events: none;
@@ -51,6 +79,12 @@
 	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
+	@include xl {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	@include sm {
+		grid-template-columns: repeat(2, 1fr);
+	}
 	border-radius: 13px;
 	background-color: $frame-color;
 	overflow: hidden;
@@ -60,6 +94,9 @@
 		text-align: center;
 		line-height: 38px;
 		user-select: none;
+		@include md {
+			padding: 0;
+		}
 	}
 	.active {
 		color: $text-active-color;

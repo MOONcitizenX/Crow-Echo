@@ -2,6 +2,18 @@
 
 .home {
 	width: 100%;
+	height: 100%;
+	max-width: 1400px;
+	@include xl {
+		max-width: 990px;
+	}
+	@include lg {
+		max-width: 800px;
+	}
+	@include md {
+		max-width: 600px;
+	}
+	flex: 1;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -13,6 +25,15 @@
 		background: $red-color;
 		width: 468px;
 		aspect-ratio: 1/1;
+		@include xl {
+			max-width: 400px;
+		}
+		@include lg {
+			max-width: 300px;
+		}
+		@include md {
+			max-width: 250px;
+		}
 		border-radius: 50%;
 		position: relative;
 		&::after {
@@ -21,6 +42,15 @@
 			top: -20px;
 			left: 10px;
 			width: 450px;
+			@include xl {
+				max-width: 400px;
+			}
+			@include lg {
+				max-width: 300px;
+			}
+			@include md {
+				max-width: 250px;
+			}
 			aspect-ratio: 1/1;
 			background-image: url('../../assets/svg/pngwing\ 3.svg');
 			background-size: contain;
@@ -37,8 +67,14 @@
 		line-height: 39px;
 		text-align: center;
 		transition: all 0.2s ease-in-out;
+		@include sm {
+			font-size: 24px;
+			line-height: 30px;
+		}
 	}
 	&__bottom {
+		// margin-top: auto;
+		justify-self: end;
 		width: 100%;
 		display: flex;
 		justify-content: center;
@@ -49,6 +85,15 @@
 	&__crow {
 		width: 133px;
 		height: 107px;
+		@include xl {
+			max-width: 100px;
+		}
+		@include lg {
+			max-width: 80px;
+		}
+		@include md {
+			max-width: 65px;
+		}
 		align-self: flex-end;
 		transition: all 0.2s ease-in-out;
 	}

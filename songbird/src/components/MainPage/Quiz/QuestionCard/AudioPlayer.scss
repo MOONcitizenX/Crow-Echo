@@ -46,10 +46,6 @@
 
 			color: $gray-color;
 			font-size: 20px;
-			&_current {
-			}
-			&_end {
-			}
 		}
 		&__vol {
 			display: flex;
@@ -75,6 +71,9 @@
 			height: 15px;
 			background-color: $gray-color;
 			border-radius: 15px;
+			@include md {
+				width: 35%;
+			}
 		}
 	}
 }
