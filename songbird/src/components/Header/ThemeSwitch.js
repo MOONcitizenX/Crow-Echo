@@ -7,9 +7,11 @@ export class ThemeSwitch extends BaseElement {
 			className: 'theme-switch'
 		});
 		this.update = (val) => {
+			const input = this.input.elem;
 			val === 'dark'
 				? document.body.classList.remove('light')
 				: document.body.classList.add('light');
+			input.checked = val === 'dark' ? false : true;
 		};
 		this.theme = themeState;
 		this.input = new BaseElement({
