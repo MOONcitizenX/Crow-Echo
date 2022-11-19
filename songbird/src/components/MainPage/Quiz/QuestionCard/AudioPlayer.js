@@ -70,18 +70,8 @@ export class AudioPlayer extends BaseElement {
 			className: 'player__play-icon',
 			attr: {
 				onclick: () => {
-					if (!this.playerState.get().isPaused &&
-                        !this.audio.paused) {
-						this.playerState.set({
-							isPaused: true,
-							timeCurrent: this.audio.currentTime
-						});
-						this.audio.pause();
-					}
-					if (this.playerState.get().isPaused && this.audio.paused) {
-						this.playerState.set({ isPaused: false });
-						this.audio.play();
-					}
+					this.pauseAudio();
+					this.playAudio();
 				}
 			}
 		});
@@ -158,6 +148,21 @@ export class AudioPlayer extends BaseElement {
 			}
 		});
 		this.src = this.playerState.get().src;
+	}
+	async playAudio() {
+		if (this.audio.paused && this.playerState.get().isPaused) {
+			this.playerState.set({ isPaused: false });
+			return this.audio.play();
+		}
+	}
+	pauseAudio() {
+		if (!this.audio.paused && !this.playerState.get().isPaused) {
+			this.playerState.set({
+				isPaused: true,
+				timeCurrent: this.audio.currentTime
+			});
+			this.audio.pause();
+		}
 	}
 	render() {
 		this.time.addChildren(this.timeCurrent, this.timeEnd);
