@@ -51,6 +51,16 @@ export class AudioPlayer extends BaseElement {
 				timeWidth: getPercentFromSeconds(currentTime, duration)
 			});
 		};
+		this.audio.onplaying = () => {
+			this.playerState.set({
+				isPaused: false
+			});
+		};
+		this.audio.onpause = () => {
+			this.playerState.set({
+				isPaused: true
+			});
+		};
 		this.play = new BaseElement({
 			tag: 'div',
 			className: 'player__play'
@@ -59,15 +69,16 @@ export class AudioPlayer extends BaseElement {
 			tag: 'div',
 			className: 'player__play-icon',
 			attr: {
-				onclick: (e) => {
-					if (!this.playerState.get().isPaused) {
+				onclick: () => {
+					if (!this.playerState.get().isPaused &&
+                        !this.audio.paused) {
 						this.playerState.set({
 							isPaused: true,
 							timeCurrent: this.audio.currentTime
 						});
 						this.audio.pause();
 					}
-					else {
+					if (this.playerState.get().isPaused && this.audio.paused) {
 						this.playerState.set({ isPaused: false });
 						this.audio.play();
 					}
