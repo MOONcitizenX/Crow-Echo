@@ -17,7 +17,6 @@ export class LangSwitch extends BaseElement {
 				: this.elem.classList.remove('lang-switch_active');
 		};
 		this.lang = langState;
-		this.lang.add(this.update);
 		this.switchTextRu = new BaseElement({
 			tag: 'div',
 			className: 'lang-switch__btn_ru',
@@ -28,9 +27,10 @@ export class LangSwitch extends BaseElement {
 			className: 'lang-switch__btn_en',
 			textContent: 'EN'
 		});
-		this.update(this.lang.get());
 	}
 	render() {
+		this.lang.add(this.update);
+		this.update(this.lang.get());
 		this.addChildren(this.switchTextRu.elem, this.switchTextEn.elem);
 	}
 	destroy() {

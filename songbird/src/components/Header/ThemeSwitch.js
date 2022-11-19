@@ -12,7 +12,6 @@ export class ThemeSwitch extends BaseElement {
 				: document.body.classList.add('light');
 		};
 		this.theme = themeState;
-		this.theme.add(this.update);
 		this.input = new BaseElement({
 			tag: 'input',
 			className: 'theme-switch__input',
@@ -33,6 +32,8 @@ export class ThemeSwitch extends BaseElement {
 		});
 	}
 	render() {
+		this.theme.add(this.update);
+		this.update(this.theme.get());
 		this.addChildren(this.input.elem, this.label.elem);
 	}
 }
