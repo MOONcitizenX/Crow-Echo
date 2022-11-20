@@ -19,7 +19,7 @@ export class AudioPlayer extends BaseElement {
 				this.src = state.src;
 				this.audio.currentTime = state.timeCurrent;
 			}
-			if (state.isPaused) {
+			if (!this.audio.paused && state.isPaused) {
 				this.audio.pause();
 			}
 			if (!state.isPaused) {
@@ -70,8 +70,7 @@ export class AudioPlayer extends BaseElement {
 			className: 'player__play-icon',
 			attr: {
 				onclick: () => {
-					this.pauseAudio();
-					this.playAudio();
+					this.playPauseAudio();
 				}
 			}
 		});
@@ -149,13 +148,11 @@ export class AudioPlayer extends BaseElement {
 		});
 		this.src = this.playerState.get().src;
 	}
-	async playAudio() {
+	async playPauseAudio() {
 		if (this.audio.paused && this.playerState.get().isPaused) {
 			this.playerState.set({ isPaused: false });
 			return this.audio.play();
 		}
-	}
-	pauseAudio() {
 		if (!this.audio.paused && !this.playerState.get().isPaused) {
 			this.playerState.set({
 				isPaused: true,
