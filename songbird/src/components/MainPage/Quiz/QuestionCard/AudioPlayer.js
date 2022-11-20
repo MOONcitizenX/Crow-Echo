@@ -34,12 +34,12 @@ export class AudioPlayer extends BaseElement {
 			}
 			if (state.isMuted) {
 				this.audio.volume = 0;
-				volInput.classList.add('mute');
+				this.volIcon.elem.classList.add('mute');
 				volInput.style.backgroundSize = '0% 100%';
 				volInput.value = (0).toString();
 			}
 			else {
-				volInput.classList.remove('mute');
+				this.volIcon.elem.classList.remove('mute');
 				this.audio.volume = state.volume;
 				volInput.style.backgroundSize = `${state.volume * 100}% 100%`;
 				volInput.value = (state.volume * 100).toString();
@@ -50,12 +50,16 @@ export class AudioPlayer extends BaseElement {
 			this.playerState.set({ isPaused: true });
 		};
 		this.audio.ontimeupdate = (e) => {
-			const audio = e.path[0];
+			console.log(e);
+			const audio = e.target === null ? e.path[0] : e.target;
 			const { currentTime, duration } = audio;
 			this.playerState.set({
 				timeCurrent: this.audio.currentTime,
 				timeWidth: getPercentFromSeconds(currentTime, duration)
 			});
+			const timeInput = this.timeLine.elem;
+			timeInput.style.backgroundSize = `${this.playerState.get().timeWidth}% 100%`;
+			timeInput.value = this.playerState.get().timeWidth.toString();
 		};
 		this.audio.onplaying = () => {
 			this.playerState.set({
