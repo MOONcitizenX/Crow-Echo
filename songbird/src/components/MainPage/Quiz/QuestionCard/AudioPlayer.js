@@ -50,7 +50,6 @@ export class AudioPlayer extends BaseElement {
 			this.playerState.set({ isPaused: true });
 		};
 		this.audio.ontimeupdate = (e) => {
-			console.log(e);
 			const audio = e.target === null ? e.path[0] : e.target;
 			const { currentTime, duration } = audio;
 			this.playerState.set({
