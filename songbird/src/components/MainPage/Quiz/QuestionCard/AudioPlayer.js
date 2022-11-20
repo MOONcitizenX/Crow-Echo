@@ -70,6 +70,9 @@ export class AudioPlayer extends BaseElement {
 				isPaused: true
 			});
 		};
+		this.audio.onloadedmetadata = (e) => {
+			this.timeEnd.elem.textContent = getTimeCodeFromNum(Math.round(this.audio.duration));
+		};
 		this.play = new BaseElement({
 			tag: 'div',
 			className: 'player__play'
