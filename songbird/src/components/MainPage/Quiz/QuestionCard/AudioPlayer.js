@@ -10,8 +10,12 @@ export class AudioPlayer extends BaseElement {
 		});
 		this.playerState = playerState;
 		this.update = (state) => {
-			this.timeLine.elem.style.backgroundSize = `${state.timeWidth}% 100%`;
-			this.volLine.elem.style.backgroundSize = `${state.volume * 100}% 100%`;
+			const timeInput = this.timeLine.elem;
+			timeInput.style.backgroundSize = `${state.timeWidth}% 100%`;
+			timeInput.value = state.timeWidth.toString();
+			const volInput = this.volLine.elem;
+			volInput.style.backgroundSize = `${state.volume * 100}% 100%`;
+			volInput.value = (state.volume * 100).toString();
 			this.timeCurrent.elem.textContent = getTimeCodeFromNum(Math.round(state.timeCurrent));
 			this.timeEnd.elem.textContent = getTimeCodeFromNum(Math.round(this.audio.duration));
 			if (this.src !== state.src) {
@@ -30,13 +34,15 @@ export class AudioPlayer extends BaseElement {
 			}
 			if (state.isMuted) {
 				this.audio.volume = 0;
-				this.volIcon.elem.classList.add('mute');
-				this.volLine.elem.style.backgroundSize = '0% 100%';
+				volInput.classList.add('mute');
+				volInput.style.backgroundSize = '0% 100%';
+				volInput.value = (0).toString();
 			}
 			else {
-				this.volIcon.elem.classList.remove('mute');
+				volInput.classList.remove('mute');
 				this.audio.volume = state.volume;
-				this.volLine.elem.style.backgroundSize = `${state.volume * 100}% 100%`;
+				volInput.style.backgroundSize = `${state.volume * 100}% 100%`;
+				volInput.value = (state.volume * 100).toString();
 			}
 		};
 		this.audio = new Audio(this.playerState.get().src);
@@ -85,6 +91,7 @@ export class AudioPlayer extends BaseElement {
 				type: 'range',
 				min: 0,
 				max: 100,
+				value: 0,
 				oninput: (e) => {
 					const target = e.target;
 					this.playerState.set({
