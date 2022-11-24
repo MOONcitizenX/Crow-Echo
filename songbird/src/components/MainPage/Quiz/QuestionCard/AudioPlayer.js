@@ -164,7 +164,11 @@ export class AudioPlayer extends BaseElement {
 	async playPauseAudio() {
 		if (this.audio.paused && this.playerState.get().isPaused) {
 			this.playerState.set({ isPaused: false });
-			return this.audio.play();
+			return this.audio.play().catch((e) => {
+				if (e.name === 'AbortError') {
+					return;
+				}
+			});
 		}
 		if (!this.audio.paused && !this.playerState.get().isPaused) {
 			this.playerState.set({
