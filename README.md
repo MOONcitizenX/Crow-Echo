@@ -1,15 +1,9 @@
-# 🚀 Welcome to your new awesome project!
+# Crow-Echo
 
-This project has been created using **webpack-cli**, you can now run
+### In this quiz you need to listen to the sound of a random bird and choose the correct answer.
 
-```
-npm run build
-```
 
-or
+![image](https://user-images.githubusercontent.com/104726176/204366499-531d45b1-2e7d-4af7-aa83-8c1fd15ac212.png)
+![image](https://user-images.githubusercontent.com/104726176/204366541-92de57da-8b92-487e-89b3-767daad99903.png)
 
-```
-yarn build
-```
-
-to bundle your application
+### Tech stack: TS, Scss
