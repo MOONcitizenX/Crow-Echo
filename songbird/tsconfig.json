@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"noImplicitAny": true,
+		"module": "es6",
+		"target": "es2020",
+		"allowJs": true,
+		"sourceMap": false,
+		"removeComments": false
+	},
+	"include": ["src", "src/interfaces/custom.d.ts"],
+	"files": ["src/index.ts"]
+}

@@ -1,5 +1,3 @@
-// Generated using webpack-cli https://github.com/webpack/webpack-cli
-
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -11,9 +9,10 @@ const stylesHandler = isProduction
 	: 'style-loader';
 
 const config = {
-	entry: './src/index.js',
+	entry: './src/index.ts',
 	output: {
-		path: path.resolve(__dirname, 'dist')
+		path: path.resolve(__dirname, 'dist'),
+		assetModuleFilename: 'assets/[name][ext]'
 	},
 	devServer: {
 		open: true,
@@ -21,14 +20,17 @@ const config = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: 'index.html'
+			template: 'index.html',
+			favicon: './src/assets/svg/favicon_crow.svg'
 		})
-
-		// Add your plugins here
-		// Learn more about plugins from https://webpack.js.org/configuration/plugins/
 	],
 	module: {
 		rules: [
+			{
+				test: /\.(ts|tsx)$/i,
+				loader: 'ts-loader',
+				exclude: ['/node_modules/']
+			},
 			{
 				test: /\.s[ac]ss$/i,
 				use: [
@@ -39,16 +41,13 @@ const config = {
 				]
 			},
 			{
-				test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-				type: 'asset'
+				test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif|mp3)$/i,
+				type: 'asset/resource'
 			}
-
-			// Add your rules for custom modules here
-			// Learn more about loaders from https://webpack.js.org/loaders/
 		]
 	},
 	resolve: {
-		extensions: ['.jsx', '.js', '...']
+		extensions: ['.tsx', '.ts', '.jsx', '.js', '...']
 	}
 };
 
