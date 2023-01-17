@@ -4,6 +4,9 @@
   
 ### Technologies used: Typescript, Scss  
 
+## Deployment:  
+[Crow Echo](https://mooncitizenx.github.io/Crow-Echo/)
+
 ## Run Locally
 
 Clone the project
