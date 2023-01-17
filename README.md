@@ -1,6 +1,6 @@
 # Crow-Echo
 
-### In this quiz you need to listen to the sound of a random bird and choose the correct answer.  
+### In this quiz you listen to the sound of a random bird and choose the correct answer.  
   
 ### Technologies used: Typescript, Scss  
 
