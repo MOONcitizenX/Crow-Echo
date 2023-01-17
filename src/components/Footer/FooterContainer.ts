@@ -1,9 +1,8 @@
 import { BaseElement } from '../../BaseElement';
-import schoolLogo from '../../assets/img/logo-rsschool3.png';
 
 export class FooterContainer extends BaseElement {
 	private logo;
-	private logoImg;
+	private projectName;
 	private year;
 	private link;
 	constructor() {
@@ -19,13 +18,10 @@ export class FooterContainer extends BaseElement {
 				target: '_blank'
 			}
 		});
-		this.logoImg = new BaseElement({
-			tag: 'img',
-			className: 'footer__logo_img',
-			attr: {
-				src: schoolLogo,
-				alt: 'RS School'
-			}
+		this.projectName = new BaseElement({
+			tag: 'p',
+			className: 'footer__year',
+			textContent: 'Crow Echo'
 		});
 		this.year = new BaseElement({
 			tag: 'p',
@@ -43,7 +39,7 @@ export class FooterContainer extends BaseElement {
 		});
 	}
 	render() {
-		this.logo.elem.append(this.logoImg.elem);
+		this.logo.elem.append(this.projectName.elem);
 		this.addChildren(this.logo.elem, this.year.elem, this.link.elem);
 	}
 }
